@@ -9,4 +9,4 @@
 实战项目：人力资源管理系统。
 
 [GitHub](https://github.com/cxy35/learning)
-[Get Started](../README.md)
+[Get Started](README.md)
