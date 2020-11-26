@@ -126,7 +126,7 @@
   * [如何在人力资源管理系统中提高 RabbitMQ 消息发送的可靠性](hr/hr-rabbitmq-reliability-producer.md)
   * [如何在人力资源管理系统中提高 RabbitMQ 消息消费的可靠性](hr/hr-rabbitmq-reliability-consumer.md)
 
-* 精品文章
+* 文章收藏
 
   * [2019 Java 全栈工程师进阶路线图，一定要收藏！](https://mp.weixin.qq.com/s/XiUUgFvUQ3y8FUDSXbhEKA)
   * [SpringBoot常用注解大全，一键收藏了！](https://mp.weixin.qq.com/s/Lq_iBz9cV9g11OvAwFmo-A)

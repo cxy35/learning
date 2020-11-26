@@ -7,8 +7,8 @@
 
 * 个人站点
 
-  * [独立站点](https://cxy35.com)
+  * [独立站点](https://www.cxy35.com)
   * [CSDN](https://blog.csdn.net/cxy35)
   * [OSCHINA](https://my.oschina.net/cxy35)
-  * [Gitee](https://gitee.com/cxy35)
   * [GitHub](https://github.com/cxy35)
+  * [Gitee](https://gitee.com/cxy35)

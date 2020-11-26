@@ -2,10 +2,15 @@
 
 ## 项目地址
 
-- [教程合集示例代码](https://github.com/cxy35/learning)
-- [教程合集示例代码（Spring Boot）](https://github.com/cxy35/spring-boot-samples)
-- [教程合集示例代码（Spring Cloud）](https://github.com/cxy35/spring-cloud-samples)
-- [实战项目（人力资源管理系统）](https://github.com/cxy35/hr)
+- 教程合集示例代码：[https://github.com/cxy35/learning](https://github.com/cxy35/learning)
+- 教程合集示例代码（Spring Boot）:[https://github.com/cxy35/spring-boot-samples](https://github.com/cxy35/spring-boot-samples)
+- 教程合集示例代码（Spring Cloud）：[https://github.com/cxy35/spring-cloud-samples](https://github.com/cxy35/spring-cloud-samples)
+- 实战项目（人力资源管理系统）：[https://github.com/cxy35/hr](https://github.com/cxy35/hr)
+
+## 更好的阅读体验
+
+- 文档地址：[https://www.cxy35.com](https://www.cxy35.com)
+- 文档地址（备用）：[https://www.cxy35.com](https://cxy35.github.io/learning)
 
 ## Spring Boot
 
@@ -127,6 +132,7 @@
 - [MySQL 定时备份](mysql/mysql-bak-timer.md)
 - [MySQL binlog 详解](mysql/mysql-binlog.md)
 - [MySQL 常见问题](mysql/mysql-faq.md)
+- [MySQL 核心知识点](mysql/mysql-knowledge.md)
 
 ## Redis
 
@@ -153,24 +159,54 @@
 - [Nginx 配置 SSL 支持 HTTPS（自签证书）](nginx/nginx-ssl.md)
 - [Nginx 常见问题](nginx/nginx-faq.md)
 
+## 其他
+
+- [Tomcat 集群](other/tomcat-cluster.md)
+- [Apache 实现 Tomcat 集群 - mod_jk（老版本）](other/apache-tomcat-cluster-mod-jk.md)
+- [Apache 实现 Tomcat 集群 - mod_proxy（新版本）](other/apache-tomcat-cluster-mod-proxy.md)
+- [Tomcat 访问日志分析工具 - AWStats](other/tomcat-awstats.md)
+- [Tomcat 管理和监控工具 - PSI Probe](other/tomcat-psiprobe.md)
+- [Mycat 概述](other/mycat-overview.md)
+- [POI 操作手册](other/poi.md)
+- [MyBatis 主键回填](other/mybatis-key.md)
+- [不要再自己写 Java 工具类了，这些开源的不香吗？](other/java-utils.md)
+- [JVM 内存分析工具 - MAT](other/mat.md)
+- [分布式任务调度与计算中心 PowerJob](other/powerjob.md)
+- [通过 canal 将 MySQL 数据实时同步到 Elasticsearch](other/canal-mysql-es.md)
+
 ## 工具
 
-> 一些常用工具（Git / IDEA / Eclipse / Sublime / Hexo）的使用教程。
+> 一些常用工具的使用教程。
 
-- [Git 安装](tool/git-install.md)
-- [Git 常用命令](tool/git-command.md)
-- [Git 配置 SSH keys](tool/git-ssh.md)
----
 - [IntelliJ IDEA 常用快捷键](tool/idea-keymap.md)
 - [IntelliJ IDEA 常用配置](tool/idea-settings.md)
 - [IntelliJ IDEA 常用插件](tool/idea-plugins.md)
 - [IntelliJ IDEA 插件 EasyCode（代码自动生成）](tool/idea-plugins-easycode.md)
 ---
+- [Sublime Text 常用快捷键](tool/sublime-keymap.md)
+- [Sublime Text 常用插件](tool/sublime-plugins.md)
+---
+- [Maven 常用命令](tool/maven-command.md)
+- [Maven 实战](tool/maven-in-action.md)
+---
+- [Git 安装](tool/git-install.md)
+- [Git 常用命令](tool/git-command.md)
+- [Git 配置 SSH keys](tool/git-ssh.md)
+---
+- [SVN 目录使用规范](tool/svn-dir.md)
+---
 - [Eclipse 常用插件在线安装地址](tool/eclipse-plugins.md)
 - [Eclipse 问题汇总](tool/eclipse-error.md)
 ---
-- [Sublime Text 常用快捷键](tool/sublime-keymap.md)
-- [Sublime Text 常用插件](tool/sublime-plugins.md)
+- [Linux 常用命令 - 目录、文件等](tool/linux-command.md)
+- [Linux 常用命令 - 文件内容编辑](tool/linux-command-vi.md)
+- [Linux 常用命令 - 打包、压缩、解压缩](tool/linux-command-tar.md)
+- [Linux 常用命令 - 重启、关机](tool/linux-command-reboot-shutdown.md)
+- [Linux 常用命令 - 文件传输](tool/linux-command-scp-rzsz.md)
+- [Linux 磁盘分区、格式化、挂载](tool/linux-command-fdisk-mount.md)
+- [Linux 下查看某个端口被哪个进程或程序占用](tool/linux-netstat-ps.md)
+---
+- [Markdown 语法](tool/markdown-grammar.md)
 ---
 - [Hexo 搭建个人博客网站](tool/hexo.md)
 - [Hexo 主题配置 - NexT](tool/hexo-theme-next.md)
@@ -183,7 +219,7 @@
 - [如何在人力资源管理系统中提高 RabbitMQ 消息发送的可靠性](hr/hr-rabbitmq-reliability-producer.md)
 - [如何在人力资源管理系统中提高 RabbitMQ 消息消费的可靠性](hr/hr-rabbitmq-reliability-consumer.md)
 
-## 精品文章
+## 文章收藏
 
 - [2019 Java 全栈工程师进阶路线图，一定要收藏！](https://mp.weixin.qq.com/s/XiUUgFvUQ3y8FUDSXbhEKA)
 - [SpringBoot常用注解大全，一键收藏了！](https://mp.weixin.qq.com/s/Lq_iBz9cV9g11OvAwFmo-A)
