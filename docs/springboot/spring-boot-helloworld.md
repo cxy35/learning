@@ -1,10 +1,3 @@
----
-title: Spring Boot 项目创建
-date: 2019-11-01 09:16:23
-categories: Spring Boot
-tags: [Spring Boot]
-toc: true
----
 3 种方式实现 Spring Boot 项目创建。
 <!-- more -->
 

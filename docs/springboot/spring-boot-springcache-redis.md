@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Cache + Redis（实现数据缓存）
-date: 2019-12-27 10:12:24
-categories: Spring Boot
-tags: [Spring Boot, Spring Cache, Redis]
-toc: true
----
 学习在 Spring Boot 中整合 `Spring Cache + Redis` ，实现数据的缓存。 Spring Cache 统一了缓存江湖的门面，它提供统一的接口，实现可以是 `Redis` 或 `Ehcache` 或其他支持这种规范的缓存框架，他们的关系类似于 JDBC 与各种数据库驱动，本文使用 `Redis` 实现。这种方式相对于自己手动通过 RedisTemplate 往 Redis 中缓存数据（参考 [Spring Boot 整合 Redis](https://mp.weixin.qq.com/s/oXwCwO0Ng24xvYo3DcXjDA) ）来说比较简单。
 <!-- more -->
 

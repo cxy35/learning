@@ -1,11 +1,3 @@
----
-title: IntelliJ IDEA 常用快捷键
-date: 2019-10-08 10:09:35
-categories: IDE
-tags: [IDE, IntelliJ IDEA, 快捷键]
-toc: true
-thumbnail: /images/ide/idea-thumbnail.jpg
----
 工欲善其事，必先利其器。本文收集 IntelliJ IDEA 常用快捷键，持续更新中......
 <!-- more -->
 

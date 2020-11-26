@@ -1,10 +1,3 @@
----
-title: MySQL 备份与恢复 - xtrabackup
-date: 2018-10-14 15:46:37
-categories: MySQL
-tags: [MySQL, 备份, xtrabackup]
-toc: true
----
 【TODO-未整理、未实测】MySQL 备份与恢复 - xtrabackup 。
 <!-- more -->
 

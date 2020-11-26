@@ -1,10 +1,3 @@
----
-title: Linux 常用命令 - 文件内容编辑
-date: 2019-01-03 15:30:44
-categories: Linux
-tags: [Linux, 命令]
-toc: true
----
 通过本文学习 Linux 常用命令-文件内容编辑：vi 。
 <!-- more -->
 

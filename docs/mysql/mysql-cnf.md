@@ -1,10 +1,3 @@
----
-title: MySQL 参数配置优化
-date: 2018-09-26 09:25:47
-categories: MySQL
-tags: [MySQL, 优化]
-toc: true
----
 MySQL 参数配置优化，提升 MySQL 效率与稳定性。
 <!-- more -->
 

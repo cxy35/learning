@@ -1,10 +1,3 @@
----
-title: Nginx 添加到 Windows 系统服务
-date: 2020-03-02 18:17:54
-categories: Nginx
-tags: [Nginx]
-toc: true
----
 借助第三方工具 WinSW 将 Nginx 添加到 Windows 系统服务，实现自启动。
 <!-- more -->
 

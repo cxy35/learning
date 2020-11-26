@@ -1,11 +1,3 @@
----
-title: Git 安装
-date: 2020-02-05 16:13:41
-categories: Git
-tags: [Git, 安装]
-toc: true
-thumbnail: /images/git/git-thumbnail.jpg
----
 手把手带你安装 Git 。
 <!-- more -->
 

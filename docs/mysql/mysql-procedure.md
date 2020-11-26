@@ -1,10 +1,3 @@
----
-title: MySQL 存储过程
-date: 2018-08-08 21:27:27
-categories: MySQL
-tags: [MySQL, 存储过程]
-toc: true
----
 通过本文学习 MySQL 存储过程的语法和使用。
 <!-- more -->
 

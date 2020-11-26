@@ -1,11 +1,3 @@
----
-title: MySQL 安装 - Linux
-date: 2018-07-27 16:19:04
-categories: MySQL
-tags: [MySQL, 安装]
-toc: true
-# thumbnail: /images/mysql/mysql-thumbnail.jpg
----
 手把手带你在 Linux 上安装 MySQL-5.6/5.7 ，图文并茂。
 <!-- more -->
 

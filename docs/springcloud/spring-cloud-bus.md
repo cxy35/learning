@@ -1,10 +1,3 @@
----
-title: Spring Cloud Bus 消息总线
-date: 2020-05-14 19:13:48
-categories: Spring Cloud
-tags: [Spring Cloud, Bus]
-toc: true
----
 学习在 Spring Cloud 中使用 Bus 实现消息总线，包括配置文件自动批量刷新、逐个刷新等功能。
 <!-- more -->
 

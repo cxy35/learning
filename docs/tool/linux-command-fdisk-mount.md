@@ -1,10 +1,3 @@
----
-title: Linux 磁盘分区、格式化、挂载
-date: 2018-12-18 10:51:51
-categories: Linux
-tags: [Linux, 分区, 格式化, 挂载]
-toc: true
----
 通过本文学习 Linux 磁盘分区、格式化、挂载。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Spring Cloud Netflix Eureka Client 服务注册与发现
-date: 2020-04-10 13:32:09
-categories: Spring Cloud
-tags: [Spring Cloud, Eureka]
-toc: true
----
 学习在 Spring Cloud 中使用 Eureka Client 实现服务注册与发现。
 <!-- more -->
 

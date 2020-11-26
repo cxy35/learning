@@ -1,10 +1,3 @@
----
-title: Mycat 概述
-date: 2019-03-19 17:48:05
-categories: Mycat
-tags: [Mycat]
-toc: true
----
 通过本文学习 Mycat 的介绍、架构、原理、应用场景等。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Spring Cloud Alibaba Nacos 服务配置中心和注册中心
-date: 2020-05-23 13:16:06
-categories: Spring Cloud
-tags: [Spring Cloud, Nacos]
-toc: true
----
 学习在 Spring Cloud 中使用 Nacos 实现服务配置中心和注册中心，类似 Spring Cloud Config 和 Spring Cloud Netflix Eureka 提供的功能。
 <!-- more -->
 

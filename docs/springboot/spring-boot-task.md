@@ -1,10 +1,3 @@
----
-title: Spring Boot 配置定时任务（@Scheduled / Quartz）
-date: 2019-12-20 09:53:43
-categories: Spring Boot
-tags: [Spring Boot]
-toc: true
----
 学习在 Spring Boot 中如何配置定时任务。一般有两种方案，一种是使用 Spring 自带的定时任务处理器 `@Scheduled` 注解来实现（业务比较简单时），另一种是使用第三方框架 `Quartz` 来实现。
 <!-- more -->
 

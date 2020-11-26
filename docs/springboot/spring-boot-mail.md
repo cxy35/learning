@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合邮件发送
-date: 2020-01-31 11:08:00
-categories: Spring Boot
-tags: [Spring Boot]
-toc: true
----
 学习在 Spring Boot 中发送邮件，使用对应的自动化配置类，实现非常方便。
 <!-- more -->
 

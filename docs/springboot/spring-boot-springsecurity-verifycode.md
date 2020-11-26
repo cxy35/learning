@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security（配置验证码）
-date: 2020-01-16 18:04:27
-categories: Spring Boot
-tags: [Spring Boot, Spring Security]
-toc: true
----
 Spring Boot 整合 Spring Security ，配置验证码。
 <!-- more -->
 

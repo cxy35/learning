@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 MyBatis 多数据源
-date: 2019-12-08 16:47:25
-categories: Spring Boot
-tags: [Spring Boot, MyBatis, 多数据源]
-toc: true
----
 学习在 Spring Boot 中使用 MyBatis 多数据源来操作不同的数据库。
 <!-- more -->
 

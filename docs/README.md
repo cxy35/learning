@@ -1,1 +1,1 @@
-docs/README
+docs/readme

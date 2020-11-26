@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Redis
-date: 2019-12-15 15:20:38
-categories: Spring Boot
-tags: [Spring Boot, Redis]
-toc: true
----
 学习在 Spring Boot 中使用 Redis 来实现数据存储。在 Spring Boot 中，默认集成的 Redis 就是 **`Spring Data Redis`** ，默认底层的连接池使用了 `lettuce` ，可以自行修改为自己的熟悉的，例如 `Jedis` 。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 JdbcTemplate
-date: 2019-12-04 09:15:43
-categories: Spring Boot
-tags: [Spring Boot, JdbcTemplate]
-toc: true
----
 学习在 Spring Boot 中使用 JdbcTemplate 来操作数据库。 JdbcTemplate 是 Spring 自带的，虽然功能没有 MyBatis 强大，但配置和使用简单。
 <!-- more -->
 

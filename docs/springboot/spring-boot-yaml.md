@@ -1,10 +1,3 @@
----
-title: Spring Boot 配置 yaml
-date: 2019-11-04 08:54:35
-categories: Spring Boot
-tags: [Spring Boot, yaml]
-toc: true
----
 学习 Spring Boot 项目中的配置文件（ yaml 格式），如： application.yaml 。
 <!-- more -->
 

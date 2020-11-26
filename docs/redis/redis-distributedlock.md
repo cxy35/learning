@@ -1,10 +1,3 @@
----
-title: Redis 实现分布式锁
-date: 2020-06-26 16:15:32
-categories: Redis
-tags: [Redis]
-toc: true
----
 本文学习在 Redis 中通过 `String` 实现分布式锁。
 <!-- more -->
 

@@ -1,11 +1,3 @@
----
-title: MySQL 安装 - Windows
-date: 2018-07-28 09:16:23
-categories: MySQL
-tags: [MySQL, 安装]
-toc: true
-# thumbnail: /images/mysql/mysql-thumbnail.jpg
----
 手把手带你在 Windows 上安装 MySQL-5.6 。
 <!-- more -->
 

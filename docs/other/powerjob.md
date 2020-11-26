@@ -1,10 +1,3 @@
----
-title: 分布式任务调度与计算中心 PowerJob
-date: 2020-06-07 19:48:07
-categories: PowerJob
-tags: [PowerJob, 分布式, 任务调度]
-toc: true
----
 PowerJob 是全新一代**分布式任务调度与计算框架**，能让您轻松完成作业的调度与繁杂任务的分布式计算。
 <!-- more -->
 

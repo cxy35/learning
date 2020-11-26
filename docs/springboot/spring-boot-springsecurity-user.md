@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security（配置用户/角色-基于内存）
-date: 2020-01-09 15:54:45
-categories: Spring Boot
-tags: [Spring Boot, Spring Security]
-toc: true
----
 Spring Boot 整合 Spring Security 之后，默认用户名为 user ，密码在项目启动时打印在控制台。这个随机生成的密码，每次项目启动时都会变，不是很方便。我们可以自己配置 Spring Security 的用户和角色，有三种方式可以实现：
 
 - 通过 `application.properties` 配置文件配置**在内存中**。

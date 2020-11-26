@@ -1,10 +1,3 @@
----
-title: Linux 常用命令 - 打包、压缩、解压缩
-date: 2019-01-06 15:44:40
-categories: Linux
-tags: [Linux, 命令]
-toc: true
----
 通过本文学习 Linux 常用命令-打包、压缩、解压缩：tar 。
 <!-- more -->
 

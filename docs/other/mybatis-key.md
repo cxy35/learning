@@ -1,10 +1,3 @@
----
-title: MyBatis 主键回填
-date: 2019-02-16 16:40:46
-categories: MyBatis
-tags: [MyBatis]
-toc: true
----
 两种方式实现 MyBatis 主键回填。
 <!-- more -->
 

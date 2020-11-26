@@ -1,10 +1,3 @@
----
-title: Redis 安装
-date: 2020-05-26 12:16:23
-categories: Redis
-tags: [Redis, 安装]
-toc: true
----
 手把手带你使用多种姿势安装 Redis 。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Freemarker
-date: 2019-11-15 10:02:03
-categories: Spring Boot
-tags: [Spring Boot, Freemarker]
-toc: true
----
 学习 Spring Boot 整合页面模板 Freemarker 。
 <!-- more -->
 

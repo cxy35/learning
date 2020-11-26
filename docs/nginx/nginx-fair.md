@@ -1,10 +1,3 @@
----
-title: Nginx 负载均衡 - fair
-date: 2020-03-05 17:10:14
-categories: Nginx
-tags: [Nginx, fair]
-toc: true
----
 学习在 Nginx 中使用 fair 模块（第三方）来实现负载均衡，fair 采用的不是内建负载均衡使用的轮换的均衡算法，而是**可以根据页面大小、响应时间智能的进行负载均衡**。
 <!-- more -->
 

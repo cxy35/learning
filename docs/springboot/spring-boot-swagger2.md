@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Swagger2
-date: 2019-12-22 14:29:21
-categories: Spring Boot
-tags: [Spring Boot, Swagger2]
-toc: true
----
 学习在 Spring Boot 中使用 Swagger2 实时生成在线接口文档，还支持接口测试。特别是在前后端分离开发时，可以说是一大神器。
 <!-- more -->
 

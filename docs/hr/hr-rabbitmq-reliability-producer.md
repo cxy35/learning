@@ -1,10 +1,3 @@
----
-title: 如何在人力资源管理系统中提高 RabbitMQ 消息发送的可靠性
-date: 2020-05-05 18:50:18
-categories: HR
-tags: [HR, RabbitMQ]
-toc: true
----
 学习如何在人力资源管理系统中提高 RabbitMQ 消息发送的可靠性，避免因为网络抖动等原因导致消息发送失败。
 <!-- more -->
 

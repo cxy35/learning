@@ -1,10 +1,3 @@
----
-title: Spring Boot 自定义 Starter
-date: 2019-11-11 16:17:11
-categories: Spring Boot
-tags: [Spring Boot, Starter]
-toc: true
----
 认识 Spring Boot 中的自动化配置，并手把手带你写一个自己的 Starter 。
 <!-- more -->
 

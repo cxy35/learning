@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 MyBatis 通用 Mapper（TkMybatis）
-date: 2020-05-20 20:27:46
-categories: Spring Boot
-tags: [Spring Boot, TkMybatis]
-toc: true
----
 学习在 Spring Boot 中整合 MyBatis 通用 Mapper（TkMybatis）。通用 Mapper 是一个可以实现任意 MyBatis 通用方法的框架，项目提供了常规的增删改查操作以及 Example 相关的单表操作。通用 Mapper 是为了解决 MyBatis 使用中 90% 的基本操作，使用它可以很方便的进行开发，可以节省开发人员大量的时间。
 <!-- more -->
 

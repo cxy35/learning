@@ -1,10 +1,3 @@
----
-title: MySQL 备份与恢复
-date: 2018-10-12 09:49:37
-categories: MySQL
-tags: [MySQL, 备份, mysqldump]
-toc: true
----
 多种姿势实现 MySQL 备份与恢复。
 <!-- more -->
 

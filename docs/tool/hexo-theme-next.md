@@ -1,11 +1,3 @@
----
-title: Hexo 主题配置 - NexT
-date: 2019-09-20 11:55:49
-categories: Hexo
-tags: [Hexo, NexT]
-toc: true
-# thumbnail: /images/hexo/next-thumbnail.jpg
----
 hexo-theme-next 主题配置大全，图文并茂，持续更新中。
 <!-- more -->
 

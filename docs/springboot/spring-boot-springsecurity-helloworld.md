@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security（初次体验）
-date: 2020-01-07 15:17:46
-categories: Spring Boot
-tags: [Spring Boot, Spring Security]
-toc: true
----
 通过本文体验 Spring Boot 整合 `Spring Security` 。 Spring Security 是 Spring 家族中的一个安全管理框架，但在 Spring Boot 出现之前，使用的没有 Shiro 多，因为在 SSM/SSH 项目中整合 Spring Security 比较麻烦，直到 Spring Boot 的出现。目前关于安全管理框架的整合模式一般有两种，一种是 `SSM/SSH + Shiro` ，另一种是 `Spring Boot/Spring Cloud + Spring Security` ，但并非绝对。
 <!-- more -->
 

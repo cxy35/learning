@@ -1,10 +1,3 @@
----
-title: Apache 实现 Tomcat 集群 - mod_jk（老版本）
-date: 2018-05-05 11:51:35
-categories: Apache
-tags: [Apache, Tomcat, 集群, mod_jk]
-toc: true
----
 使用 Apache 实现 Tomcat 集群，采用 mod_jk 组件（老版本）。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Nginx 配置 SSL 支持 HTTPS（自签证书）
-date: 2020-05-22 11:08:53
-categories: Nginx
-tags: [Nginx, SSL, HTTPS]
-toc: true
----
 Nginx 配置 SSL ，使其支持 HTTPS（自签证书）。
 <!-- more -->
 

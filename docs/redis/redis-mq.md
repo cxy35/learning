@@ -1,10 +1,3 @@
----
-title: Redis 实现消息队列
-date: 2020-06-27 19:48:07
-categories: Redis
-tags: [Redis]
-toc: true
----
 本文学习在 Redis 中通过 `List/ZSet` 实现消息队列。
 <!-- more -->
 

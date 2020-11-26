@@ -1,10 +1,3 @@
----
-title: MySQL 事件
-date: 2018-08-10 21:27:39
-categories: MySQL
-tags: [MySQL, 事件]
-toc: true
----
 通过本文学习 MySQL 事件。
 <!-- more -->
 

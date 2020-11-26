@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 JdbcTemplate 多数据源
-date: 2019-12-05 14:08:57
-categories: Spring Boot
-tags: [Spring Boot, JdbcTemplate, 多数据源]
-toc: true
----
 学习在 Spring Boot 中使用 JdbcTemplate 多数据源来操作不同的数据库。JdbcTemplate 是 Spring 自带的，虽然功能没有 MyBatis 强大，但使用简单。
 <!-- more -->
 

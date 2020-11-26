@@ -1,10 +1,3 @@
----
-title: Redis 实现 UV 统计
-date: 2020-07-11 19:48:07
-categories: Redis
-tags: [Redis, HyperLogLog]
-toc: true
----
 本文学习在 Redis 中通过 `HyperLogLog` 实现 UV 统计。
 <!-- more -->
 

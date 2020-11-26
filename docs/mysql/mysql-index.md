@@ -1,10 +1,3 @@
----
-title: MySQL 索引
-date: 2018-08-12 21:27:48
-categories: MySQL
-tags: [MySQL, 索引]
-toc: true
----
 索引是快速搜索的关键，索引的建立对于 MySQL 的高效运行很重要。通过本文学习 MySQL 索引。
 <!-- more -->
   

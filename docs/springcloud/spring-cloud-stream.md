@@ -1,10 +1,3 @@
----
-title: Spring Cloud Stream 构建消息驱动的微服务
-date: 2020-05-16 18:15:01
-categories: Spring Cloud
-tags: [Spring Cloud, Stream]
-toc: true
----
 学习在 Spring Cloud 中使用 Stream 构建消息驱动的微服务，包括基本使用、自定义消息通道、消息分组、消息分区、定时任务等功能。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Linux 常用命令 - 重启、关机
-date: 2019-01-12 16:16:45
-categories: Linux
-tags: [Linux, 命令]
-toc: true
----
 通过本文学习 Linux 常用命令-重启、关机：reboot shutdown 等。
 <!-- more -->
 

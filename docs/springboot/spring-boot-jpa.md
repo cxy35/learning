@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Jpa
-date: 2019-12-10 10:46:31
-categories: Spring Boot
-tags: [Spring Boot, Jpa]
-toc: true
----
 学习在 Spring Boot 中使用 Jpa 来操作数据库。在 Spring Boot 中，使用的 Jpa 实际上是 **`Spring Data Jpa`** ， Spring Data 是 Spring 家族的一个子项目，用于简化 SQL 和 NoSQL 的访问，在 Spring Data 中，只要你的**方法名称符合规范**，它就知道你想干什么，不需要自己再去写 SQL 。
 <!-- more -->
 

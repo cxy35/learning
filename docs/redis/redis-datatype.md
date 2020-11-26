@@ -1,10 +1,3 @@
----
-title: Redis 基本数据类型（字符串、列表、集合、散列、有序集合）
-date: 2020-05-31 16:58:08
-categories: Redis
-tags: [Redis]
-toc: true
----
 Redis 中的数据都是以 `key/value` 的形式存储的，key 都是字符串，value 支持多种不同的数据类型，其中基本数据类型有：`String(含 Bit)、List、Set、Hash、ZSet`。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Linux 常用命令 - 目录、文件等
-date: 2019-01-08 15:57:08
-categories: Linux
-tags: [Linux, 命令]
-toc: true
----
 通过本文学习 Linux 常用命令-目录、文件：cd mkdir touch cp mv rm more du 等。
 <!-- more -->
 

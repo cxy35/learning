@@ -1,11 +1,3 @@
----
-title: Hexo 主题配置 - Icarus
-date: 2020-01-20 16:46:04
-categories: Hexo
-tags: [Hexo, Icarus]
-toc: true
-# thumbnail: /images/hexo/icarus-thumbnail.png
----
 hexo-theme-icarus 主题配置大全，图文并茂，持续更新中。
 <!-- more -->
 

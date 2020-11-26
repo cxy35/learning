@@ -1,11 +1,3 @@
----
-title: IntelliJ IDEA 常用配置
-date: 2019-10-22 17:10:55
-categories: IDE
-tags: [IDE, IntelliJ IDEA, 配置]
-toc: true
-thumbnail: /images/ide/idea-thumbnail.jpg
----
 工欲善其事，必先利其器。本文收集 IntelliJ IDEA 常用配置，持续更新中......
 <!-- more -->
 

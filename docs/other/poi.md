@@ -1,10 +1,3 @@
----
-title: POI 操作手册
-date: 2018-04-23 17:14:24
-categories: POI
-tags: [POI]
-toc: true
----
 通过本文认识 POI ，并学习 Excel/Word/... 等类型文档的操作。
 <!-- more -->
 

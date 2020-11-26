@@ -1,10 +1,3 @@
----
-title: Spring Cloud Netflix Eureka Server 搭建服务注册中心
-date: 2020-04-09 12:39:46
-categories: Spring Cloud
-tags: [Spring Cloud, Eureka]
-toc: true
----
 学习在 Spring Cloud 中使用 Eureka Server 搭建服务注册中心，手把手带你实现单机和集群两种模式。
 <!-- more -->
 

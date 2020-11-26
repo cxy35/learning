@@ -1,10 +1,3 @@
----
-title: IntelliJ IDEA 常用插件
-date: 2020-05-14 18:10:22
-categories: IDE
-tags: [IDE, IntelliJ IDEA, 插件]
-toc: true
----
 工欲善其事，必先利其器。本文收集 IntelliJ IDEA 常用插件，持续更新中......
 <!-- more -->
 

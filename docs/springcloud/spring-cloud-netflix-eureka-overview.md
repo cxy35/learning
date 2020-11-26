@@ -1,10 +1,3 @@
----
-title: Spring Cloud Netflix Eureka 概述
-date: 2020-04-07 15:32:18
-categories: Spring Cloud
-tags: [Spring Cloud, Eureka]
-toc: true
----
 Eureka 是 Spring Cloud 中的服务注册中心，类似于 Dubbo 中的 Zookeeper 。本文学习 Eureka 概述、工作细节、集群等。它是 Netflix 家族成员之一。
 <!-- more -->
 

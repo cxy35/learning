@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Redis + Spring Session（实现 Session 共享）
-date: 2019-12-17 18:03:48
-categories: Spring Boot
-tags: [Spring Boot, Redis, Session]
-toc: true
----
 学习在 Spring Boot 中整合 Redis + Spring Session ，实现 Session 共享。先来回顾下在 SSM 中使用 Spring Session 的配置，首先是 web.xml 配置代理过滤器，然后在 Spring 容器中配置 Redis，最后再配置 Spring Session ，步骤有些繁琐。下面来看下在 Spring Boot 中如何使用，比较起来你会发现超级简单。
 <!-- more -->
 

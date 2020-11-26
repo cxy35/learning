@@ -1,10 +1,3 @@
----
-title: Nginx 安装 - Windows
-date: 2020-03-05 10:29:29
-categories: Nginx
-tags: [Nginx, 安装]
-toc: true
----
 手把手带你在 Windows 上安装 Nginx-1.16.0 。
 <!-- more -->
 

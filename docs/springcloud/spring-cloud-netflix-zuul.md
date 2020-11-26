@@ -1,10 +1,3 @@
----
-title: Spring Cloud Netflix Zuul 服务网关
-date: 2020-05-03 18:18:11
-categories: Spring Cloud
-tags: [Spring Cloud, Zuul]
-toc: true
----
 学习在 Spring Cloud 中使用 Zuul 实现服务网关，包括基本使用、请求过滤、忽略路径、前缀等功能。它是 Netflix 家族成员之一。
 <!-- more -->
 

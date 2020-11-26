@@ -1,10 +1,3 @@
----
-title: MySQL 常用函数
-date: 2018-08-06 21:26:24
-categories: MySQL
-tags: [MySQL, 函数]
-toc: true
----
 通过本文学习 MySQL 常用函数。
 <!-- more -->
 

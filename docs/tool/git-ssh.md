@@ -1,11 +1,3 @@
----
-title: Git 配置 SSH keys
-date: 2020-02-10 16:57:21
-categories: Git
-tags: [Git, SSH]
-toc: true
-# thumbnail: /images/git/git-ssh-keys-thumbnail.jpg
----
 GitHub 支持 HTTPS 和 SSH 两种协议。使用 HTTPS 协议时，每次提交都要求输入用户名和密码，显得有点麻烦。本文介绍如何通过配置 SSH keys 实现愉快的提交。
 <!-- more -->
 

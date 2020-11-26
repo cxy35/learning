@@ -1,10 +1,3 @@
----
-title: Sublime Text 常用快捷键
-date: 2020-11-02 12:39:11
-categories: IDE
-tags: [IDE, Sublime, 快捷键]
-toc: true
----
 工欲善其事，必先利其器。本文收集 Sublime Text 常用快捷键，持续更新中......
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Linux 常用命令 - 文件传输
-date: 2019-01-13 16:17:03
-categories: Linux
-tags: [Linux, 命令]
-toc: true
----
 通过本文学习 Linux 常用命令-文件传输：scp rz sz 等。
 <!-- more -->
 

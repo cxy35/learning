@@ -1,10 +1,3 @@
----
-title: Spring Cloud Alibaba Sentinel 断路器
-date: 2020-05-24 16:54:31
-categories: Spring Cloud
-tags: [Spring Cloud, Sentinel]
-toc: true
----
 学习在 Spring Cloud 中使用 Sentinel 实现断路器，类似 Spring Cloud Netflix Hystrix ，包括实时监控、簇点链路、流控、降级等功能。 Sentinel 提供的功能更强大，使用更方便，可以替代 Hystrix ，还能结合 Nacos 中的配置中心一起使用。
 <!-- more -->
 

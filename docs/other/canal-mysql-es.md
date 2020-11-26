@@ -1,10 +1,3 @@
----
-title: 通过 canal 将 MySQL 数据实时同步到 Elasticsearch
-date: 2020-11-15 18:42:24
-categories: canal
-tags: [canal, MySQL, Elasticsearch, ES]
-toc: true
----
 通过本文学习如何通过 canal 将 MySQL 数据实时同步到 Elasticsearch。
 <!-- more -->
 

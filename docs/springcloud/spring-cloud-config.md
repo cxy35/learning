@@ -1,10 +1,3 @@
----
-title: Spring Cloud Config 分布式配置中心
-date: 2020-05-11 18:54:54
-categories: Spring Cloud
-tags: [Spring Cloud, Config]
-toc: true
----
 学习在 Spring Cloud 中使用 Config 实现分布式配置中心，包括基本使用、配置文件位置、配置文件加解密、Config Server 安全管理、结合注册中心、配置文件动态刷新、请求失败重试等功能。
 <!-- more -->
 

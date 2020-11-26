@@ -1,10 +1,3 @@
----
-title: 瞬间几千次的重复提交，我用 Spring Boot + Redis 扛住了（实现接口自动幂等）
-date: 2020-04-22 15:29:02
-categories: Spring Boot
-tags: [Spring Boot, Redis, 幂等]
-toc: true
----
 使用 Spring Boot + Redis + Interceptor + 自定义 Annotation 实现接口自动幂等，解决接口重复提交问题。转载自：[https://www.jianshu.com/p/c806003a8530](https://www.jianshu.com/p/c806003a8530)
 <!-- more -->
 

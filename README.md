@@ -233,6 +233,7 @@
 - [【项目实践】SpringBoot三招组合拳，手把手教你打出优雅的后端接口](https://juejin.cn/post/6844904101940117511)
 - [【项目实践】后端接口统一规范的同时，如何优雅得扩展规范](https://juejin.cn/post/6844904143912435719)
 - [Elastic：菜鸟上手指南](https://blog.csdn.net/UbuntuTouch/article/details/102728604)
+- [JavaGuide面试突击版](https://snailclimb.gitee.io/javaguide-interview/#/)
 
 ## 微信公众号
 

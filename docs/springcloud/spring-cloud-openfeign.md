@@ -1,10 +1,3 @@
----
-title: Spring Cloud OpenFeign 声明式服务调用
-date: 2020-04-24 13:15:40
-categories: Spring Cloud
-tags: [Spring Cloud, OpenFeign]
-toc: true
----
 学习在 Spring Cloud 中使用 OpenFeign 实现声明式服务调用，包括简单调用、参数传递、继承特性、日志配置、数据压缩、服务降级/容错等功能。
 <!-- more -->
 

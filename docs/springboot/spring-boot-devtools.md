@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 DevTools（实现热部署）
-date: 2020-04-06 10:35:06
-categories: Spring Boot
-tags: [Spring Boot, DevTools, LiveReload]
-toc: true
----
 Spring Boot 整合 DevTools ，实现类文件和静态资源文件的热部署，只需要添加 `spring-boot-devtools` 依赖就可以轻松实现。
 <!-- more -->
 

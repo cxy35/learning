@@ -1,10 +1,3 @@
----
-title: Spring Cloud 中 RestTemplate 的使用说明
-date: 2020-04-13 15:55:39
-categories: Spring Cloud
-tags: [Spring Cloud, RestTemplate]
-toc: true
----
 本文整理在 Spring Cloud 中 RestTemplate 的使用说明，包括 `GET/POST/PUT/DELETE` 请求以及一些通用的请求执行方法 `exchange/execute` ，结合 `@LoadBalanced` 注解可以实现客户端负载均衡。
 <!-- more -->
 

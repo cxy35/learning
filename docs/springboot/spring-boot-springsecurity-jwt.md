@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security + JWT（实现无状态登录）
-date: 2020-01-25 16:26:52
-categories: Spring Boot
-tags: [Spring Boot, Spring Security, JWT]
-toc: true
----
 学习在 Spring Boot 中整合 Spring Security 和 JWT ，实现无状态登录，可做为前后端分离时的解决方案，技术上没问题，但实际上还是推荐使用 OAuth2 中的 password 模式。
 <!-- more -->
 

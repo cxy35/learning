@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Thymeleaf
-date: 2019-11-13 10:01:40
-categories: Spring Boot
-tags: [Spring Boot, Thymeleaf]
-toc: true
----
 学习 Spring Boot 整合页面模板 Thymeleaf 。
 <!-- more -->
 

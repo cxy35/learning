@@ -1,10 +1,3 @@
----
-title: Spring Cloud Gateway 服务网关
-date: 2020-05-04 18:54:08
-categories: Spring Cloud
-tags: [Spring Cloud, Gateway]
-toc: true
----
 学习在 Spring Cloud 中使用 Gateway 实现服务网关，包括基本使用、自动代理、 Predicate 、 Filter 等功能。
 <!-- more -->
 

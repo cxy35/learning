@@ -1,10 +1,3 @@
----
-title: Spring Cloud Resilience4j 断路器
-date: 2020-04-27 19:30:24
-categories: Spring Cloud
-tags: [Spring Cloud, Resilience4j]
-toc: true
----
 学习在 Spring Cloud 中使用 Resilience4j 实现断路器，包括断路器 CircuitBreaker 、限流 RateLimiter 、请求重试 Retry 等功能。
 <!-- more -->
 

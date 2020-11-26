@@ -1,10 +1,3 @@
----
-title: Sublime Text 常用插件
-date: 2020-11-02 14:15:36
-categories: IDE
-tags: [IDE, Sublime, 插件]
-toc: true
----
 工欲善其事，必先利其器。本文收集 Sublime Text 常用插件，持续更新中......
 <!-- more -->
 

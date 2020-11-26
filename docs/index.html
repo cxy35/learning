@@ -15,19 +15,22 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '程序员35',
-      repo: 'https://github.com/cxy35',
+      name: '好好学习，天天向上 - 程序员35',
+      repo: 'https://github.com/cxy35/learning',
       loadNavbar: true,
       loadSidebar: true,
       coverpage: true,
-      auto2top: true,
-      maxLevel: 2,
+      auto2top: true, // 切换页面后是否自动跳转到页面顶部
+      maxLevel: 2, // 最大支持渲染的标题层级
       subMaxLevel: 3,
+      homepage: '../README.md',
+      // 全文搜索
       search: {
+        // maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         // paths: 'auto',
         placeholder: '搜索',
-        noData: '找不到结果!',
-        depth: 3
+        noData: '找不到结果',
+        depth: 3 // 搜索标题的最大层级, 1-6
       },
       count:{
         countable:true,
@@ -41,6 +44,7 @@
       },
       ga: 'UA-144208445-1',
       plugins: [
+        // EditOnGithubPlugin.create('https://github.com/cxy35/learning/tree/main'),
         function(hook) {
           var header = [
             '<p>',
@@ -70,12 +74,21 @@
   </script>
   <script src="//unpkg.com/docsify@4.10.0/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify@4.10.0/lib/plugins/ga.js"></script>
+  <!-- 全文搜索 -->
   <script src="//unpkg.com/docsify@4.10.0/lib/plugins/search.js"></script>
+  <!-- 复制到剪贴板 -->
   <script src="//unpkg.com/docsify-copy-code@2.1.0/dist/docsify-copy-code.min.js"></script>
+  <!-- 代码高亮 -->
   <script src="//unpkg.com/prismjs@1.19.0/components/prism-bash.js"></script>
   <script src="//unpkg.com/prismjs@1.19.0/components/prism-java.js"></script>
   <script src="//unpkg.com/prismjs@1.19.0/components/prism-sql.js"></script>
+  <!-- 字数统计 -->
   <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!-- 图片缩放 -->
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+  <!-- 在 Github 上编辑 -->
+  <script src="//unpkg.com/docsify-edit-on-github/index.js"></script>
+  <!-- 全文搜索（非官方） -->
+  <!-- <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"> -->
 </body>
 </html>

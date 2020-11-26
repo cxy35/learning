@@ -1,10 +1,3 @@
----
-title: Redis 中的 Java 客户端（Jedis / Lettuce）
-date: 2020-06-07 19:48:07
-categories: Redis
-tags: [Redis, Jedis, Lettuce]
-toc: true
----
 本文学习使用 Java 客户端（`Jedis / Lettuce`） 操作 Redis 。
 <!-- more -->
 

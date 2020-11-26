@@ -1,10 +1,3 @@
----
-title: Spring Boot 配置 properties
-date: 2019-11-03 15:17:15
-categories: Spring Boot
-tags: [Spring Boot, properties]
-toc: true
----
 学习 Spring Boot 项目中的配置文件（ properties 格式），如： application.properties 。
 <!-- more -->
 

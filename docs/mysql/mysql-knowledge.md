@@ -1,10 +1,3 @@
----
-title: MySQL 核心知识点
-date: 2018-11-12 09:16:23
-categories: MySQL
-tags: [MySQL]
-toc: true
----
 本文记录 MySQL 相关的一些核心知识点。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Jpa 多数据源
-date: 2019-12-11 10:47:24
-categories: Spring Boot
-tags: [Spring Boot, Jpa, 多数据源]
-toc: true
----
 学习在 Spring Boot 中使用 Jpa 多数据源来操作不同的数据库。
 <!-- more -->
 

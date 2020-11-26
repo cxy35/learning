@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security + OAuth2
-date: 2020-01-28 11:02:26
-categories: Spring Boot
-tags: [Spring Boot, Spring Security, OAuth2]
-toc: true
----
 学习在 Spring Boot 中整合 Spring Security 和 OAuth2 。
 <!-- more -->
 

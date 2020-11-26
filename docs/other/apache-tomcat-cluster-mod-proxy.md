@@ -1,10 +1,3 @@
----
-title: Apache 实现 Tomcat 集群 - mod_proxy（新版本）
-date: 2018-05-09 11:52:00
-categories: Apache
-tags: [Apache, Tomcat, 集群, mod_proxy]
-toc: true
----
 使用 Apache 实现 Tomcat 集群，采用 mod_proxy 组件（新版本）。
 <!-- more -->
 

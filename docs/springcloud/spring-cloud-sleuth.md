@@ -1,10 +1,3 @@
----
-title: Spring Cloud Sleuth 链路追踪
-date: 2020-05-17 18:27:29
-categories: Spring Cloud
-tags: [Spring Cloud, Sleuth]
-toc: true
----
 学习在 Spring Cloud 中使用 Sleuth 实现链路追踪，包括基本使用、异步任务、定时任务等功能，并结合 Zipkin 展示收集到的信息。
 <!-- more -->
 

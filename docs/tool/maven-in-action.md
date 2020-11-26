@@ -1,10 +1,3 @@
----
-title: Maven 实战
-date: 2018-06-02 09:16:23
-categories: Maven
-tags: [Maven]
-toc: true
----
 从零开始学习 Maven ，从入门到精通。
 <!-- more -->
 

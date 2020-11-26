@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security（配置登录/登出）
-date: 2020-01-18 19:37:17
-categories: Spring Boot
-tags: [Spring Boot, Spring Security]
-toc: true
----
 Spring Boot 整合 Spring Security ，配置登录/登出，如：登录接口，登录成功或失败后的响应等。
 <!-- more -->
 

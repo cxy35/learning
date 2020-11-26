@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Cache + Ehcache（实现数据缓存）
-date: 2019-12-28 11:35:31
-categories: Spring Boot
-tags: [Spring Boot, Spring Cache, Ehcache]
-toc: true
----
 学习在 Spring Boot 中整合 `Spring Cache + Ehcache` ，实现数据的缓存。 Spring Cache 统一了缓存江湖的门面，它提供统一的接口，实现可以是 `Redis` 或 `Ehcache` 或其他支持这种规范的缓存框架，他们的关系类似于 JDBC 与各种数据库驱动，本文使用 `Ehcache` 实现。 Ehcache 也是 Java 领域比较优秀的缓存方案之一，但在 Redis 一统江湖的时代， Ehcache 渐渐有点没落了。
 <!-- more -->
 

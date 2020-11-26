@@ -1,10 +1,3 @@
----
-title: MySQL 定时备份
-date: 2018-10-20 09:35:54
-categories: MySQL
-tags: [MySQL, 备份]
-toc: true
----
 在 Linux 上实现 MySQL 定时备份。
 <!-- more -->
 

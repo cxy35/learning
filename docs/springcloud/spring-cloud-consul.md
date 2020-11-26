@@ -1,10 +1,3 @@
----
-title: Spring Cloud Consul 服务注册与发现
-date: 2020-04-15 14:48:24
-categories: Spring Cloud
-tags: [Spring Cloud, Consul]
-toc: true
----
 学习在 Spring Cloud 中使用 Consul 实现服务注册与发现，它是 Eureka 之外的另一种选择。
 <!-- more -->
 

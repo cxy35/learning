@@ -1,10 +1,3 @@
----
-title: MySQL 用户与权限
-date: 2018-09-01 17:48:17
-categories: MySQL
-tags: [MySQL]
-toc: true
----
 学习 MySQL 的用户管理与权限管理。
 <!-- more -->
 

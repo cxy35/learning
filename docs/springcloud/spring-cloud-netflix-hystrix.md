@@ -1,10 +1,3 @@
----
-title: Spring Cloud Netflix Hystrix 断路器
-date: 2020-04-18 12:37:44
-categories: Spring Cloud
-tags: [Spring Cloud, Hystrix]
-toc: true
----
 学习在 Spring Cloud 中使用 Hystrix 实现断路器，包括服务降级/容错、异步调用、异常处理、请求缓存、请求合并等功能。它是 Netflix 家族成员之一。
 <!-- more -->
 

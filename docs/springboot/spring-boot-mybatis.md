@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 MyBatis
-date: 2019-12-07 09:24:59
-categories: Spring Boot
-tags: [Spring Boot, MyBatis]
-toc: true
----
 学习在 Spring Boot 中使用 MyBatis 来操作数据库。与 JdbcTemplate 相比，MyBatis 比较灵活，功能也很强大。在 Spring Boot 使用 MyBatis ，和 SSM 中相比简单的不得了。
 <!-- more -->
 

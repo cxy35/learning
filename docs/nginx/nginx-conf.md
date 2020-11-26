@@ -1,10 +1,3 @@
----
-title: Nginx 参数配置优化
-date: 2020-03-05 10:46:14
-categories: Nginx
-tags: [Nginx, 优化]
-toc: true
----
 Nginx 参数配置优化，提升 Nginx 效率与稳定性，官方文档：[http://nginx.org/en/docs/](http://nginx.org/en/docs/) 。
 <!-- more -->
 

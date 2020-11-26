@@ -1,10 +1,3 @@
----
-title: MySQL binlog 详解
-date: 2020-07-11 09:59:30
-categories: MySQL
-tags: [MySQL, binlog]
-toc: true
----
 通过本文学习 MySQL 中 binlog 相关的内容，包括概述、配置及常用操作、数据恢复实战等。
 <!-- more -->
 

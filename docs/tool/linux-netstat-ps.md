@@ -1,10 +1,3 @@
----
-title: Linux 下查看某个端口被哪个进程或程序占用
-date: 2018-12-16 16:28:26
-categories: Linux
-tags: [Linux]
-toc: true
----
 Linux 下查看某个端口被哪个进程或程序占用。
 <!-- more -->
 

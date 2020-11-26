@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Spring Security（使用 JSON 格式数据登录）
-date: 2020-01-20 14:16:22
-categories: Spring Boot
-tags: [Spring Boot, Spring Security]
-toc: true
----
 Spring Boot 整合 Spring Security ，默认的登录数据是通过 key/value 的形式来传递的，本文学习使用 JSON 格式数据登录。
 <!-- more -->
 

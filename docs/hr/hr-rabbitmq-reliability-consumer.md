@@ -1,10 +1,3 @@
----
-title: 如何在人力资源管理系统中提高 RabbitMQ 消息消费的可靠性
-date: 2020-05-06 18:40:44
-categories: HR
-tags: [HR, RabbitMQ]
-toc: true
----
 学习如何在人力资源管理系统中提高 RabbitMQ 消息消费的可靠性，避免消息被重复消费。
 <!-- more -->
 

@@ -1,10 +1,3 @@
----
-title: MySQL 主从部署
-date: 2018-09-12 16:42:36
-categories: MySQL
-tags: [MySQL, 主从]
-toc: true
----
 认识 MySQL 主从，并手把手带你实现 MySQL 主从部署，图文并茂。
 <!-- more -->
 

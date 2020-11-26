@@ -1,10 +1,3 @@
----
-title: Elasticsearch 常用命令
-date: 2020-10-21 11:02:47
-categories: Elasticsearch
-tags: [Elastic, Elasticsearch, 命令]
-toc: true
----
 通过本文学习 Elasticsearch 常用命令，以下所有命令都在 Kibana 的 Dev Tools 中执行。
 <!-- more -->
 

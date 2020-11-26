@@ -1,10 +1,3 @@
----
-title: Spring Boot 使用 @ControllerAdvice
-date: 2019-11-22 11:12:36
-categories: Spring Boot
-tags: [Spring Boot]
-toc: true
----
 学习在 Spring Boot 如何使用 `@ControllerAdvice` 注解。它其实是 Spring MVC 提供的功能，是一个增强的 Controller ，主要可以实现三个方面的功能：**全局异常处理、全局数据绑定、全局数据预处理**。
 <!-- more -->
 

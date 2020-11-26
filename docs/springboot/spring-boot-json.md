@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 JSON（Jackson / Gson / FastJson）
-date: 2019-11-18 14:56:51
-categories: Spring Boot
-tags: [Spring Boot, JSON]
-toc: true
----
 学习 Spring Boot 整合 JSON（Jackson / Gson / FastJson） 。
 <!-- more -->
 

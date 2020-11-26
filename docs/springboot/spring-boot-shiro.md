@@ -1,10 +1,3 @@
----
-title: Spring Boot 整合 Shiro
-date: 2020-01-05 09:39:59
-categories: Spring Boot
-tags: [Spring Boot, Shiro]
-toc: true
----
 学习在 Spring Boot 中用两种方式整合 `Shiro` 。虽然在 Spring Boot 中的安全管理框架主流是使用 `Spring Security` ，但使用 Shiro 技术上也是可行的。
 <!-- more -->
 

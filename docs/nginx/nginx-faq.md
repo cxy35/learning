@@ -1,10 +1,3 @@
----
-title: Nginx 常见问题
-date: 2020-03-02 14:02:59
-categories: Nginx
-tags: [Nginx, 问题]
-toc: true
----
 本文记录 Nginx 使用过程中出现的问题汇总，持续更新中。
 <!-- more -->
 

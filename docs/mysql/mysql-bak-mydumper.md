@@ -1,10 +1,3 @@
----
-title: MySQL 备份与恢复 - mydumper
-date: 2018-10-13 15:42:59
-categories: MySQL
-tags: [MySQL, 备份, mydumper]
-toc: true
----
 mydumper 是第三方支持 mysql 的备份恢复工具，支持多线程，备份与恢复速度快。
 <!-- more -->
 

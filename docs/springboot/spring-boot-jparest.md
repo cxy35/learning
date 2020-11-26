@@ -1,10 +1,3 @@
----
-title: Spring Boot 构建 Rest 服务（Jpa）
-date: 2019-12-24 15:11:47
-categories: Spring Boot
-tags: [Spring Boot, Rest, Jpa]
-toc: true
----
 学习在 Spring Boot 中结合 Jpa 构建 Rest 服务，只需要几行代码就能快速实现一个 RESTful 风格的增删改查接口。
 <!-- more -->
 

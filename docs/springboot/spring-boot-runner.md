@@ -1,10 +1,3 @@
----
-title: Spring Boot 配置系统启动任务
-date: 2019-11-27 19:11:18
-categories: Spring Boot
-tags: [Spring Boot]
-toc: true
----
 学习如何在 Spring Boot 中配置系统启动任务。
 <!-- more -->
 

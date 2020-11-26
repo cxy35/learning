@@ -1,10 +1,3 @@
----
-title: Nginx 实现 Tomcat 集群
-date: 2018-05-19 15:37:37
-categories: Nginx
-tags: [Nginx, Tomcat, 集群]
-toc: true
----
 使用 Nginx 实现 Tomcat 集群。
 <!-- more -->
 

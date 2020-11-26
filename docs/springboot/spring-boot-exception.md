@@ -1,10 +1,3 @@
----
-title: Spring Boot 自定义异常处理
-date: 2019-11-24 16:15:53
-categories: Spring Boot
-tags: [Spring Boot]
-toc: true
----
 学习在 Spring Boot 如何实现自定义异常处理，及其中的原理。
 <!-- more -->
 
