@@ -10,7 +10,7 @@
 ## 更好的阅读体验
 
 - 文档地址：[https://www.cxy35.com](https://www.cxy35.com)
-- 文档地址（备用）：[https://www.cxy35.com](https://cxy35.github.io/learning)
+- 文档地址（备用）：[https://cxy35.github.io/learning](https://cxy35.github.io/learning)
 
 ## Spring Boot
 
