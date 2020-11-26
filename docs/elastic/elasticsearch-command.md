@@ -18,7 +18,7 @@ toc: true
 
 - 新增索引：`PUT /user`
 - 新增索引-自定义`settings`：
-```curl
+```
 PUT /user
 {
   "settings": {
@@ -28,7 +28,7 @@ PUT /user
 }
 ```
 - 新增索引-自定义`mappings`：
-```curl
+```
 PUT /user
 {
   "mappings": {
@@ -63,7 +63,7 @@ PUT /user
 ## 3 文档
 
 - 新增文档-指定id（id不存在则新增，存在则更新）：
-```curl
+```
 POST /user/_doc/1
 {
   "id": 1,
@@ -78,7 +78,7 @@ POST /user/_doc/1
 }
 ```
 - 新增文档-指定id（id不存在则新增，存在则报错）：
-```curl
+```
 POST /user/_create/1
 {
   "id": 1,
@@ -93,7 +93,7 @@ POST /user/_create/1
 }
 ```
 - 新增文档-自动生成id：
-```curl
+```
 POST /user/_doc
 {
   "id": 2,
@@ -108,7 +108,7 @@ POST /user/_doc
 }
 ```
 - 新增文档-批量`_bulk`：
-```curl
+```
 POST /user/_bulk
 {"index":{"_id":"1"}}
 {"id":1,"username":"zhangsan"}
@@ -117,14 +117,14 @@ POST /user/_bulk
 ```
 - 查看文档：`GET /user/_doc/1`
 - 查看文档-批量`_mget`：
-```curl
+```
 GET /user/_mget
 {
   "ids": ["1", "2"]
 }
 ```
 - 修改文档-指定id（id不存在则新增，存在则替换）-整体修改（因此需要传所有字段）：
-```curl
+```
 POST /user/_doc/1
 {
   "id": 1,
@@ -139,7 +139,7 @@ POST /user/_doc/1
 }
 ```
 - 修改文档-指定id（id不存在则报错，存在则合并）-局部修改（因此只需要传修改的字段）：
-```curl
+```
 POST /user/_update/1
 {
   "doc": {
@@ -149,7 +149,7 @@ POST /user/_update/1
 ```
 ```
 - 修改文档-指定id（id不存在则创建，存在则合并）-局部修改（因此只需要传修改的字段）：
-```curl
+```
 POST /user/_update/1
 {
   "doc": {
@@ -159,7 +159,7 @@ POST /user/_update/1
 }
 ```
 - 修改文档-指定id-局部修改-脚本方式：
-```curl
+```
 POST /user/_update/1
 {
   "script" : {
@@ -173,7 +173,7 @@ POST /user/_update/1
 }
 ```
 - 修改文档-`update_by_query`-局部修改-脚本方式：
-```curl
+```
 POST /user/_update_by_query
 {
   "query": {
@@ -194,13 +194,13 @@ POST /user/_update_by_query
 - 检查文档是否存在：`HEAD /user/_doc/1`
 - 删除文档-指定id：`DELETE /user/_doc/1`
 - 删除文档-批量`_bulk`：
-```curl
+```
 POST /_bulk
 { "delete" : { "_index" : "user2", "_id": 1 }}
 { "delete" : { "_index" : "user2", "_id": 6 }}
 ```
 - 删除文档-`delete_by_query`：
-```curl
+```
 POST /user/_delete_by_query
 {
   "query": {
@@ -217,7 +217,7 @@ POST /user/_delete_by_query
 
 - 搜索-文档总数`_count`：`GET /user/_count`
 - 搜索-文档数量`_count`：
-```curl
+```
 GET /user/_count
 {
   "query": {
@@ -231,7 +231,7 @@ GET /user/_count
 ---
 
 - 搜索`_search`：
-```curl
+```
 GET /_search
 GET /user,user2/_search
 GET /user/_search
@@ -242,7 +242,7 @@ GET /user/_search?filter_path=hits.total
 GET /user/_search?_source=username,address
 ```
 - 搜索-所有文档`match_all`：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -251,7 +251,7 @@ GET /user/_search
 }
 ```
 - 搜索-分页`from/size`：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -262,7 +262,7 @@ GET /user/_search
 }
 ```
 - 搜索-排序`sort`：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -276,7 +276,7 @@ GET /user/_search
 }
 ```
 - 搜索-指定返回字段`_source`：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -289,7 +289,7 @@ GET /user/_search
 ### 4.2 匹配
 
 - 搜索-匹配`match`（数值类型是精确匹配，文本类型是模糊匹配）：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -302,7 +302,7 @@ GET /user/_search
 # GET /user/_search?q=enabled:1
 ```
 - 搜索-多字段匹配`multi_match`（或）：
-```curl
+```
 POST /user/_search
 {
   "query": {
@@ -317,7 +317,7 @@ POST /user/_search
 }
 ```
 - 搜索-短语匹配`match_phrase`（同时包含多个短语）：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -331,7 +331,7 @@ GET /user/_search
 ### 4.3 组合
 
 - 搜索-组合`bool/must`（同时满足多个条件）：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -345,7 +345,7 @@ GET /user/_search
 }
 ```
 - 搜索-组合`bool/should`（满足其中任意一个条件）：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -359,7 +359,7 @@ GET /user/_search
 }
 ```
 - 搜索-组合`bool/must_not`（同时不满足多个条件）：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -373,7 +373,7 @@ GET /user/_search
 }
 ```
 - 搜索-组合`bool/filter`（过滤，keyword 字段用于一般用于精确搜索、聚合、排序）：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -388,7 +388,7 @@ GET /user/_search
 }
 ```
 - 搜索-多种组合：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -407,7 +407,7 @@ GET /user/_search
 ### 4.4 过滤
 
 - 搜索-过滤`filter`：
-```curl
+```
 GET /user/_search
 {
   "query": {
@@ -430,7 +430,7 @@ GET /user/_search
 
 - 搜索-聚合`aggs`（类似于 MySQL 中的 `group by`）：
 
-```curl
+```
 GET /user/_search
 {
   "size": 0,
@@ -444,7 +444,7 @@ GET /user/_search
 }
 ```
 - 搜索-嵌套聚合`aggs`：
-```curl
+```
 GET /user/_search
 {
   "size": 0,
@@ -465,7 +465,7 @@ GET /user/_search
 }
 ```
 - 搜索-嵌套聚合`aggs`并对结果进行排序`order`：
-```curl
+```
 GET /user/_search
 {
   "size": 0,
@@ -489,7 +489,7 @@ GET /user/_search
 }
 ```
 - 搜索-分段聚合`aggs/range`：
-```curl
+```
 GET /user/_search
 {
   "size": 0,
