@@ -126,6 +126,15 @@
   * [如何在人力资源管理系统中提高 RabbitMQ 消息发送的可靠性](docs/hr/hr-rabbitmq-reliability-producer.md)
   * [如何在人力资源管理系统中提高 RabbitMQ 消息消费的可靠性](docs/hr/hr-rabbitmq-reliability-consumer.md)
 
+* 笔试面试
+
+ * [Java面试总结](https://blog.csdn.net/thinkwon/category_9731418.html)
+ * [JavaGuide面试突击版](https://snailclimb.gitee.io/javaguide-interview/#/)
+ * [面试阿里被问：“你的项目是如何处理重复请求/并发请求的？”](https://mp.weixin.qq.com/s/L1EnUs1WxlfUgv35Mu1Tvw)
+ * [面试官：面对千万级、亿级流量怎么处理？](https://mp.weixin.qq.com/s/XLMxYDhMD3hSvt0rj4IEJQ)
+ * [高频面试题：秒杀场景设计](https://mp.weixin.qq.com/s/yYc6V4kEyN9ISlEpFhmq0w)
+ * [#面试大全](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkzNTEwOTAxMA==&action=getalbum&album_id=1512519209967271939&scene=173&from_msgid=2247485223&from_itemidx=1&count=3#wechat_redirect)
+
 * 文章收藏
 
   * [2019 Java 全栈工程师进阶路线图，一定要收藏！](https://mp.weixin.qq.com/s/XiUUgFvUQ3y8FUDSXbhEKA)
@@ -133,11 +142,6 @@
   * [『JWT』有人让你赶快用它，有人劝你放弃它！](https://mp.weixin.qq.com/s/FjnDSBQN6VIVU93w3TjgUg)
   * [二维码扫描登录，原来是这样实现的！](https://mp.weixin.qq.com/s/et2tPKLXGYvzI9NtK-8bSg)
   * [Java 生鲜电商平台 - API 接口设计之 token、timestamp、sign 具体架构与实现](https://mp.weixin.qq.com/s/g6eXUxbem47WsgY1N5vjcA)
-  * [面试阿里被问：“你的项目是如何处理重复请求/并发请求的？”](https://mp.weixin.qq.com/s/L1EnUs1WxlfUgv35Mu1Tvw)
-  * [面试官：面对千万级、亿级流量怎么处理？](https://mp.weixin.qq.com/s/XLMxYDhMD3hSvt0rj4IEJQ)
-  * [高频面试题：秒杀场景设计](https://mp.weixin.qq.com/s/yYc6V4kEyN9ISlEpFhmq0w)
-  * [#面试大全](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkzNTEwOTAxMA==&action=getalbum&album_id=1512519209967271939&scene=173&from_msgid=2247485223&from_itemidx=1&count=3#wechat_redirect)
   * [【项目实践】SpringBoot三招组合拳，手把手教你打出优雅的后端接口](https://juejin.cn/post/6844904101940117511)
   * [【项目实践】后端接口统一规范的同时，如何优雅得扩展规范](https://juejin.cn/post/6844904143912435719)
   * [Elastic：菜鸟上手指南](https://blog.csdn.net/UbuntuTouch/article/details/102728604)
-  * [JavaGuide面试突击版](https://snailclimb.gitee.io/javaguide-interview/#/)

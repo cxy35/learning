@@ -69,8 +69,8 @@
             '</footer>'
           ].join('');
           hook.afterEach(function (html) {
-            var isReadme = window.location.href.indexOf("README");
-            // var isReadme = 1;
+            // var isReadme = window.location.href.indexOf("README");
+            var isReadme = 1;
             if(isReadme===-1){
               return header + html + footer;
             }else{
