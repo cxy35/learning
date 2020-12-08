@@ -140,7 +140,6 @@ POST /user/_update/1
   }
 }
 ```
-```
 - 修改文档-指定id（id不存在则创建，存在则合并）-局部修改（因此只需要传修改的字段）：
 ```
 POST /user/_update/1
@@ -1379,7 +1378,7 @@ GET /twitter/_search
 
 ## Analyzer 分为三个部分：Char Filters, Tokenizer及 Token Filter
 ### happy、birthday
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1388,7 +1387,7 @@ GET /twitter/_analyze
 }
 
 ### happi、birthdai（词根）
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1397,7 +1396,7 @@ GET /twitter/_analyze
 }
 
 ### Happy、Birthday
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1406,7 +1405,7 @@ GET /twitter/_analyze
 }
 
 ### happy、birthday
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy.Birthday"
@@ -1415,7 +1414,7 @@ GET /twitter/_analyze
 }
 
 ### 生、日、快、乐
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "生日快乐"
@@ -1423,9 +1422,18 @@ GET /twitter/_analyze
   "analyzer": "standard"
 }
 
+### 生日快乐、生日、快乐
+GET /_analyze
+{
+  "text": [
+    "生日快乐"
+  ],
+  "analyzer": "ik_max_word"
+}
+
 ### 也可以只使用 Analyzer 中的 Tokenizer 部分
 ### Happy、Birthday
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1434,7 +1442,7 @@ GET /twitter/_analyze
 }
 
 ### Happy Birthday
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1443,7 +1451,7 @@ GET /twitter/_analyze
 }
 
 ### happy birthday
-GET /twitter/_analyze
+GET /_analyze
 {
   "text": [
     "Happy Birthday"
