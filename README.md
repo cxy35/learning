@@ -248,6 +248,7 @@
 ## 项目收藏
 
 - [以Java语言为主的各种项目实践，涵盖各个业务、各个功能](https://github.com/RudeCrab/rude-java)
+- [分享 GitHub 上有趣、入门级的开源项目](https://github.com/521xueweihan/HelloGitHub)
 
 ## 微信公众号
 

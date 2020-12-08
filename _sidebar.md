@@ -104,6 +104,21 @@
   - [Nginx 配置 SSL 支持 HTTPS（自签证书）](docs/nginx/nginx-ssl.md)
   - [Nginx 常见问题](docs/nginx/nginx-faq.md)
 
+* 其他
+
+  - [Tomcat 集群](docs/other/tomcat-cluster.md)
+  - [Apache 实现 Tomcat 集群 - mod_jk（老版本）](docs/other/apache-tomcat-cluster-mod-jk.md)
+  - [Apache 实现 Tomcat 集群 - mod_proxy（新版本）](docs/other/apache-tomcat-cluster-mod-proxy.md)
+  - [Tomcat 访问日志分析工具 - AWStats](docs/other/tomcat-awstats.md)
+  - [Tomcat 管理和监控工具 - PSI Probe](docs/other/tomcat-psiprobe.md)
+  - [Mycat 概述](docs/other/mycat-overview.md)
+  - [POI 操作手册](docs/other/poi.md)
+  - [MyBatis 主键回填](docs/other/mybatis-key.md)
+  - [不要再自己写 Java 工具类了，这些开源的不香吗？](docs/other/java-utils.md)
+  - [JVM 内存分析工具 - MAT](docs/other/mat.md)
+  - [分布式任务调度与计算中心 PowerJob](docs/other/powerjob.md)
+  - [通过 canal 将 MySQL 数据实时同步到 Elasticsearch](docs/other/canal-mysql-es.md)
+
 * 工具
 
   - [Git 安装](docs/tool/git-install.md)
@@ -155,3 +170,4 @@
 * 项目收藏
 
   - [以Java语言为主的各种项目实践，涵盖各个业务、各个功能](https://github.com/RudeCrab/rude-java)
+  - [分享 GitHub 上有趣、入门级的开源项目](https://github.com/521xueweihan/HelloGitHub)
