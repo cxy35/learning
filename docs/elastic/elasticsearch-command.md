@@ -526,7 +526,7 @@ GET /user/_search
 ### 4.6 官方搜索例子
 
 ```
-# 准备数据
+@ 准备数据
 POST twitter/_bulk
 { "index" : { "_id": 1 } }
 {"user":"双榆树-张三","message":"今儿天气不错啊，出去转转去","uid":2,"age":20,"city":"北京","province":"北京","country":"中国","address":"中国北京市海淀区","location":{"lat":"39.970718","lon":"116.325747"}}
@@ -541,8 +541,8 @@ POST twitter/_bulk
 { "index" : { "_id": 6 } }
 {"user":"虹桥-老吴","message":"好友来了都今天我生日，好友来了,什么 birthday happy 就成!","uid":7,"age":90,"city":"上海","province":"上海","country":"中国","address":"中国上海市闵行区","location":{"lat":"31.175927","lon":"121.383328"}}
 
-# 查询
-## _search
+@ 查询
+@@ _search
 GET _search
 GET /twitter,twitter2/_search
 GET /twitter/_search
@@ -552,7 +552,7 @@ GET /twitter/_search?filter_path=hits.total
 GET /twitter/_search?_source=user,city
 
 
-## _count
+@@ _count
 GET /twitter/_count
 GET /twitter/_count
 {
@@ -563,7 +563,7 @@ GET /twitter/_count
   }
 }
 
-## 查看/设置 settings
+@@ 查看/设置 settings
 GET /twitter/_settings
 PUT twitter
 {
@@ -573,7 +573,7 @@ PUT twitter
   }
 }
 
-## 查看/设置 mapping
+@@ 查看/设置 mapping
 GET /twitter/_mapping
 PUT twitter/_mapping
 {
@@ -644,8 +644,8 @@ PUT twitter/_mapping
   }
 }
 
-## 普通查询
-### match
+@@ 普通查询
+@@@ match
 GET /twitter/_search
 {
   "query": {
@@ -657,7 +657,7 @@ GET /twitter/_search
 
 GET /twitter/_search?q=city:"北京"
 
-### keyword字段用于精确搜索，aggregation和排序（sorting）
+@@@ keyword字段用于精确搜索，aggregation和排序（sorting）
 GET /twitter/_search
 {
   "query": {
@@ -686,7 +686,7 @@ GET /twitter/_search
   }
 }
 
-### 匹配“朝”，“阳”，“区”，“老”及“贾”这5个字中的任何一个将被显示
+@@@ 匹配“朝”，“阳”，“区”，“老”及“贾”这5个字中的任何一个将被显示
 GET /twitter/_search
 {
   "query": {
@@ -699,7 +699,7 @@ GET /twitter/_search
   }
 }
 
-### 至少要匹配“朝”，“阳”，“区”，“老”及“贾这5个中的3个字才可以
+@@@ 至少要匹配“朝”，“阳”，“区”，“老”及“贾这5个中的3个字才可以
 GET /twitter/_search
 {
   "query": {
@@ -713,7 +713,7 @@ GET /twitter/_search
   }
 }
 
-### 需要同时匹配索引的5个字才可以
+@@@ 需要同时匹配索引的5个字才可以
 GET /twitter/_search
 {
   "query": {
@@ -726,7 +726,7 @@ GET /twitter/_search
   }
 }
 
-### multi：同时对三个fields: user，adress及message进行搜索
+@@@ multi：同时对三个fields: user，adress及message进行搜索
 GET /twitter/_search
 {
   "query": {
@@ -742,7 +742,7 @@ GET /twitter/_search
   }
 }
 
-### prefix：查询user字段里以“朝”为开头的所有文档
+@@@ prefix：查询user字段里以“朝”为开头的所有文档
 GET /twitter/_search
 {
   "query": {
@@ -754,7 +754,7 @@ GET /twitter/_search
   }
 }
 
-### term：使用user.keyword来对“朝阳区-老贾”进行精确匹配查询相应的文档
+@@@ term：使用user.keyword来对“朝阳区-老贾”进行精确匹配查询相应的文档
 GET /twitter/_search
 {
   "query": {
@@ -766,7 +766,7 @@ GET /twitter/_search
   }
 }
 
-### terms：查询user.keyword里含有“双榆树-张三”或“东城区-老刘”的所有文档
+@@@ terms：查询user.keyword里含有“双榆树-张三”或“东城区-老刘”的所有文档
 GET /twitter/_search
 {
   "query": {
@@ -779,8 +779,8 @@ GET /twitter/_search
   }
 }
 
-## 复合查询
-### must：查询的是必须是 北京城市的，并且年刚好是30岁的
+@@ 复合查询
+@@@ must：查询的是必须是 北京城市的，并且年刚好是30岁的
 GET /twitter/_search
 {
   "query": {
@@ -801,7 +801,7 @@ GET /twitter/_search
   }
 }
 
-### must_not：寻找不在北京的所有的文档
+@@@ must_not：寻找不在北京的所有的文档
 GET /twitter/_search
 {
   "query": {
@@ -817,7 +817,7 @@ GET /twitter/_search
   }
 }
 
-### should：表述“或”的意思，也就是有就更好，没有就算了。age必须是30岁，但是如果文档里含有“Hanppy birthday”，相关性会更高
+@@@ should：表述“或”的意思，也就是有就更好，没有就算了。age必须是30岁，但是如果文档里含有“Hanppy birthday”，相关性会更高
 GET /twitter/_search
 {
   "query": {
@@ -840,7 +840,7 @@ GET /twitter/_search
   }
 }
 
-### 位置查询 geo_distance ：查找在地址栏里有“北京”，并且在以位置(116.454182, 39.920086)为中心的5公里以内的所有文档，并按照远近大小进行排序
+@@@ 位置查询 geo_distance ：查找在地址栏里有“北京”，并且在以位置(116.454182, 39.920086)为中心的5公里以内的所有文档，并按照远近大小进行排序
 GET /twitter/_search
 {
   "query": {
@@ -874,7 +874,7 @@ GET /twitter/_search
   ]
 }
 
-### 范围查询 range ：查询年龄介于30到40岁的文档
+@@@ 范围查询 range ：查询年龄介于30到40岁的文档
 GET /twitter/_search
 {
   "query": {
@@ -887,7 +887,7 @@ GET /twitter/_search
   }
 }
 
-### 范围查询 range ：查询年龄介于30到40岁的文档，并对它们进行排序
+@@@ 范围查询 range ：查询年龄介于30到40岁的文档，并对它们进行排序
 GET /twitter/_search
 {
   "query": {
@@ -906,7 +906,7 @@ GET /twitter/_search
   ]
 }
 
-### Exists 查询：查询 district 字段是否存在
+@@@ Exists 查询：查询 district 字段是否存在
 GET /twitter/_search
 {
   "query": {
@@ -916,7 +916,7 @@ GET /twitter/_search
   }
 }
 
-### 匹配查询
+@@@ 匹配查询
 PUT twitter/_doc/8
 {
   "user": "朝阳区-老王",
@@ -933,8 +933,8 @@ PUT twitter/_doc/8
   }
 }
 
-### 匹配查询：match 查询时不分大小写，不分先后顺序
-### 默认“或”，匹配到一个单词即可
+@@@ 匹配查询：match 查询时不分大小写，不分先后顺序
+@@@ 默认“或”，匹配到一个单词即可
 GET /twitter/_search
 {
   "query": {
@@ -944,7 +944,7 @@ GET /twitter/_search
   }
 }
 
-### “与”，需要同时匹配两个单词
+@@@ “与”，需要同时匹配两个单词
 GET /twitter/_search
 {
   "query": {
@@ -957,7 +957,7 @@ GET /twitter/_search
   }
 }
 
-### minimum_should_match 至少应该要匹配两个单词
+@@@ minimum_should_match 至少应该要匹配两个单词
 GET /twitter/_search
 {
   "query": {
@@ -970,7 +970,7 @@ GET /twitter/_search
   }
 }
 
-### 匹配查询：match_phrase 查询时不分大小写，但区分先后顺序
+@@@ 匹配查询：match_phrase 查询时不分大小写，但区分先后顺序
 GET /twitter/_search
 {
   "query": {
@@ -985,7 +985,7 @@ GET /twitter/_search
   }
 }
 
-### SQL 查询
+@@@ SQL 查询
 GET /_sql?
 {
   "query": """
@@ -994,14 +994,14 @@ GET /_sql?
   """
 }
 
-### Multi Search：减少请求次数
-### 同时获取两个文档
+@@@ Multi Search：减少请求次数
+@@@ 同时获取两个文档
 GET /twitter/_doc/_mget
 {
   "ids": ["1", "2"]
 }
 
-### 同时到多个索引中查询
+@@@ 同时到多个索引中查询
 GET _msearch
 {"index":"twitter"}
 {"query":{"match_all":{}},"from":0,"size":1}
@@ -1013,7 +1013,7 @@ GET _msearch
 GET /twitter,twitter2/_search
 GET /twitter*/_search
 
-### Profile：调试工具，它添加了有关执行的详细信息搜索请求中的每个组件，它为用户提供有关搜索的每个步骤的洞察力
+@@@ Profile：调试工具，它添加了有关执行的详细信息搜索请求中的每个组件，它为用户提供有关搜索的每个步骤的洞察力
 GET /twitter/_search
 {
   "profile": "true", 
@@ -1025,8 +1025,8 @@ GET /twitter/_search
 }
 
 
-## 聚合查询 aggregation 及 analyzer
-### 准备数据
+@@ 聚合查询 aggregation 及 analyzer
+@@@ 准备数据
 DELETE twitter
 PUT twitter
 {
@@ -1097,7 +1097,7 @@ POST _bulk
 {"index":{"_index":"twitter","_id":6}}
 {"user":"老吴","message":"好友来了都今天我生日，好友来了,什么 birthday happy 就成!","uid":7,"age":28,"city":"上海","province":"上海","country":"中国","address":"中国上海市闵行区","location":{"lat":"31.175927","lon":"121.383328"}, "DOB": "1991-04-01"}
 
-### range 聚合：把用户进行年龄分段，查出来在不同的年龄段的用户
+@@@ range 聚合：把用户进行年龄分段，查出来在不同的年龄段的用户
 GET /twitter/_search
 {
   "size": 0,
@@ -1124,7 +1124,7 @@ GET /twitter/_search
   }
 }
 
-### date_range 聚合：统计在某个时间段里的文档数
+@@@ date_range 聚合：统计在某个时间段里的文档数
 POST twitter/_search
 {
   "size": 0,
@@ -1148,7 +1148,7 @@ POST twitter/_search
   }
 }
 
-### terms 聚合：寻找在所有的文档出现”happy birthday”里按照城市进行分类的一个聚合
+@@@ terms 聚合：寻找在所有的文档出现”happy birthday”里按照城市进行分类的一个聚合
 GET /twitter/_search
 {
   "query": {
@@ -1167,7 +1167,7 @@ GET /twitter/_search
   }
 }
 
-### terms 聚合：我们也可以使用 script 来生成一个在索引里没有的术语来进行统计。比如，我们可以通过如下的script来生成一个对文档人出生年份的统计：
+@@@ terms 聚合：我们也可以使用 script 来生成一个在索引里没有的术语来进行统计。比如，我们可以通过如下的script来生成一个对文档人出生年份的统计：
 POST twitter/_search
 {
   "size": 0,
@@ -1183,7 +1183,7 @@ POST twitter/_search
   }
 }
 
-### histogram 聚合：根据值动态构建固定大小（也称为间隔）的存储桶
+@@@ histogram 聚合：根据值动态构建固定大小（也称为间隔）的存储桶
 GET /twitter/_search
 {
   "size": 0,
@@ -1197,7 +1197,7 @@ GET /twitter/_search
   }
 }
 
-### date_histogram 聚合：这种聚合类似于正常的直方图，但只能与日期或日期范围值一起使用。这里我们按照每隔一年这样的时间间隔来进行
+@@@ date_histogram 聚合：这种聚合类似于正常的直方图，但只能与日期或日期范围值一起使用。这里我们按照每隔一年这样的时间间隔来进行
 GET /twitter/_search
 {
   "size": 0,
@@ -1211,7 +1211,7 @@ GET /twitter/_search
   }
 }
 
-### cardinality 聚合：统计有多少个城市
+@@@ cardinality 聚合：统计有多少个城市
 GET /twitter/_search
 {
   "size": 0,
@@ -1224,8 +1224,8 @@ GET /twitter/_search
   }
 }
 
-### Metric 聚合：我们可以使用Metrics来统计我们的数值数据
-### 对年龄字段全方位统计，包括数据总条数、平均值、最大/小值、求和
+@@@ Metric 聚合：我们可以使用Metrics来统计我们的数值数据
+@@@ 对年龄字段全方位统计，包括数据总条数、平均值、最大/小值、求和
 GET /twitter/_search
 {
   "size": 0,
@@ -1238,7 +1238,7 @@ GET /twitter/_search
   }
 }
 
-### 只得到平均值
+@@@ 只得到平均值
 GET /twitter/_search
 {
   "size": 0,
@@ -1295,7 +1295,7 @@ POST twitter/_search
   }
 }
 
-### 使用 script，计算平均值再乘以2倍的结果
+@@@ 使用 script，计算平均值再乘以2倍的结果
 GET /twitter/_search
 {
   "size": 0,
@@ -1314,7 +1314,7 @@ GET /twitter/_search
   }
 }
 
-### 或者直接使用script的方法来进行聚合
+@@@ 或者直接使用script的方法来进行聚合
 GET /twitter/_search
 {
   "size": 0,
@@ -1332,7 +1332,7 @@ GET /twitter/_search
   }
 }
 
-### percentile：得到25%，50%、75%及100%的人在什么年龄范围
+@@@ percentile：得到25%，50%、75%及100%的人在什么年龄范围
 GET /twitter/_search
 {
   "size": 0,
@@ -1351,8 +1351,8 @@ GET /twitter/_search
   }
 }
 
-### 更为复杂的聚合：结合上面的 bucket 聚合及 metric 聚合
-### 我们首先通过terms来生成每个城市的桶聚合，然后在每个桶里计算所有文档的平均年龄，并根据平均年龄来进行降序排序
+@@@ 更为复杂的聚合：结合上面的 bucket 聚合及 metric 聚合
+@@@ 我们首先通过terms来生成每个城市的桶聚合，然后在每个桶里计算所有文档的平均年龄，并根据平均年龄来进行降序排序
 GET /twitter/_search
 {
   "size": 0,
@@ -1376,9 +1376,9 @@ GET /twitter/_search
   }
 }
 
-## Analyzer 分为三个部分：Char Filters, Tokenizer及 Token Filter
-### happy、birthday
-GET /_analyze
+@@ Analyzer 分为三个部分：Char Filters, Tokenizer及 Token Filter
+@@@ happy、birthday
+GET /twitter/_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1386,8 +1386,8 @@ GET /_analyze
   "analyzer": "standard"
 }
 
-### happi、birthdai（词根）
-GET /_analyze
+@@@ happi、birthdai（词根）
+GET /twitter/_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1395,8 +1395,8 @@ GET /_analyze
   "analyzer": "english"
 }
 
-### Happy、Birthday
-GET /_analyze
+@@@ Happy、Birthday
+GET /twitter/_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1404,8 +1404,8 @@ GET /_analyze
   "analyzer": "whitespace"
 }
 
-### happy、birthday
-GET /_analyze
+@@@ happy、birthday
+GET /twitter/_analyze
 {
   "text": [
     "Happy.Birthday"
@@ -1413,8 +1413,8 @@ GET /_analyze
   "analyzer": "simple"
 }
 
-### 生、日、快、乐
-GET /_analyze
+@@@ 生、日、快、乐
+GET /twitter/_analyze
 {
   "text": [
     "生日快乐"
@@ -1422,18 +1422,9 @@ GET /_analyze
   "analyzer": "standard"
 }
 
-### 生日快乐、生日、快乐
-GET /_analyze
-{
-  "text": [
-    "生日快乐"
-  ],
-  "analyzer": "ik_max_word"
-}
-
-### 也可以只使用 Analyzer 中的 Tokenizer 部分
-### Happy、Birthday
-GET /_analyze
+@@@ 也可以只使用 Analyzer 中的 Tokenizer 部分
+@@@ Happy、Birthday
+GET /twitter/_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1441,8 +1432,8 @@ GET /_analyze
   "tokenizer": "standard"
 }
 
-### Happy Birthday
-GET /_analyze
+@@@ Happy Birthday
+GET /twitter/_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1450,8 +1441,8 @@ GET /_analyze
   "tokenizer": "keyword"
 }
 
-### happy birthday
-GET /_analyze
+@@@ happy birthday
+GET /twitter/_analyze
 {
   "text": [
     "Happy Birthday"
@@ -1459,7 +1450,6 @@ GET /_analyze
   "tokenizer": "keyword",
   "filter": ["lowercase"]
 }
-
 ```
 
 ---
