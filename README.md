@@ -245,6 +245,17 @@
 - [平台级SaaS架构的基础：统一身份管理系统](https://mtide.net/%E5%B9%B3%E5%8F%B0%E7%BA%A7SAAS%E6%9E%B6%E6%9E%84%E7%9A%84%E5%9F%BA%E7%A1%80-%E7%BB%9F%E4%B8%80%E8%BA%AB%E4%BB%BD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.html)
 - [微服务架构下的统一身份认证和授权](https://mtide.net/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E4%B8%8B%E7%9A%84%E7%BB%9F%E4%B8%80%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83.html)
 
+## 图片收藏
+
+- [微服务架构图](https://www.processon.com/diagraming/5fd822341e085306e0f8bf61)
+- [微服务架构-从理论到实践-理解微服务关键问题](https://www.processon.com/view/5a790168e4b064e9ddb8febf)
+- [统一身份管理系统（Unified Identity Management System）](https://www.processon.com/diagraming/5fc6053b5653bb027fab2579)
+- [统一用户认证中心](https://oscimg.oschina.net/oscnet/up-e88e8a3c40773bf831be0e72e599114f9fd.png)
+- [Spring Security - 登录认证和权限授权](https://img-blog.csdnimg.cn/img_convert/3ca1cf9e4bca570743d6b1a64ee0e666.png)
+- [面试官：面对千万级、亿级流量怎么处理？](https://img-blog.csdnimg.cn/20201215105958936.png)
+- [秒杀场景设计 - 流量过滤](https://img-blog.csdnimg.cn/20201215110129487.png)
+- [秒杀场景设计 - 防止超卖](https://img-blog.csdnimg.cn/20201215110148797.png)
+
 ## 项目收藏
 
 - [以Java语言为主的各种项目实践，涵盖各个业务、各个功能](https://github.com/RudeCrab/rude-java)
