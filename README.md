@@ -248,6 +248,7 @@
 ## 图片收藏
 
 - [微服务架构图](https://www.processon.com/diagraming/5fd822341e085306e0f8bf61)
+- [springcloud微服务系统架构图](https://www.processon.com/diagraming/5fd9be705653bb06f343eece)
 - [微服务架构-从理论到实践-理解微服务关键问题](https://www.processon.com/view/5a790168e4b064e9ddb8febf)
 - [统一身份管理系统（Unified Identity Management System）](https://www.processon.com/diagraming/5fc6053b5653bb027fab2579)
 - [统一用户认证中心](https://oscimg.oschina.net/oscnet/up-e88e8a3c40773bf831be0e72e599114f9fd.png)
