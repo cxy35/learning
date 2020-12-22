@@ -443,7 +443,7 @@ mysqldump  -uroot -p --host=localhost --all-databases --default-auth=”/usr/loc
 
 ## 5 第三方工具 - xtrabackup
 
-详细使用参考：[MySQL 备份与恢复 - xtrabackup](https://www.cxy35.com/2018/10/14/MySQL/MySQL%E5%A4%87%E4%BB%BD%E4%B8%8E%E6%81%A2%E5%A4%8D-xtrabackup/)
+详细使用参考：[MySQL 备份与恢复 - xtrabackup](https://www.cxy35.com/#/docs/mysql/mysql-bak-xtrabackup)
 
 ## 6 扩展阅读
 
