@@ -88,7 +88,7 @@ yaml 配置目前不支持 `@PropertySource` 注解。
 
 ## 4 类型安全的属性注入（推荐）
 
-当配置的属性非常多的时候，上述方式工作量大且容易出错，所以就不合适了。在 Spring Boot 中引入了类型安全的属性注入，通过 `@Configurationyaml` 注解来实现，如下：
+当配置的属性非常多的时候，上述方式工作量大且容易出错，所以就不合适了。在 Spring Boot 中引入了类型安全的属性注入，通过 `@ConfigurationProperties` 注解来实现，如下：
 
 ```java
 @Component

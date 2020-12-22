@@ -523,7 +523,36 @@ GET /user/_search
 }
 ```
 
-### 4.6 官方搜索例子
+### 4.6 原生 SQL
+
+```
+GET /_sql?format=txt
+{
+  "query": "SHOW TABLES"
+}
+
+GET /_sql?format=txt
+{
+  "query": "SELECT * FROM user"
+}
+
+GET /_sql?format=txt
+{
+  "query": "DESCRIBE user"
+}
+
+POST /_sql?format=txt
+{
+  "query": "SHOW FUNCTIONS LIKE '%DATE%'"
+}
+
+POST /_sql?format=txt
+{
+  "query": "SELECT id,username,nick_name,address,SCORE() FROM user WHERE MATCH(address,'杭州') LIMIT 10"
+}
+```
+
+### 4.7 官方搜索例子
 
 ```
 @ 准备数据

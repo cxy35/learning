@@ -310,6 +310,14 @@ DELETE FROM t_user WHERE id=4;
 
 - 最后，通过 `GET /canal_user/_search` 命令，查看 Elasticsearch 中的数据，发现会实时同步。
 
+### 3.7 adapter 管理 REST 接口
+
+- 查询所有订阅同步的 canal instance 或 MQ topic：`curl http://127.0.0.1:8081/destinations`
+- 数据同步开关状态：`curl http://127.0.0.1:8081/syncSwitch/example`
+- 数据同步开关：`curl http://127.0.0.1:8081/syncSwitch/example/off -X PUT`
+- **手动 ETL，可用于数据全量/增量同步**（如果 `params` 参数为空则全表导入, 参数对应的查询条件在配置中的 `etlCondition` 指定）：`curl http://127.0.0.1:8081/etl/es7/t_user.yml -X POST -d "params=2020-10-20 00:00:00"`
+- 查看相关库总数据：`curl http://127.0.0.1:8081/count/es7/t_user.yml`
+
 ## 4 使用 canal.admin
 
 ### 4.1 简介
@@ -414,7 +422,7 @@ canal.admin.register.cluster =
 
 ### 4.4 测试
 
-- 访问 [http://192.168.3.101:8089](http://192.168.3.101:8089) 就可以看到 canal.admin 的 Web 界面了，默认的账号密码为：`admin/123456`（对应 canal_manager.canal_user 表）。
+- 访问 [http://127.0.0.1:8089](http://127.0.0.1:8089) 就可以看到 canal.admin 的 Web 界面了，默认的账号密码为：`admin/123456`（对应 canal_manager.canal_user 表）。
 
 ![](https://oscimg.oschina.net/oscnet/up-497438c1a4d1ccbd728537207d9de0fdffa.png)
 
