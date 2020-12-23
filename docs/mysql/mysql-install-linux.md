@@ -92,7 +92,7 @@ chown -R mysql:mysql /usr/local/mydata
 
 - 复制并修改配置文件。
 
-具体参考：[MySQL 配置文件 - 5.6](https://gitee.com/cxy35/mysql/tree/master/my.cnf)
+具体参考：[MySQL 配置文件 - 5.6](https://github.com/cxy35/collect/tree/master/mysql/my.cnf)
 
 ```bash
 # 下面复制的是最简单最低要求的一个配置文件（可根据实际需要拷贝不同的配置文件），具体的参数配置优化见下文
