@@ -185,6 +185,7 @@
 
 * 图片收藏
 
+  - [电商系统微服务系统架构图](https://www.processon.com/diagraming/5fe458645653bb0547829c29)
   - [微服务架构图](https://www.processon.com/diagraming/5fd822341e085306e0f8bf61)
   - [springcloud微服务系统架构图](https://www.processon.com/diagraming/5fd9be705653bb06f343eece)
   - [微服务架构-从理论到实践-理解微服务关键问题](https://www.processon.com/view/5a790168e4b064e9ddb8febf)
