@@ -412,6 +412,33 @@ git push
 # git pull
 ```
 
+## 13 场景3：fork了别人的项目后，再同步更新别人的提交
+
+```bash
+# 查看所有远程仓库（origin）
+git remote -v 
+# 添加远程仓库，指向上游源仓库
+git remote add upstream git@github.com:xxx/xxx.git
+# 查看所有远程仓库（origin、upstream）
+git remote -v 
+# 下载源仓库所有分支的代码
+git fetch upstream
+
+# 切换到本地 master 分支
+git checkout master
+# 合并源仓库 master 分支到本地 master 分支
+git merge upstream/master
+# 如果合并时有冲突的话，可以忽略本地分支的改动：git reset --hard upstream/master
+# 推送本地分支到自己的仓库
+# git push origin master
+git push 
+
+# 更新其他分支的操作类似
+# git checkout 其他分支名
+# git merge upstream/其他分支名
+# git push origin 其他分支名
+```
+
 ---
 
 - [Git 教程合集](https://mp.weixin.qq.com/s/S_wAUhlN1hqTjl4CwFS19Q)
