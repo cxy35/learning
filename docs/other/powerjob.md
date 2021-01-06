@@ -13,7 +13,7 @@ PowerJob 是全新一代**分布式任务调度与计算框架**，能让您轻�
 * 运维便捷：支持**在线日志**功能，执行器产生的日志可以在前端控制台页面实时显示，降低 debug 成本，极大地提高开发效率。
 * 依赖精简：最小仅依赖关系型数据库（MySQL/Oracle/MS SQLServer...），扩展依赖为 MongoDB （用于存储庞大的在线日志）。
 * 高可用&高性能：调度服务器经过精心设计，一改其他调度框架基于数据库锁的策略，实现了无锁化调度。部署多个调度服务器可以同时实现高可用和性能的提升（支持无限的水平扩展）。
-* 故障转移与恢复：任务执行失败后，可根据配置的重试策略完成重试，只要执行器集群有足够的计算节点，任务就能顺利完成。
+* **故障转移与恢复**：任务执行失败后，可根据配置的重试策略完成重试，只要执行器集群有足够的计算节点，任务就能顺利完成。
 
 ### 1.2 适用场景
 
@@ -35,7 +35,7 @@ PowerJob 的设计目标为**企业级的分布式任务调度平台**，即成�
 ### 1.5 同类产品对比
 
 ||QuartZ|xxl-job|SchedulerX 2.0|**PowerJob**|
-|-:|-:|-:|-:|-:|
+|:-|:-|:-|:-|:-|
 |定时类型|CRON|CRON|CRON、固定频率、固定延迟、OpenAPI|**CRON、固定频率、固定延迟、OpenAPI**|
 |任务类型|内置 Java|内置 Java、GLUE Java、Shell、Python 等脚本|内置 Java、外置 Java（FatJar）、Shell、Python 等脚本|**内置 Java、外置 Java（容器）、Shell、Python 等脚本**|
 |分布式任务|无|静态分片|MapReduce 动态分片|**MapReduce 动态分片**|
@@ -50,18 +50,18 @@ PowerJob 的设计目标为**企业级的分布式任务调度平台**，即成�
 
 ### 2.1 分组概念
 
-- appName：应用名称，建议与用户实际接入 PowerJob 的应用名称保持一致，**用于业务分组与隔离，一个 appName 等于一个业务集群，也就是实际的一个 Java 项目**。
+- appName：应用名称，建议与用户实际接入调度中心的应用名称保持一致，**用于业务分组与隔离，一个 appName 等于一个业务集群，也就是实际的一个 Java 项目**。
 
 ### 2.2 核心概念
 
-- 任务（Job）：描述了需要被 PowerJob 调度的任务信息，包括任务名称、调度时间、处理器信息等。
-- 任务实例（JobInstance，简称 Instance）：任务（Job）被调度执行后会生成任务实例（Instance），任务实例记录了任务的运行时信息（任务与任务实例的关系类似于类与对象的关系）。
-- 作业（Task）：任务实例的执行单元，一个 JobInstance 存在至少一个 Task，具体规则如下：
-- 单机任务（STANDALONE）：一个 JobInstance 对应一个 Task。
-- 广播任务（BROADCAST）：一个 JobInstance 对应 N 个 Task，N 为集群机器数量，即每一台机器都会生成一个 Task。
-- Map/MapReduce 任务：一个 JobInstance 对应若干个 Task，由开发者手动 map 产生。
-- 工作流（Workflow）：由 DAG（有向无环图）描述的一组任务（Job），用于任务编排。
-- 工作流实例（WorkflowInstance）：工作流被调度执行后会生成工作流实例，记录了工作流的运行时信息。
+- **任务（Job）**：描述了需要被调度中心调度的任务信息，包括任务名称、调度时间、处理器信息等。
+- **任务实例（JobInstance，简称 Instance）**：任务（Job）被调度执行后会生成任务实例（Instance），任务实例记录了任务的运行时信息（任务与任务实例的关系类似于类与对象的关系）。
+- **作业（Task）**：任务实例的执行单元，一个 JobInstance 存在至少一个 Task，具体规则如下：
+    - 单机任务（STANDALONE）：一个 JobInstance 对应一个 Task。
+    - 广播任务（BROADCAST）：一个 JobInstance 对应 N 个 Task，N 为集群机器数量，即每一台机器都会生成一个 Task。
+    - Map/MapReduce 任务：一个 JobInstance 对应若干个 Task，由开发者手动 map 产生。
+- **工作流（Workflow）**：由 DAG（有向无环图）描述的一组任务（Job），用于任务编排。
+- **工作流实例（WorkflowInstance）**：工作流被调度执行后会生成工作流实例，记录了工作流的运行时信息。
 
 ### 2.3 扩展概念
 
@@ -70,11 +70,11 @@ PowerJob 的设计目标为**企业级的分布式任务调度平台**，即成�
 
 ### 2.4 定时任务类型
 
-- API：该任务只会由 powerjob-client 中提供的 OpenAPI 接口触发，server 不会主动调度。
+- API：该任务只会由 powerjob-client 中提供的 OpenAPI 接口触发，Server 不会主动调度。
 - CRON：该任务的调度时间由 CRON 表达式指定。
 - 固定频率：秒级任务，每隔多少毫秒运行一次，功能与 java.util.concurrent.ScheduledExecutorService#scheduleAtFixedRate 相同。
 - 固定延迟：秒级任务，延迟多少毫秒运行一次，功能与 java.util.concurrent.ScheduledExecutorService#scheduleWithFixedDelay 相同。
-- 工作流：该任务只会由其所属的工作流调度执行，server 不会主动调度该任务。如果该任务不属于任何一个工作流，该任务就不会被调度。
+- 工作流：该任务只会由其所属的工作流调度执行，Server 不会主动调度该任务。如果该任务不属于任何一个工作流，该任务就不会被调度。
 
 > 备注：固定延迟和固定频率任务统称秒级任务，这两种任务无法被停止，**只有任务被关闭或删除时才能真正停止任务**。
 
