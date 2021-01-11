@@ -344,9 +344,9 @@ git commit -m "本次提交的备注信息"
 
 # 关联本地仓库和上述远程仓库，并将远程仓库的名字设置为 origin，方便后续操作
 # 只需关联一次，后续提交分支等都不需要再执行了
-git remote add origin https://github.com/cxy35/testgit.git
+git remote add origin git@github.com:cxy35/testgit.git
 
-# 显示所有远程仓库，显示 origin https://github.com/cxy35/testgit.git
+# 显示所有远程仓库，显示 origin git@github.com:cxy35/testgit.git
 # git remote -v
 
 # 推送本地仓库的指定分支（这里是 master）到远程仓库
@@ -384,7 +384,7 @@ git push -u origin master
 
 ```bash
 # 克隆一个远程仓库（默认是 master）到本地仓库，放在当前目录下的 testgit 目录中
-git clone https://github.com/cxy35/testgit.git testgit
+git clone git@github.com:cxy35/testgit.git testgit
 
 # 列出所有本地分支，显示 master
 # git branch
