@@ -129,7 +129,7 @@ public interface UserMapper extends Mapper<User> {
 
 ---
 
-除了 Mapper 接口，官方还提供了一些几个好用的通用 Mapper 接口，都可以用来继承使用，汇总如下：
+除了 Mapper 接口，官方还提供了一些好用的通用 Mapper 接口，都可以用来继承使用，汇总如下：
 
 - Mapper 接口：
 
