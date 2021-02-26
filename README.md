@@ -110,8 +110,8 @@
 |[Spring Cloud Bus 消息总线](docs/springcloud/spring-cloud-bus.md)|[spring-cloud-bus](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-bus)|
 |[Spring Cloud Stream 构建消息驱动的微服务](docs/springcloud/spring-cloud-stream.md)|[spring-cloud-stream](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-stream)|
 |[Spring Cloud Sleuth 链路追踪](docs/springcloud/spring-cloud-sleuth.md)|[spring-cloud-sleuth](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sleuth)|
-|[Spring Cloud Alibaba Nacos 服务配置中心和注册中心](docs/springcloud/spring-cloud-nacos.md)|[spring-cloud-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos)|
-|[Spring Cloud Alibaba Sentinel 断路器](docs/springcloud/spring-cloud-sentinel.md)|[spring-cloud-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel)|
+|[Spring Cloud Alibaba Nacos 服务配置中心和注册中心](docs/springcloud/spring-cloud-alibaba-nacos.md)|[spring-cloud-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos)|
+|[Spring Cloud Alibaba Sentinel 断路器](docs/springcloud/spring-cloud-alibaba-sentinel.md)|[spring-cloud-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel)|
 |[Spring Cloud 中 RestTemplate 的使用说明](docs/springcloud/spring-cloud-resttemplate.md)|spring-cloud-resttemplate|
 |[Spring Cloud OpenFeign 声明式服务调用](docs/springcloud/spring-cloud-openfeign.md)|[spring-cloud-openfeign](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-openfeign)|
 
