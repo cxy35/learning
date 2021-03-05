@@ -63,7 +63,7 @@
 
 接着在 `application.yml` 配置文件中添加数据库相关信息的配置，如下：
 
-```properties
+```yml
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -326,7 +326,7 @@ class UserServiceTests {
 }
 ```
 
-## 4 代码生成器
+## 3 代码生成器
 
 - [MyBatis-Plus 代码生成器](https://github.com/cxy35/generators/tree/master/generator-mybatisplus)
 

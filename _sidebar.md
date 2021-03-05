@@ -20,6 +20,7 @@
   - [Spring Boot 整合 MyBatis 多数据源](docs/springboot/spring-boot-mybatismulti.md)
   - [Spring Boot 整合 MyBatis 通用 Mapper（TkMybatis）](docs/springboot/spring-boot-mybatis-tkmybatis.md)
   - [Spring Boot 整合 MyBatis-Plus](docs/springboot/spring-boot-mybatis-mybatisplus.md)
+  - [Spring Boot 整合 MyBatis-Plus 多数据源](docs/springboot/spring-boot-mybatis-mybatisplusmulti.md)
   - [Spring Boot 整合 Jpa](docs/springboot/spring-boot-jpa.md)
   - [Spring Boot 整合 Jpa 多数据源](docs/springboot/spring-boot-jpamulti.md)
   - [Spring Boot 整合 Redis](docs/springboot/spring-boot-redis.md)
