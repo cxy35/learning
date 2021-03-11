@@ -43,6 +43,7 @@
 - 代码包裹（for/if/trycache等）：Ctrl+ALT+T
 - **代码格式化：Ctrl+Alt+L**
 - **移除无用的import：Ctrl+Alt+O**
+- **大小写切换：Ctrl+Shift+U**
 - 编译：Ctrl+F9
 
 ---
