@@ -45,9 +45,7 @@
 * Spring Cloud
 
   - [Spring Cloud 概述](docs/springcloud/spring-cloud-overview.md)
-  - [Spring Cloud Netflix Eureka 概述](docs/springcloud/spring-cloud-netflix-eureka-overview.md)
-  - [Spring Cloud Netflix Eureka Server 搭建服务注册中心](docs/springcloud/spring-cloud-netflix-eureka-server.md)
-  - [Spring Cloud Netflix Eureka Client 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka-client.md)
+  - [Spring Cloud Netflix Eureka 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka.md)
   - [Spring Cloud Consul 服务注册与发现](docs/springcloud/spring-cloud-consul.md)
   - [Spring Cloud Netflix Hystrix 断路器](docs/springcloud/spring-cloud-netflix-hystrix.md)
   - [Spring Cloud Resilience4j 断路器](docs/springcloud/spring-cloud-resilience4j.md)

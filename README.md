@@ -99,9 +99,7 @@
 |相关文章|示例代码|
 |:-|:-|
 |[Spring Cloud 概述](docs/springcloud/spring-cloud-overview.md)|spring-cloud-overview|
-|[Spring Cloud Netflix Eureka 概述](docs/springcloud/spring-cloud-netflix-eureka-overview.md)|[spring-cloud-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-eureka)|
-|[Spring Cloud Netflix Eureka Server 搭建服务注册中心](docs/springcloud/spring-cloud-netflix-eureka-server.md)|[spring-cloud-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-eureka)|
-|[Spring Cloud Netflix Eureka Client 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka-client.md)|[spring-cloud-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-eureka)|
+|[Spring Cloud Netflix Eureka 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka.md)|[spring-cloud-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-eureka)|
 |[Spring Cloud Consul 服务注册与发现](docs/springcloud/spring-cloud-consul.md)|[spring-cloud-consul](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-consul)|
 |[Spring Cloud Netflix Hystrix 断路器](docs/springcloud/spring-cloud-netflix-hystrix.md)|[spring-cloud-hystrix](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-hystrix)|
 |[Spring Cloud Resilience4j 断路器](docs/springcloud/spring-cloud-resilience4j.md)|[spring-cloud-resilience4j](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-resilience4j)|
