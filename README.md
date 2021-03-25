@@ -100,8 +100,10 @@
 |:-|:-|
 |[Spring Cloud 概述](docs/springcloud/spring-cloud-overview.md)|spring-cloud-overview|
 |[Spring Cloud Netflix Eureka 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka.md)|[spring-cloud-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-eureka)|
+|[Spring Cloud Alibaba Nacos 服务注册与配置中心](docs/springcloud/spring-cloud-alibaba-nacos.md)|[spring-cloud-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos)|
 |[Spring Cloud Consul 服务注册与发现](docs/springcloud/spring-cloud-consul.md)|[spring-cloud-consul](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-consul)|
 |[Spring Cloud Netflix Hystrix 断路器](docs/springcloud/spring-cloud-netflix-hystrix.md)|[spring-cloud-hystrix](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-hystrix)|
+|[Spring Cloud Alibaba Sentinel 断路器](docs/springcloud/spring-cloud-alibaba-sentinel.md)|[spring-cloud-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel)|
 |[Spring Cloud Resilience4j 断路器](docs/springcloud/spring-cloud-resilience4j.md)|[spring-cloud-resilience4j](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-resilience4j)|
 |[Spring Cloud Netflix Zuul 服务网关](docs/springcloud/spring-cloud-netflix-zuul.md)|[spring-cloud-zuul](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-zuul)|
 |[Spring Cloud Gateway 服务网关](docs/springcloud/spring-cloud-gateway.md)|[spring-cloud-gateway](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-gateway)|
@@ -109,10 +111,8 @@
 |[Spring Cloud Bus 消息总线](docs/springcloud/spring-cloud-bus.md)|[spring-cloud-bus](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-bus)|
 |[Spring Cloud Stream 构建消息驱动的微服务](docs/springcloud/spring-cloud-stream.md)|[spring-cloud-stream](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-stream)|
 |[Spring Cloud Sleuth 链路追踪](docs/springcloud/spring-cloud-sleuth.md)|[spring-cloud-sleuth](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sleuth)|
-|[Spring Cloud Alibaba Nacos 服务配置中心和注册中心](docs/springcloud/spring-cloud-alibaba-nacos.md)|[spring-cloud-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos)|
-|[Spring Cloud Alibaba Sentinel 断路器](docs/springcloud/spring-cloud-alibaba-sentinel.md)|[spring-cloud-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel)|
-|[Spring Cloud 中 RestTemplate 的使用说明](docs/springcloud/spring-cloud-resttemplate.md)|spring-cloud-resttemplate|
 |[Spring Cloud OpenFeign 声明式服务调用](docs/springcloud/spring-cloud-openfeign.md)|[spring-cloud-openfeign](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-openfeign)|
+|[Spring Cloud 中 RestTemplate 的使用说明](docs/springcloud/spring-cloud-resttemplate.md)|spring-cloud-resttemplate|
 
 ## MySQL
 
