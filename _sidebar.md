@@ -55,8 +55,8 @@
   - [Spring Cloud Gateway 服务网关](docs/springcloud/spring-cloud-gateway.md)
   - [Spring Cloud Config 分布式配置中心](docs/springcloud/spring-cloud-config.md)
   - [Spring Cloud Bus 消息总线](docs/springcloud/spring-cloud-bus.md)
-  - [Spring Cloud Stream 构建消息驱动的微服务](docs/springcloud/spring-cloud-stream.md)
   - [Spring Cloud Sleuth 链路追踪](docs/springcloud/spring-cloud-sleuth.md)
+  - [Spring Cloud Stream 构建消息驱动的微服务](docs/springcloud/spring-cloud-stream.md)
   - [Spring Cloud OpenFeign 声明式服务调用](docs/springcloud/spring-cloud-openfeign.md)
   - [Spring Cloud 中 RestTemplate 的使用说明](docs/springcloud/spring-cloud-resttemplate.md)
 
