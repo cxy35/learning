@@ -1,15 +1,26 @@
-学习在 Spring Cloud 中使用 Gateway 实现服务网关，包括基本使用、自动代理、 Predicate 、 Filter 等功能。
+学习在 Spring Cloud 中使用 Gateway 实现服务网关，包括基本使用、自动代理、 Predicate、 Filter 等功能。
 <!-- more -->
 
 ## 1 概述
 
-Gateway 的主要功能如下：
+Gateway 是在 Spring 生态系统之上构建的 API 网关服务，基于 Spring 5，Spring Boot 2 和 Project Reactor 等技术。Gateway 旨在提供一种简单而有效的方式来对 API 进行路由，以及提供一些强大的过滤器功能， 例如：熔断、限流、重试等。
 
-- 限流
-- 路径重写
-- 动态路由
-- 集成 Spring Cloud DiscoveryClient
-- 集成 Hystrix 断路器
+Spring Cloud Gateway 具有如下特性：
+
+- 基于 Spring Framework 5, Project Reactor 和 Spring Boot 2.0 进行构建；
+- 动态路由：能够匹配任何请求属性；
+- 可以对路由指定 Predicate（断言）和 Filter（过滤器）；
+- 集成 Hystrix 的断路器功能；
+- 集成 Spring Cloud 服务发现功能；
+- 易于编写的 Predicate（断言）和 Filter（过滤器）；
+- 请求限流功能；
+- 支持路径重写。
+
+Spring Cloud Gateway 相关概念：
+
+- Route（路由）：路由是构建网关的基本模块，它由ID，目标 URI，一系列的断言和过滤器组成，如果断言为true则匹配该路由；
+- Predicate（断言）：指的是 Java 8 的 Function Predicate。 输入类型是 Spring 框架中的 ServerWebExchange。 这使开发人员可以匹配 HTTP 请求中的所有内容，例如请求头或请求参数。如果请求与断言相匹配，则进行路由；
+- Filter（过滤器）：指的是 Spring 框架中 GatewayFilter 的实例，使用过滤器，可以在请求被路由前后对请求进行修改。
 
 和 Zuul 相比，有如下区别：
 
@@ -232,7 +243,8 @@ spring:
             - Path=/get
       discovery:
         locator:
-          enabled: true # 开启自动代理
+          enabled: true # 开启从注册中心动态创建路由的功能
+          # lower-case-service-id: true # 使用小写服务名，默认是大写
 # 当前服务的端口
 server:
   port: 7002
@@ -356,6 +368,8 @@ spring:
           predicates:
             - Method=GET
 ```
+
+在结合注册中心使用过滤器的时候，我们需要注意的是 uri 的协议为 `lb`，这样才能启用 Gateway 的负载均衡功能。
 
 配置完成后，重启项目，访问 [http://127.0.0.1:7002/hello2](http://127.0.0.1:7002/hello2) 完成测试。
 
