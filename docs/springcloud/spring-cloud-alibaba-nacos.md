@@ -288,7 +288,7 @@ public class ConsumerController {
 
 - [Spring Cloud 教程合集](https://mp.weixin.qq.com/s/SBmcs2bxumhNz4kky1pl-A)（微信左下方**阅读全文**可直达）。
 - Spring Cloud 教程合集示例代码：[https://github.com/cxy35/spring-cloud-samples](https://github.com/cxy35/spring-cloud-samples)
-- 本文示例代码：[https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos)
+- 本文示例代码：[https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-alibaba-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-alibaba-nacos)
 
 
 ---

@@ -99,13 +99,13 @@
 |相关文章|示例代码|
 |:-|:-|
 |[Spring Cloud 概述](docs/springcloud/spring-cloud-overview.md)|spring-cloud-overview|
-|[Spring Cloud Netflix Eureka 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka.md)|[spring-cloud-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-eureka)|
-|[Spring Cloud Alibaba Nacos 服务注册与配置中心](docs/springcloud/spring-cloud-alibaba-nacos.md)|[spring-cloud-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-nacos)|
+|[Spring Cloud Netflix Eureka 服务注册与发现](docs/springcloud/spring-cloud-netflix-eureka.md)|[spring-cloud-netflix-eureka](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-netflix-eureka)|
+|[Spring Cloud Alibaba Nacos 服务注册与配置中心](docs/springcloud/spring-cloud-alibaba-nacos.md)|[spring-cloud-alibaba-nacos](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-alibaba-nacos)|
 |[Spring Cloud Consul 服务注册与发现](docs/springcloud/spring-cloud-consul.md)|[spring-cloud-consul](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-consul)|
-|[Spring Cloud Netflix Hystrix 断路器](docs/springcloud/spring-cloud-netflix-hystrix.md)|[spring-cloud-hystrix](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-hystrix)|
-|[Spring Cloud Alibaba Sentinel 断路器](docs/springcloud/spring-cloud-alibaba-sentinel.md)|[spring-cloud-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel)|
+|[Spring Cloud Netflix Hystrix 断路器](docs/springcloud/spring-cloud-netflix-hystrix.md)|[spring-cloud-netflix-hystrix](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-netflix-hystrix)|
+|[Spring Cloud Alibaba Sentinel 断路器](docs/springcloud/spring-cloud-alibaba-sentinel.md)|[spring-cloud-alibaba-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-alibaba-sentinel)|
 |[Spring Cloud Resilience4j 断路器](docs/springcloud/spring-cloud-resilience4j.md)|[spring-cloud-resilience4j](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-resilience4j)|
-|[Spring Cloud Netflix Zuul 服务网关](docs/springcloud/spring-cloud-netflix-zuul.md)|[spring-cloud-zuul](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-zuul)|
+|[Spring Cloud Netflix Zuul 服务网关](docs/springcloud/spring-cloud-netflix-zuul.md)|[spring-cloud-netflix-zuul](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-netflix-zuul)|
 |[Spring Cloud Gateway 服务网关](docs/springcloud/spring-cloud-gateway.md)|[spring-cloud-gateway](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-gateway)|
 |[Spring Cloud Config 分布式配置中心](docs/springcloud/spring-cloud-config.md)|[spring-cloud-config](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-config)|
 |[Spring Cloud Bus 消息总线](docs/springcloud/spring-cloud-bus.md)|[spring-cloud-bus](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-bus)|

@@ -91,11 +91,11 @@ Spring Cloud 中，除了大的版本之外，还有一些小版本，小版本�
 
 ||Spring Cloud 第一代|Spring Cloud 第二代|
 |:-|:-|:-|
-|网关|spring-cloud-zuul（来源于 Netflix Zuul ，性能一般）|Spring Cloud Gateway|
-|注册中心|spring-cloud-eureka（集成于 Netflix Eureka ，不再维护，Consul，ZK）|[阿里 Nacos](https://github.com/alibaba/nacos) ，拍拍贷 radar 等可选|
+|网关|spring-cloud-netflix-zuul（来源于 Netflix Zuul ，性能一般）|Spring Cloud Gateway|
+|注册中心|spring-cloud-netflix-eureka（集成于 Netflix Eureka ，不再维护，Consul，ZK）|[阿里 Nacos](https://github.com/alibaba/nacos) ，拍拍贷 radar 等可选|
 |配置中心|spring-cloud-config（自研，功能不足，国内使用其它配置中心替代）|[阿里 Nacos](https://github.com/alibaba/nacos) ，[携程 Apollo](https://github.com/ctripcorp/apollo) ，[随行付 Config Keeper](https://github.com/sxfad/config-keeper)|
 |客户端软负载均衡|spring-cloud-ribbon（来源于 Netflix 集成，不支持 webFlux 的负载均衡）|[spring-cloud-loadbalancer](https://github.com/spring-cloud-incubator/spring-cloud-loadbalancer)|
-|熔断器|spring-cloud-hystrix（来源于 Netflix 集成，不再开发新功能，进入维护状态）|[spring-cloud-r4j(Resilience4J)](https://github.com/spring-cloud-incubator/spring-cloud-r4j)，[阿里 Sentinel](https://github.com/alibaba/Sentinel)|
+|熔断器|spring-cloud-netflix-hystrix（来源于 Netflix 集成，不再开发新功能，进入维护状态）|[spring-cloud-r4j(Resilience4J)](https://github.com/spring-cloud-incubator/spring-cloud-r4j)，[阿里 Sentinel](https://github.com/alibaba/Sentinel)|
 
 ### 2.5 与 Spring Boot 的版本对应关系
 

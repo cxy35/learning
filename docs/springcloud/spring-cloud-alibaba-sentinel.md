@@ -19,7 +19,7 @@ Sentinel 启动成功后，访问 [http://127.0.0.1:8080](http://127.0.0.1:8080)
 
 ## 3 基本使用
 
-创建 Spring Boot 项目 `spring-cloud-sentinel` ，添加 `Web/Sentinel` 依赖，如下：
+创建 Spring Boot 项目 `spring-cloud-alibaba-sentinel` ，添加 `Web/Sentinel` 依赖，如下：
 
 ![](https://oscimg.oschina.net/oscnet/up-d3e39b6d9bd49a1f4f60b8a2069675f9e34.png)
 
@@ -53,7 +53,7 @@ Sentinel 启动成功后，访问 [http://127.0.0.1:8080](http://127.0.0.1:8080)
 项目创建成功后，修改 `application.properties` 配置文件，配置 Sentinel 控制台地址，如下：
 
 ```properties
-spring.application.name=spring-cloud-sentinel
+spring.application.name=spring-cloud-alibaba-sentinel
 server.port=8081
 
 # Sentinel 控制台地址
@@ -120,7 +120,7 @@ Sentinel 还能结合 Nacos 中的配置中心一起使用。
 修改 `application.properties` 配置文件，增加 Nacos 相关配置信息，如下：
 
 ```properties
-spring.application.name=spring-cloud-sentinel
+spring.application.name=spring-cloud-alibaba-sentinel
 server.port=8081
 
 # Sentinel 控制台地址
@@ -128,7 +128,7 @@ spring.cloud.sentinel.transport.dashboard=127.0.0.1:8080
 
 # 结合 Nacos 中的配置中心使用
 spring.cloud.sentinel.datasource.ds.nacos.server-addr=127.0.0.1:8848
-spring.cloud.sentinel.datasource.ds.nacos.data-id=spring-cloud-sentinel
+spring.cloud.sentinel.datasource.ds.nacos.data-id=spring-cloud-alibaba-sentinel
 spring.cloud.sentinel.datasource.ds.nacos.group-id=DEFAULT_GROUP
 spring.cloud.sentinel.datasource.ds.nacos.rule-type=flow
 ```
@@ -159,7 +159,7 @@ spring.cloud.nacos.config.server-addr=127.0.0.1:8848
 ]
 ```
 
-**最后，重启项目，访问 http://127.0.0.1:8081/hello ，之后， Sentinel 会根据 Nacos 后台的 spring-cloud-sentinel 这项配置，自动在 Sentinel 控制台生成一条对应的流控规则**。
+**最后，重启项目，访问 http://127.0.0.1:8081/hello ，之后， Sentinel 会根据 Nacos 后台的 spring-cloud-alibaba-sentinel 这项配置，自动在 Sentinel 控制台生成一条对应的流控规则**。
 
 ![](https://oscimg.oschina.net/oscnet/up-04c549bef3e0d4f2e95fdbd7983d604bf85.png)
 
@@ -171,7 +171,7 @@ spring.cloud.nacos.config.server-addr=127.0.0.1:8848
 
 - [Spring Cloud 教程合集](https://mp.weixin.qq.com/s/SBmcs2bxumhNz4kky1pl-A)（微信左下方**阅读全文**可直达）。
 - Spring Cloud 教程合集示例代码：[https://github.com/cxy35/spring-cloud-samples](https://github.com/cxy35/spring-cloud-samples)
-- 本文示例代码：[https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-sentinel)
+- 本文示例代码：[https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-alibaba-sentinel](https://github.com/cxy35/spring-cloud-samples/tree/master/spring-cloud-alibaba-sentinel)
 
 
 ---
