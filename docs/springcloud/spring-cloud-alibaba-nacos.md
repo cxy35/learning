@@ -28,14 +28,11 @@ Spring Cloud Alibaba 是阿里巴巴提供的一套微服务开发一站式解�
 
 ## 2 安装
 
-下载安装包：
-
-- Linux：[https://github.com/alibaba/nacos/releases/download/1.3.0-beta/nacos-server-1.3.0-BETA.tar.gz](https://github.com/alibaba/nacos/releases/download/1.3.0-beta/nacos-server-1.3.0-BETA.tar.gz)
-- Windows：[https://github.com/alibaba/nacos/releases/download/1.3.0-beta/nacos-server-1.3.0-BETA.zip](https://github.com/alibaba/nacos/releases/download/1.3.0-beta/nacos-server-1.3.0-BETA.zip)
+下载地址：[https://github.com/alibaba/nacos/releases](https://github.com/alibaba/nacos/releases)
 
 解压后启动：
 
-- Windows：在 bin 目录下双击 `startup.cmd`
+- Windows：在 bin 目录下执行 `startup.cmd -m standalone`
 - Linux：在 bin 目录下执行 `sh startup.sh -m standalone`
 
 > 注意：需要 java 和 javac 两个命令，可以先测试下。

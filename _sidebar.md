@@ -59,6 +59,7 @@
   - [Spring Cloud Stream 构建消息驱动的微服务](docs/springcloud/spring-cloud-stream.md)
   - [Spring Cloud OpenFeign 声明式服务调用](docs/springcloud/spring-cloud-openfeign.md)
   - [Spring Cloud 中 RestTemplate 的使用说明](docs/springcloud/spring-cloud-resttemplate.md)
+  - [Spring Cloud Alibaba Seata 分布式事务](docs/springcloud/spring-cloud-alibaba-seata.md)
 
 * MySQL
 
