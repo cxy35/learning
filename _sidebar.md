@@ -180,6 +180,7 @@
   - [【项目实践】一文带你搞定页面权限、按钮权限以及数据权限](https://juejin.cn/post/6892918622230937613)
   - [【项目实践】一文带你搞定前后端分离下的认证和授权|Spring Security + JWT](https://juejin.cn/post/6900721218207350791)
   - [【项目实践】手把手教你自建高性能对象存储服务器](https://juejin.cn/post/6937832120026923015)
+  - [企业研发流程演进之路](https://juejin.cn/post/6943019580193243173)
   - [Elastic：菜鸟上手指南](https://blog.csdn.net/UbuntuTouch/article/details/102728604)
   - [平台级SaaS架构的基础：统一身份管理系统](https://mtide.net/%E5%B9%B3%E5%8F%B0%E7%BA%A7SAAS%E6%9E%B6%E6%9E%84%E7%9A%84%E5%9F%BA%E7%A1%80-%E7%BB%9F%E4%B8%80%E8%BA%AB%E4%BB%BD%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F.html)
   - [微服务架构下的统一身份认证和授权](https://mtide.net/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E4%B8%8B%E7%9A%84%E7%BB%9F%E4%B8%80%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83.html)
