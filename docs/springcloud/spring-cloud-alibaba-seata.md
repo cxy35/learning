@@ -122,7 +122,7 @@ registry {
 
 #### 4.2.1 创建业务数据库和表
 
-- 创建存储订单的数据表 `seat-order.order` ：
+- 创建存储订单的数据表 `seata-order.order` ：
 
 ```sql
 CREATE TABLE `order` (
@@ -137,7 +137,7 @@ CREATE TABLE `order` (
 ALTER TABLE `order` ADD COLUMN `status` int(1) DEFAULT NULL COMMENT '订单状态：0：创建中；1：已完结' AFTER `money` ;
 ```
 
-- 创建存储库存的数据表 `seat-storage.storage`：
+- 创建存储库存的数据表 `seata-storage.storage`：
 
 ```sql
 CREATE TABLE `storage` (
@@ -149,10 +149,10 @@ CREATE TABLE `storage` (
                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `seat-storage`.`storage` (`id`, `product_id`, `total`, `used`, `residue`) VALUES ('1', '1', '100', '0', '100');
+INSERT INTO `seata-storage`.`storage` (`id`, `product_id`, `total`, `used`, `residue`) VALUES ('1', '1', '100', '0', '100');
 ```
 
-- 创建存储账户信息的数据表 `seat-account.account`：
+- 创建存储账户信息的数据表 `seata-account.account`：
 
 ```sql
 CREATE TABLE `account` (
@@ -164,14 +164,14 @@ CREATE TABLE `account` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `seat-account`.`account` (`id`, `user_id`, `total`, `used`, `residue`) VALUES ('1', '1', '1000', '0', '1000');
+INSERT INTO `seata-account`.`account` (`id`, `user_id`, `total`, `used`, `residue`) VALUES ('1', '1', '1000', '0', '1000');
 ```
 
 - 在上述业务数据库中分别创建日志回滚表 `undo_log` ，建表语句在这里下载：[https://github.com/seata/seata/tree/develop/script/client](https://github.com/seata/seata/tree/develop/script/client)。
 
 - 完整数据库示意图如下：
 
-![](https://oscimg.oschina.net/oscnet/up-da7eda8f0ec3c3b344d1947ef2314be9806.png)
+![](https://oscimg.oschina.net/oscnet/up-c87cc550c7b115ba10be7278ba3d8cc16f3.png)
 
 #### 4.2.2 创建三个服务并完成配置
 
@@ -240,7 +240,7 @@ spring:
         server-addr: localhost:8848
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/seat-order
+    url: jdbc:mysql://localhost:3306/seata-order
     username: root
     password: '000000'
 feign:
