@@ -122,7 +122,7 @@ registry {
 
 #### 4.2.1 创建业务数据库和表
 
-- 创建存储订单的数据表 `seata-order.order` ：
+- 创建存储订单的数据表 `seata_order.order` ：
 
 ```sql
 CREATE TABLE `order` (
@@ -131,13 +131,12 @@ CREATE TABLE `order` (
   `product_id` bigint(11) DEFAULT NULL COMMENT '产品id',
   `count` int(11) DEFAULT NULL COMMENT '数量',
   `money` decimal(11,0) DEFAULT NULL COMMENT '金额',
+  `status` int(1) DEFAULT NULL COMMENT '订单状态：0：创建中；1：已完结',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
-ALTER TABLE `order` ADD COLUMN `status` int(1) DEFAULT NULL COMMENT '订单状态：0：创建中；1：已完结' AFTER `money` ;
 ```
 
-- 创建存储库存的数据表 `seata-storage.storage`：
+- 创建存储库存的数据表 `seata_storage.storage`：
 
 ```sql
 CREATE TABLE `storage` (
@@ -149,10 +148,10 @@ CREATE TABLE `storage` (
                          PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `seata-storage`.`storage` (`id`, `product_id`, `total`, `used`, `residue`) VALUES ('1', '1', '100', '0', '100');
+INSERT INTO `storage` (`id`, `product_id`, `total`, `used`, `residue`) VALUES ('1', '1', '100', '0', '100');
 ```
 
-- 创建存储账户信息的数据表 `seata-account.account`：
+- 创建存储账户信息的数据表 `seata_account.account`：
 
 ```sql
 CREATE TABLE `account` (
@@ -164,7 +163,7 @@ CREATE TABLE `account` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-INSERT INTO `seata-account`.`account` (`id`, `user_id`, `total`, `used`, `residue`) VALUES ('1', '1', '1000', '0', '1000');
+INSERT INTO `account` (`id`, `user_id`, `total`, `used`, `residue`) VALUES ('1', '1', '1000', '0', '1000');
 ```
 
 - 在上述业务数据库中分别创建日志回滚表 `undo_log` ，建表语句在这里下载：[https://github.com/seata/seata/tree/develop/script/client](https://github.com/seata/seata/tree/develop/script/client)。
@@ -240,7 +239,7 @@ spring:
         server-addr: localhost:8848
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/seata-order
+    url: jdbc:mysql://localhost:3306/seata_order
     username: root
     password: '000000'
 feign:
