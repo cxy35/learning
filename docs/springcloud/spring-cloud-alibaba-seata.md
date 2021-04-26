@@ -170,7 +170,7 @@ INSERT INTO `account` (`id`, `user_id`, `total`, `used`, `residue`) VALUES ('1',
 
 - 完整数据库示意图如下：
 
-![](https://oscimg.oschina.net/oscnet/up-c87cc550c7b115ba10be7278ba3d8cc16f3.png)
+![](https://oscimg.oschina.net/oscnet/up-7757a3335c5baa8a3c0766c7165248319b9.png)
 
 #### 4.2.2 创建三个服务并完成配置
 
