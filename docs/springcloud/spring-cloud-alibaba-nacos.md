@@ -92,7 +92,7 @@ Nacos 做配置中心，可以代替 Spring Cloud Config 。
 spring.application.name=nacos-config
 server.port=8080
 
-spring.cloud.nacos.server-addr=127.0.0.1:8848
+spring.cloud.nacos.config.server-addr=127.0.0.1:8848
 spring.cloud.nacos.config.file-extension=properties
 ```
 
