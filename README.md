@@ -259,6 +259,7 @@
 - [面试官：面对千万级、亿级流量怎么处理？](https://img-blog.csdnimg.cn/20201215105958936.png)
 - [秒杀场景设计 - 流量过滤](https://img-blog.csdnimg.cn/20201215110129487.png)
 - [秒杀场景设计 - 防止超卖](https://img-blog.csdnimg.cn/20201215110148797.png)
+- [秒杀架构](https://oscimg.oschina.net/oscnet/up-37e79650c8eddcda9b2e64daacc3415f0d7.png)
 
 ## 项目收藏
 
