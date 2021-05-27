@@ -38,7 +38,8 @@
 - **变量或者类重命名：Shift+F6**
 - 重构函数：Ctrl+F6
 - **生成 Constructor/Getter/Setter/equals/hashCode/toString 等方法：Alt+Insert**
-- **选择可以覆盖或实现的方法：Ctrl+O**
+- **选择可以覆盖的方法：Ctrl+O**
+- **选择可以实现的方法：Ctrl+I**
 - 列编辑：按住 Alt，多行时再按住 Shift
 - 代码包裹（for/if/trycache等）：Ctrl+ALT+T
 - **代码格式化：Ctrl+Alt+L**
