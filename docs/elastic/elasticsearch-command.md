@@ -291,7 +291,7 @@ GET /user/_search
   }
 }
 
-@ GET /user/_search?q=enabled:1
+GET /user/_search?q=enabled:1
 ```
 - 搜索-多字段匹配`multi_match`（或）：
 ```
