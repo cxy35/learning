@@ -147,7 +147,10 @@
 
 ## Elastic
 
+- [Elasticsearch 安装](docs/elastic/elasticsearch-install.md)
 - [Elasticsearch 常用命令](docs/elastic/elasticsearch-command.md)
+- [Elasticsearch IK 中文分词器](docs/elastic/elasticsearch-analysis-ik.md)
+- [Kibana 安装](docs/elastic/kibana-install.md)
 
 ## Nginx
 
