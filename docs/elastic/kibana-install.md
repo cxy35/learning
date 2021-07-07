@@ -37,7 +37,7 @@ cd kibana-7.13.1-linux-x86_64
 
 ## 3 配置
 
-修改配置文件 `./conf/kibana.yml`，常用配置如下：
+修改配置文件 `./config/kibana.yml`，常用配置如下：
 
 ```yml
 #配置端口，默认5601
@@ -61,6 +61,19 @@ elasticsearch.password: "123456"
 
 ## 4 启动
 
+首先在 Linux 系统中新建 elastic 用户，用于启动 kibana，否则会报错：
+
+```bash
+groupadd elastic
+useradd elastic -g elastic
+#passwd es
+
+cd /usr/local/elastic
+chown -R elastic:elastic kibana-7.13.1-linux-x86_64
+
+su elastic
+```
+
 ```bash
 cd /usr/local/elastic/kibana-7.13.1-linux-x86_64
 
@@ -71,7 +84,7 @@ cd /usr/local/elastic/kibana-7.13.1-linux-x86_64
 nohup ./bin/kibana &
 ```
 
-浏览器访问 `[http://localhost:5601](http://localhost:5601)` 验证是否启动成功。
+浏览器访问 [http://localhost:5601](http://localhost:5601) 验证是否启动成功。
 
 ---
 
@@ -122,7 +135,7 @@ kill -9 xxx
 
 启用 Elasticsearch 安全功能后，用户必须使用有效的用户 ID 和密码登录 Kibana，有三种方式配置。
 
-- 如果您不介意在配置文件中显示密码，修改配置文件 `./conf/kibana.yml`，增加如下配置：
+- 如果您不介意在配置文件中显示密码，修改配置文件 `./config/kibana.yml`，增加如下配置：
 
 ```yml
 #配置elasticsearch认证信息（如果 Elasticsearch 有启用），用户名和密码在 Elasticsearch 启用安全认证时设置过

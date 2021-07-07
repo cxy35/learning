@@ -37,7 +37,7 @@ cd elasticsearch-7.13.1
 
 ## 3 配置
 
-修改配置文件 `./conf/elasticsearch.yml`，常用配置如下：
+修改配置文件 `./config/elasticsearch.yml`，常用配置如下：
 
 ```yml
 #配置集群名称，默认elasticsearch
@@ -90,7 +90,7 @@ nohup ./bin/elasticsearch &
 
 ---
 
-浏览器访问 `[http://localhost:9200](http://localhost:9200)` 验证是否启动成功。
+浏览器访问 [http://localhost:9200](http://localhost:9200) 验证是否启动成功。
 
 或者通过命令验证：`curl 'http://localhost:9200'`。
 
@@ -140,7 +140,7 @@ kill -9 xxx
 
 ## 6 启用安全认证
 
-修改配置文件 `./conf/elasticsearch.yml`，在最后面增加如下配置：
+修改配置文件 `./config/elasticsearch.yml`，在最后面增加如下配置：
 
 ```yml
 discovery.type: single-node
@@ -196,7 +196,7 @@ curl -u elastic:123456 'http://localhost:9200'
 
 - 报错描述：`system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk`。
 - 报错原因：Centos6 不支持 SecComp，而 ES 默认 bootstrap.system_call_filter 为 true 进行检测，所以导致检测失败，失败后直接导致 ES 不能启动。
-- 报错解决：修改配置文件 `./conf/elasticsearch.yml`，在 Memory 下面增加如下配置：
+- 报错解决：修改配置文件 `./config/elasticsearch.yml`，在 Memory 下面增加如下配置：
 
 ```yml
 bootstrap.memory_lock: false

@@ -145,6 +145,14 @@
 - [Redis 实现消息队列](docs/redis/redis-mq.md)
 - [Redis 实现 UV 统计](docs/redis/redis-hyperloglog.md)
 
+## MQ
+
+- [消息队列概述](docs/mq/mq-overview.md)
+- [如何保证消息队列的高可用？](docs/mq/mq-high-availability.md)
+- [如何保证消息不被重复消费？](docs/mq/mq-not-repeatedly-consumed.md)
+- [如何保证消息的可靠性传输？](docs/mq/mq-reliable-transmission.md)
+- [如何保证消息的顺序性？](docs/mq/mq-order.md)
+
 ## Elastic
 
 - [Elasticsearch 安装](docs/elastic/elasticsearch-install.md)
