@@ -1,4 +1,4 @@
-消息队列概述，为什么使用消息队列？消息队列有什么优点和缺点？Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么优点和缺点？
+为什么使用消息队列？消息队列有什么优点和缺点？ActiveMQ、RabbitMQ、RocketMQ、Kafka 都有什么优点和缺点？
 
 ## 1 优点
 
