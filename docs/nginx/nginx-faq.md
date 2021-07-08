@@ -1,7 +1,7 @@
 本文记录 Nginx 使用过程中出现的问题汇总，持续更新中。
 <!-- more -->
 
-## 1 maximum number of descriptors supported by select() is 1024
+## maximum number of descriptors supported by select() is 1024
 
 原因：
 
@@ -20,15 +20,41 @@
 
 **如果条件允许的话建议使用 linux 版本。**
 
-## 2 集群中的某个节点正在关闭中或启动中，请求还会被转发过去吗？
+## ./configure: error: the HTTP rewrite module requires the PCRE library.
+
+报错信息如下：
+
+```
+./configure: error: the HTTP rewrite module requires the PCRE library.
+You can either disable the module by using --without-http_rewrite_module
+option, or install the PCRE library into the system, or build the PCRE library
+statically from the source with nginx by using --with-pcre=<path> option.
+```
+
+解决方案：`yum -y install pcre-devel`
+
+## ./configure: error: SSL modules require the OpenSSL library.
+
+报错信息如下：
+
+```
+./configure: error: SSL modules require the OpenSSL library.
+You can either do not enable the modules, or install the OpenSSL library
+into the system, or build the OpenSSL library statically from the source
+with nginx by using --with-openssl=<path> option.
+```
+
+解决方案：`yum -y install openssl openssl-devel`
+
+## 集群中的某个节点正在关闭中或启动中，请求还会被转发过去吗？
 
 不会，正在执行的请求会立刻被转发到其他节点上。
 
-## 3 集群中的某个节点被关闭后，请求还会被转发过去吗？
+## 集群中的某个节点被关闭后，请求还会被转发过去吗？
 
 不会。但有些时候请求要等 1 分钟才能收到其他节点的返回结果，偶尔出现，为什么？
 
-## 4 集群中的某个节点关闭再启动，请求还会被转发过去吗？
+## 集群中的某个节点关闭再启动，请求还会被转发过去吗？
 
 居然不会，要重启 Nginx 才会生效，为什么？
 

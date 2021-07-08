@@ -7,7 +7,7 @@ Nginx 参数配置优化，提升 Nginx 效率与稳定性，官方文档：[htt
 # user root root;
 
 # 指定工作衍生进程数（一般等于 CPU 的总核数或总核数的两倍，例如两个四核 CPU ，则综合数为 8 。通过命令 ps -ef|grep nginx 可以看出来设置的是几个）
-worker_processes  1;
+worker_processes  2;
 #worker_processes  8;
 
 # 指定错误日志存放的路径，错误日志记录级别可选项为：[debug|info|notice|warn|error|crit]，默认是 crit ，记录的日志数量从 crit 到 debug ，由少到多
@@ -27,7 +27,7 @@ events {
     # 使用的网络 I/O 模型， Linux 系统推荐采用 epoll 模型， FreeeBSD 系统推荐采用 kqueue 模型， Windows 系统不指定。
     # use epoll;
     # 允许的连接数
-    worker_connections  1024;
+    worker_connections  20480;
 }
 
 # 遵循 http 协议的服务器全局设置
@@ -56,9 +56,13 @@ http {
     # keepalive_timeout  0;
     keepalive_timeout  120;
 
+    client_header_buffer_size 512k;
+    large_client_header_buffers 4 512k;
+    client_max_body_size 10m;
+
     # 开启 gzi p压缩设置（只能在 http 模块中设置）
     # 该指令用于开启或关闭 gzip 模块( on/off )
-    # gzip  on;
+    gzip  on;
     # 设置允许压缩的页面最小字节数，页面字节数从 header 头的 content‐length 中进行获取。默认值是 0，不管页面多大都压缩。建议设置成大于 1k 的字节数，小于 1k 可能会越压越大。
     # gzip_min_length 1k;
     # 设置系统获取几个单位的缓存用于存储 gzip 的压缩结果数据流。4 16k 代表以 16k 为单位，安装原始数据大小以 16k 为单位的 4 倍申请内存。
@@ -138,20 +142,20 @@ http {
         # charset koi8-r;
 
         # 访问日志文件设置，如果 server 虚拟机中不设置，则继承 http 模块中的 access_log 的设置
-        # if ($time_iso8601 ~ '(\d{4}-\d{2}-\d{2})') {
-        #     set $date_yyyy_MM_dd $1;
-        # }
-        # access_log logs/access-$date_yyyy_MM_dd.log combined;
+        if ($time_iso8601 ~ '(\d{4}-\d{2}-\d{2})') {
+            set $date_yyyy_MM_dd $1;
+        }
+        access_log logs/access-$date_yyyy_MM_dd.log combined;
         # access_log logs/access.log  main;
 
         # location settings，可以用在 server 节点中。
         # 静态资源服务器 location，正则匹配，~为区分大小写，~*为不区分大小写
-        location ~*/test/static/ {
+        location ~*/(test/static|mystatic)/ {
             # 方法1
-	        proxy_pass http://tomcat_test_static;
+	        # proxy_pass http://tomcat_test_static;
 	        # 方法2：指定相对路径，相对 nginx 安装目录下的 mydata 为根目录
             # 如 http://127.0.0.1/test/static/common/images/1.png 会映射到 nginx 安装目录 /mydata/test/static/common/images/1.png
-            # root mydata;
+            root mydata;
             # 方法3：指定绝对路径，注意 windows 系统下分隔符用 /
             # 如 http://127.0.0.1/test/static/common/images/1.png 会映射到 D:/apache-tomcat-8.0.53-8082/webapps/test/static/common/images/1.png
             # root D:/apache-tomcat-8.0.53-8082/webapps;
