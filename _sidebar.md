@@ -95,8 +95,9 @@
   - [消息队列概述](docs/mq/mq-overview.md)
   - [如何保证消息队列的高可用？](docs/mq/mq-high-availability.md)
   - [如何保证消息不被重复消费？](docs/mq/mq-not-repeatedly-consumed.md)
-  - [如何保证消息的可靠性传输？](docs/mq/mq-reliable-transmission.md)
+  - [如何保证消息的可靠性传输？如何处理消息丢失的问题？](docs/mq/mq-reliable-transmission.md)
   - [如何保证消息的顺序性？](docs/mq/mq-order.md)
+  - [消息队列常见问题解答](docs/mq/mq-faq.md)
 
 * Elastic
 
