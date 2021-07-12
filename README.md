@@ -258,6 +258,7 @@
 - [微服务架构下的统一身份认证和授权](https://mtide.net/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E4%B8%8B%E7%9A%84%E7%BB%9F%E4%B8%80%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E4%B8%8E%E6%8E%88%E6%9D%83.html)
 - [大数据时代，数据实时同步解决方案的思考—最全的数据同步总结](https://www.cnblogs.com/laoqing/p/11359224.html)
 - [线程池的7种创建方式，强烈推荐你用它...](https://mp.weixin.qq.com/s/aXXhnreboFmSpx4cuhGncA)
+- [MyBatis-Plus，看这一篇就够了！](https://mp.weixin.qq.com/s/W_Q1dnXuopCb9Gm322NPlg)
 
 ## 图片收藏
 
