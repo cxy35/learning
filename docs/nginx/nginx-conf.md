@@ -9,6 +9,7 @@ Nginx 参数配置优化，提升 Nginx 效率与稳定性，官方文档：[htt
 # 指定工作衍生进程数（一般等于 CPU 的总核数或总核数的两倍，例如两个四核 CPU ，则综合数为 8 。通过命令 ps -ef|grep nginx 可以看出来设置的是几个）
 worker_processes  2;
 #worker_processes  8;
+worker_rlimit_nofile 65535;
 
 # 指定错误日志存放的路径，错误日志记录级别可选项为：[debug|info|notice|warn|error|crit]，默认是 crit ，记录的日志数量从 crit 到 debug ，由少到多
 # error_log  logs/error.log;
