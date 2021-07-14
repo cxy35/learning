@@ -11,6 +11,26 @@
 - 同时提供了一键检测所有代码规约情况和切换语言的功能。
 - 如果你想修改某条规约的检测规则的话，可以通过设置的 `Editor -> Inspections` 进行修改。
 
+## aiXcoder
+
+`aiXcoder` 一款国产代码开发工具，提供了比较强大的代码补全、预测的功能，它的宗旨就是让我们少些代码，能自动生成的绝不手写，上手感受下就会爱上它。
+
+![](https://oscimg.oschina.net/oscnet/up-73a7886a1876a959efe0ffcc3cfa51108fc.gif)
+
+实际开发中我会结合 `IDEA` 的 `postfix completion` 和 `aiXcoder` 配置使用，`IDEA` 本身就已经提供了许多快速补全的快捷方式，不过我发现组内很多人并没有真正用起来。
+
+![](https://oscimg.oschina.net/oscnet/up-f4dda29349449b8d9be7d483d1a6a2dbca1.gif)
+
+也可以自行定义快捷方式生成的代码块。
+
+![](https://oscimg.oschina.net/oscnet/up-38abe62c5e667987226cc799b280e67634c.png)
+
+另外，`aiXcoder` 支持相似代码搜索功能，如果哪个 `API` 不会用，直接选中右键全网搜索实用案例。
+
+![](https://oscimg.oschina.net/oscnet/up-eb7fd0297f0b7c0652e98fac0ddcbe5fd10.png)
+
+![](https://oscimg.oschina.net/oscnet/up-babd218351a38512318d8f427b190d86f04.png)
+
 ## Codota AI Autocomplete for Java and JavaScript
 
 > 查询代码使用示例。
@@ -19,6 +39,14 @@
 
 - 在对应的代码上右键选择 `Get relevant examples` 或 `Ctrl + Shift + O` 快捷键，会展示很多对应代码的用法。
 - 例子：当我们用 `stream().filter()` 对 `List` 操作，可是对 `filter()` 用法不熟，按常理我们会百度一下，而用 `Codota` 会提示很多 `filter()` 用法，节省不少查阅资料的时间。
+
+## Java Stream Debugger
+
+`Java8` 的 `stream API` 很大程度的简化了我们的代码量，可在使用过程中总会出现奇奇怪怪的 `bug` 而且不能 `debug`。
+
+`Java Stream Debugger` 支持了对 `stream API` 的调试，可以清晰的看到每一步操作数据的变化过程。
+
+![](https://oscimg.oschina.net/oscnet/up-3bc540143313cc75ed1f5f1e5125f846cf6.png)
 
 ## Easy Code
 
@@ -31,6 +59,26 @@
 - 支持同时生成生成多张表的代码。每张表有独立的配置信息。完全的个性化定义，规则由你设置。
 
 具体使用见：[IntelliJ IDEA 插件 EasyCode（代码自动生成）](https://mp.weixin.qq.com/s/aIUH2i0vnmsDUBQGzCwkjw)
+
+## easy_javadoc
+
+`easy_javadoc` 一个可以快速为 `Java` 的类、方法、属性加注释的插件，还支持自定义注释样式，`IDEA` 自身的 `Live Templates` 也支持，不过操作稍显繁琐，使用时效率不太高。
+
+在为类、方法、属性加注释时，不仅会生成注释，还是会将对应变量、类、方法翻译成中文名，不过翻译的怎么样还要取决于你的命名水平。
+
+![](https://oscimg.oschina.net/oscnet/up-4f5b33ace99c452f497b43c61e7fe5c2654.gif)
+
+快捷键：`crtl + \`
+
+是不是觉得一点点加注释效率太低了，你也可以尝试批量添加注释。
+
+![](https://oscimg.oschina.net/oscnet/up-8f5181d396880ccc2caab8c863624ee2332.gif)
+
+快捷键：`crtl + shift + \`
+
+如果现有的注释样式不适合你，可以自定义你的注释模板。
+
+![](https://oscimg.oschina.net/oscnet/up-edbd6a511a3ca56aad2d0b0c6d6387c0965.png)
 
 ## Lombok
 
@@ -66,25 +114,37 @@
 - 打开这款插件的窗口，当控制台输出 Mybatis 的 SQL 日志时，该插件会自动帮我们转换成对应的 SQL 语句。
 - 有的时候我们需要转换的日志并不在自己的控制台上，这时可以使用插件的 `SQL Text` 功能：直接复制我们需要转换的日志，然后点击 `Restore Sql` 按钮即可。
 
-## RestfulToolkit
+## Restfultoolkit
 
-> 一套 Restful 服务开发辅助工具集，提供了项目中的接口概览信息，可以根据 URL 跳转到对应的接口方法中去，内置了 HTTP 请求工具，对请求方法做了一些增强功能，总之功能很强大！
+`Restfultoolkit` 一套 `RESTful` 服务开发辅助工具集，维护项目通常会涉及到查找一个请求所对应的类，一般用 `ctrl + shift + f` 进行全局搜索，但是如果项目文件太多，这种查找方式的效率就很低。
 
-介绍：
+`Restfultoolkit` 管理项目中全部的请求链接，可以快速查找。
 
-- 根据 URL 直接跳转到对应的方法定义 ( Ctrl \ or Ctrl Alt N );
-- 提供了一个 Services tree 的显示窗口;
-- 一个简单的 http 请求工具;
-- 在请求方法上添加了有用功能: 复制生成 URL；复制方法参数...
-- 其他功能: java 类上添加 Convert to JSON 功能，格式化 json 数据 ( Windows: Ctrl + Enter; Mac: Command + Enter )。
+![](https://oscimg.oschina.net/oscnet/up-72b6c6f350532feabcd80a9ac5c51c782ee.png)
 
-使用：
+快捷键：`ctrl+ alt + n`
 
-- 右上角的 RestServices 按钮可以显示项目中接口的概览信息。
-- 可以通过搜索按钮根据 URL 搜索对应接口。
-- 可以通过底部的 HTTP 请求工具来发起接口测试请求。
-- 通过在接口方法上右键可以生成查询参数、请求参数、请求 URL 。
-- 通过在实体类上右键可以直接生成实体类对应的 JSON 。
+可以复制当前请求的`全路径`和 `JSON` 格式的参数，开发测试中非常的实用。
+
+![](https://oscimg.oschina.net/oscnet/up-5b242a94cf6e83e2114cacc035962930b01.gif)
+
+`IDEA` 右侧会出现一栏 `RestServices`，这里有整个项目的 `http` 请求，还会显示每个请求的入参、出参 `JSON` 数据，可以进行简单的模拟请求。
+
+![](https://oscimg.oschina.net/oscnet/up-742ff4d5a41d10ec9b3890f49d13578f3ef.png)
+
+## Key promoter X
+
+`Key promoter X` 是 `IDEA` 的快捷键提示插件，这是我个人非常喜欢的一个功能，它让我快速的记忆了很多操作的快捷键。当你点击某个功能且该功能有快捷键时，会提示当前操作的快捷方式。
+
+![](https://oscimg.oschina.net/oscnet/up-192aed0e4902a40a34588f0b4b3753f7c01.gif)
+
+## String Manipulation
+
+`String Manipulation` 一个比较实用的字符串转换工具，比如我们平时的变量命名可以一键转换驼峰等格式，还支持对字符串的各种加、解密（`MD5`、`Base64`等）操作。
+
+![](https://oscimg.oschina.net/oscnet/up-b6ae58424077271f644a7178a3d8c8681d1.gif)
+
+快捷键：`alt + m`
 
 ## GsonFormat
 
@@ -134,6 +194,16 @@
 - 打印日志时不同日志级别的日志会以不同颜色来显示。
 - 可以通过 Tools 打开该插件的配置菜单，然后通过配置菜单修改配色方案。
 - 可以通过在控制台右键并使用 Grep 按钮来调出日志分析的窗口，然后直接通过关键字来搜索即可。
+
+## .ignore
+
+当我们在向 `github` 提交代码时，有一些文件不希望一并提交，这时候我们可以创建一个 `.gitignore` 文件来忽略某些文件的提交。
+
+![](https://oscimg.oschina.net/oscnet/up-4f696d7714e573a24140add8f2873acdd8a.png)
+
+也可以添加指定文件到 `.gitignore` 中，被忽略的文件将变成灰色。
+
+![](https://oscimg.oschina.net/oscnet/up-12052b053289308597f445ac059422f1fd4.png)
 
 ## Statistic
 
