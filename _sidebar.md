@@ -185,6 +185,7 @@
   - [Lombok有啥牛皮的？SpringBoot和IDEA官方都要支持它！](http://www.macrozheng.com/#/reference/lombok_start)
   - [二维码扫描登录，原来是这样实现的！](https://mp.weixin.qq.com/s/et2tPKLXGYvzI9NtK-8bSg)
   - [Java 生鲜电商平台 - API 接口设计之 token、timestamp、sign 具体架构与实现](https://mp.weixin.qq.com/s/g6eXUxbem47WsgY1N5vjcA)
+  - [如何保证API接口安全？](https://mp.weixin.qq.com/s/fhS4UkbhxXYpJbzvz_AcRQ)
   - [认证、授权、鉴权和权限控制](http://www.hyhblog.cn/2018/04/25/user_login_auth_terms/)
   - [【项目实践】SpringBoot三招组合拳，手把手教你打出优雅的后端接口](https://juejin.cn/post/6844904101940117511)
   - [【项目实践】后端接口统一规范的同时，如何优雅得扩展规范](https://juejin.cn/post/6844904143912435719)

@@ -81,6 +81,9 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: auto # 全局默认主键类型设置为自增
+      # logic-delete-field: deleted # 全局逻辑删除的实体字段名
+      # logic-delete-value: 1 # 逻辑已删除值(默认为1)
+      # logic-not-delete-value: 0 # 逻辑未删除值(默认为0)
   configuration:
     auto-mapping-behavior: partial # 只对非嵌套的 resultMap 进行自动映射
     map-underscore-to-camel-case: true # 开启自动驼峰命名规则映射
