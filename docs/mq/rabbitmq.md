@@ -1,6 +1,6 @@
-# 一、中间件
+## 一、中间件
 
-## 1. 什么是中间件
+### 1. 什么是中间件
 
 > 什么是中间件
 
@@ -40,7 +40,7 @@
 
 但是作为一个开放人员，一定要有学习中间件技术的能力和思维，否则很容易当项目发展到一个阶段在去掌握估计或者在面试中提及，就会给自己带来不小的困扰，在当今这个时代这些技术也并不是什么新鲜的东西，如果去掌握和挖掘最关键的还是自己花时间和经历去探讨和研究。
 
-## 2. 中间件技术及架构的概述
+### 2. 中间件技术及架构的概述
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/1.png)
 
@@ -100,7 +100,7 @@
 4. 系统的架构和技术栈的选择可以变的灵活（而不是单纯地选择 java）
 5. 弹性的部署，不会造成平台因部署造成的瘫痪和停服的状态
 
-## 3. 基于消息中间件的分布式系统的架构
+### 3. 基于消息中间件的分布式系统的架构
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/6.jpg)
 
@@ -146,7 +146,7 @@ MQ消息队列：负责数据的传接受，存储和传递，所以性能要高
 
 其实不论选择单体架构还是分布式架构都是项目开发的一个阶段，在什么阶段选择合适的架构方式，而不能盲目追求，最后造成的后果和问题都需要自己买单。但作为一个开发人员学习和探讨新的技术使我们每个程序开发者都应该去保持和思考的问题。当我们没办法去改变社会和世界的时候，我们为了生活和生存那就必须要迎合企业和市场的需求，发挥你的价值和所学的才能，创造价值和实现自我
 
-## 4. 消息队列协议
+### 4. 消息队列协议
 
 > 什么是协议
 
@@ -234,7 +234,7 @@ Kafka协议是基于 TCP/IP的二进制协议。消息内部是 通过长度来�
 
 协议：实在 tcp/ip协议基础之上构建的一种约定俗称的规范和机制、它的主要目的可以让客户端（应用程序 java，go）进行沟通和通讯。并且这种写一下规范必须具有持久性，高可用，高可靠的性能
 
-## 5. 消息队列持久化
+### 5. 消息队列持久化
 
 > 持久化
 
@@ -246,7 +246,7 @@ Kafka协议是基于 TCP/IP的二进制协议。消息内部是 通过长度来�
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/14.jpg)
 
-## 6. 消息的分发策略
+### 6. 消息的分发策略
 
 > 消息的分发策略
 
@@ -273,7 +273,7 @@ MQ消息 队列有如下几个角色
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/17.jpg)
 
-## 7. 消息队列高可用和高可靠
+### 7. 消息队列高可用和高可靠
 
 > 什么是高可用机制
 
@@ -320,19 +320,19 @@ MQ消息 队列有如下几个角色
 1. 消息的传输：通过协议来保证系统间数据解析的正确性
 2. 消息的存储区可靠：通过持久化来保证消息的可靠性
 
-# 二、入门及安装
+## 二、入门及安装
 
-## 1. RabbitMQ入门及安装
+### 1. RabbitMQ入门及安装
 
 https://www.bilibili.com/video/BV1dX4y1V73G?p=27
 
-### 01 概述
+#### 01 概述
 
 简单概述：
 
 RabbitMQ是一个开源的遵循 AMQP协议实现的基于 Erlang语言编写，支持多种客户端（语言），用于在分布式系统中存储消息，转发消息，具有高可用，高可扩性，易用性等特征
 
-### 02下载RabbitMQ
+#### 02下载RabbitMQ
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/23.jpg)
 
@@ -343,7 +343,7 @@ RabbitMQ是采用 Erlang语言开发的，所以系统环境必须提供 Erlang�
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/24.jpg)
 
-### 03 安装Erlang
+#### 03 安装Erlang
 
 > 查看系统版本号
 
@@ -354,7 +354,7 @@ RabbitMQ是采用 Erlang语言开发的，所以系统环境必须提供 Erlang�
 ```
 mkdir -p /usr/rabbitmq
 ca /usr//rabbitmq
-# 将安装包上传到linux系统中
+## 将安装包上传到linux系统中
 erlang-22.0.7-1.el7.x86_64.rpm
 rabbitmq-server-3.7.18-1.el7.noarch.rpm
 
@@ -363,7 +363,7 @@ yum install -y erlang
 erl -v
 ```
 
-### 04 安装socat
+#### 04 安装socat
 
 > 安装下载
 
@@ -371,7 +371,7 @@ erl -v
 yum install -y socat
 ```
 
-### 05 安装rabbitmq
+#### 05 安装rabbitmq
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/26.jpg)
 
@@ -385,21 +385,21 @@ yum install rabbitmq-server -y
 > 启动服务
 
 ```
-# 启动服务
+## 启动服务
 systemctl start rabbitmq-server
-# 查看服务状态，如图
+## 查看服务状态，如图
 systemctl status rabbitmq-server.service
-# 开机自启动
+## 开机自启动
 systemctl enable rabbitmq-server
-# 停止服务
+## 停止服务
 systemctl stop rabbitmq-server
 ```
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/27.jpg)
 
-## 2. RabbitMQWeb管理界面及授权操作
+### 2. RabbitMQWeb管理界面及授权操作
 
-### 01 RabbitMQ管理界面
+#### 01 RabbitMQ管理界面
 
 > 默认情况下，是没有安装web端的客户端插件，需要安装才可以生效
 
@@ -422,16 +422,16 @@ systemctl restart rabbitmq-server
 ![图片加载失败的描述](../../images/mq/rabbitmq/28.jpg)
 
 ```
-# 10.关闭防火墙服务
+## 10.关闭防火墙服务
 systemctl disable firewalld
 Removed symlink /etc/systemd/system/multi-user.target.wants/firewalld.service.
 Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
 systemctl stop firewalld   
-# 11.访问web管理界面
+## 11.访问web管理界面
 http://10.15.0.8:15672/
 ```
 
-### 02 授权账号和密码
+#### 02 授权账号和密码
 
 > 新增用户
 
@@ -463,14 +463,14 @@ rabbitmqctl set_permissions -p / admin ".*"".*"".*"
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/29.jpg)
 
-### 03小结：
+#### 03小结：
 
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/30.jpg)
 
-## 3. RabbitMQ之Docker安装
+### 3. RabbitMQ之Docker安装
 
-###  01 Dokcer安装RabbitMQ
+####  01 Dokcer安装RabbitMQ
 
 > 虚拟化容器技术 - Docker的安装
 
@@ -510,15 +510,15 @@ docker run -id --name=myrabbit -p 15672:15672 rabbitmq:management
 
 访问网页，访问成功！
 
-## 4. RabbitMQ的角色分类
+### 4. RabbitMQ的角色分类
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/36.jpg)
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/37.jpg)
 
-# 三、入门案例
+## 三、入门案例
 
-## 1. RabbitMQ入门案例 - Simple 简单模式
+### 1. RabbitMQ入门案例 - Simple 简单模式
 
 https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 
@@ -530,12 +530,12 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 6. 定义消费者
 7. 观察消息的在 rabbitmq-server服务中的进程
 
-### 01 构建一个maven工程
+#### 01 构建一个maven工程
 
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/38.jpg)
 
-### 02 导入依赖
+#### 02 导入依赖
 
 > java原生依赖
 
@@ -548,7 +548,7 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 </dependency>
 ```
 
-### 03 第一种模型
+#### 03 第一种模型
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/39.jpg)
 
@@ -628,37 +628,37 @@ public class Consumer{
 
 ```
 
-## 2. 什么是AMQP
+### 2. 什么是AMQP
 
-### 01 什么是AMQP
+#### 01 什么是AMQP
 
 AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。是应用层协议的一个开发标准，为面向消息的中间件设计
 
-### 02 AMQP生产者流转过程
+#### 02 AMQP生产者流转过程
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/40.jpg)
 
-### 03 AMQP消费者流转过程
+#### 03 AMQP消费者流转过程
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/41.jpg)
 
-## 3. RabbitMQ的核心组成部分
+### 3. RabbitMQ的核心组成部分
 
-### 01 RabbitMQ的核心组成部分
+#### 01 RabbitMQ的核心组成部分
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/43.jpg)
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/42.jpg)
 
-### 02 RabbitMQ整体架构是什么样子的？
+#### 02 RabbitMQ整体架构是什么样子的？
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/44.jpg)
 
-### 03 RabbitMQ的运行流程
+#### 03 RabbitMQ的运行流程
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/45.jpg)
 
-### 04 RabbitMQ支持的消息模型
+#### 04 RabbitMQ支持的消息模型
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/46.jpg)
 
@@ -671,9 +671,9 @@ AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。�
 5. 主题 Topic模式
 6. 参数模式
 
-## 4. RabbitMQ入门案例 - fanout 模式
+### 4. RabbitMQ入门案例 - fanout 模式
 
-### 01 RabbitMQ的模式之发布订阅模式
+#### 01 RabbitMQ的模式之发布订阅模式
 
 > 图解
 
@@ -738,7 +738,7 @@ public class Producer{
 
 此处没有通过代码去绑定交换机和队列，而是通过可视化界面去绑定的！
 
-## 5. RabbitMQ入门案例 - Direct 模式
+### 5. RabbitMQ入门案例 - Direct 模式
 
 ```java
 //6.定义路由key
@@ -749,7 +749,7 @@ channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
 
 ```
 
-## 6. RabbitMQ入门案例 - Topic 模式
+### 6. RabbitMQ入门案例 - Topic 模式
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/50.jpg)
 
@@ -787,9 +787,9 @@ channel.basicPublish(exchangeName,course, null,message.getBytes());
 
 ```
 
-## 7. RabbitMQ入门案例 - Work模式
+### 7. RabbitMQ入门案例 - Work模式
 
-### 01 Work模式轮询模式（Round-Robin）
+#### 01 Work模式轮询模式（Round-Robin）
 
 > 图解
 
@@ -810,7 +810,7 @@ channel.basicPublish(exchangeName,course, null,message.getBytes());
 
 创建两个一样的！
 
-### 02 Work模式公平分发模式
+#### 02 Work模式公平分发模式
 
 > 生产者
 
@@ -843,9 +843,9 @@ public class Consumer{
 
 创建两个一样的！
 
-## 8. RabbitMQ使用场景
+### 8. RabbitMQ使用场景
 
-### 01 解耦、削峰、异步
+#### 01 解耦、削峰、异步
 
 > 同步异步的问题（串行）
 
@@ -913,7 +913,7 @@ public void test(){
 
 按照以上约定，用户的响应时间相当于是订单信息写入数据库的时间，也就是50毫秒。注册邮件，发送短信写入消息队列后，直接返回，因此写入消息队列的速度很快，基本可以忽略，因此用户的响应时间可能是50毫秒。因此架构改变后，系统的吞吐量提高到每秒20QPS。比串行提高了3倍，比并行提高了两倍
 
-### 02 高内聚，低耦合
+#### 02 高内聚，低耦合
 
 ![在这里插入图片描述](../../images/mq/rabbitmq/55.jpg)
 
@@ -927,9 +927,9 @@ public void test(){
 
 按照以上约定，用户的响应时间相当于是订单信息写入数据库的时间，也就是50毫秒。注册邮件，发送短信写入消息队列后，直接返回，因此写入消息队列的速度很快，基本可以忽略，因此用户的响应时间可能是50毫秒。因此架构改变后，系统的吞吐量提高到每秒20QPS。比串行提高了3倍，比并行提高了两倍
 
-# 四、Springboot案例
+## 四、Springboot案例
 
-## 1. Fanout 模式
+### 1. Fanout 模式
 
 https://www.bilibili.com/video/BV1dX4y1V73G?p=44
 
@@ -938,10 +938,10 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44
 **application.yml**
 
 ```yml
-# 服务端口
+## 服务端口
 server:
   port: 8080
-# 配置rabbitmq服务
+## 配置rabbitmq服务
 spring:
 	rabbitmq:
 		username: admin
@@ -980,10 +980,10 @@ public class OrderService{
 **application.yml**
 
 ```yml
-# 服务端口
+## 服务端口
 server:
   port: 8080
-# 配置rabbitmq服务
+## 配置rabbitmq服务
 spring:
 	rabbitmq:
 		username: admin
@@ -1076,7 +1076,7 @@ public class FanoutEmailConsumer{
 
 ```
 
-## 2. Direct 模式
+### 2. Direct 模式
 
 > 生产者
 
@@ -1145,7 +1145,7 @@ public class RabbitMqConfiguration{
 
 ```
 
-## 3. Topic 模式
+### 3. Topic 模式
 
 > 生产者
 
@@ -1225,9 +1225,9 @@ public class TopicEmailConsumer{
 
 ```
 
-# 五、RabbitMQ高级
+## 五、RabbitMQ高级
 
-##1.  过期时间TTL
+### 1.  过期时间TTL
 
 https://www.bilibili.com/video/BV1dX4y1V73G?p=44
 
@@ -1326,7 +1326,7 @@ public class TTLRabbitMQConfiguration{
 
 ```
 
-## 2. 死信队列
+### 2. 死信队列
 
 > 概述
 
@@ -1396,13 +1396,13 @@ public class TTLRabbitMQConfiguration{
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/73.jpg)
 
-## 3. 内存磁盘的监控
+### 3. 内存磁盘的监控
 
-###  01 RabbitMQ内存警告
+####  01 RabbitMQ内存警告
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/74.jpg)
 
-### 02 RabbitMQ的内存控制
+#### 02 RabbitMQ的内存控制
 
 参考帮助文档：`http://www.rabbbitmq.com/configure.html`
 
@@ -1424,25 +1424,25 @@ fraction/value 为内存阈值。默认情况是：0.4/2GB，代表的含义是�
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/76.jpg)
 
-### 03 RabbitMQ的内存换页
+#### 03 RabbitMQ的内存换页
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/77.jpg)
 
-### 04 RabbitMQ的磁盘预警
+#### 04 RabbitMQ的磁盘预警
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/78.jpg)
 
-## 4.  集群
+### 4.  集群
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/79.jpg)
 
-### 01 集群搭建
+#### 01 集群搭建
 
 配置的前提是你的 rabbitmq可以运行起来，比如`ps aix|grep rebbitmq`你能看到相关进程，又比如运行`rabbitmqct status`你可以看到类似如下信息而不报错：
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/80.jpg)
 
-### 02 单机多实例搭建
+#### 02 单机多实例搭建
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/81.jpg)
 
@@ -1480,15 +1480,15 @@ rabbitmq-plugins enable rabbitmq_management
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/87.jpg)
 
-## 5. 分布式事务
+### 5. 分布式事务
 
-### 01 简述
+#### 01 简述
 
 分布式事务指事务的操作位于不同的节点上，需要保证事务的ACID特性。
 
 例如在下单场景下，库存和订单如果不在同一个节点上，就涉及分布式事务
 
-### 02 分布式事务方式
+#### 02 分布式事务方式
 
 在分布式系统中，要实现分布式事务，无外乎哪几种解决方案。
 
@@ -1496,7 +1496,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 两阶段提交（Two-phase Commit，2PC），通过引协调者（coordinator）来协调参与者的行为，并最终决定这些参与者是否真正要执行事务。
 
-##### 准备阶段
+###### 准备阶段
 
 协调者询问参与事务是否执行成功，参与者发回事务执行结果
 
@@ -1508,7 +1508,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 ![image-20210501225752383](../../images/mq/rabbitmq/88.jpg)
 
-##### 存在的问题
+###### 存在的问题
 
 1. 同步阻塞所有事务参与者在等待其它参与者响应的时候都处于同步阻塞状态，无法进行其它操作。
 2. 单点问题协调者在2PC中起到非常大的作用，发生故障将会造成很大影响。特别是在阶段二发生故障，所有参与者会—直等待状态，无法完成其它操作。
@@ -1558,11 +1558,11 @@ TCC 其实就是采用的补偿机制，其核心思想是:针对每个操作，
 优点：实现了最终一致性，不需要依赖本地数据库事务。
 缺点：实现难度大，主流MQ不支持，RocketMQ事务消息部分代码也未开源。
 
-#### ⑤总结
+##### ⑤总结
 
 通过本文我们总结并对比了几种分布式分解方案的优缺点，分布式事务本身是一个技术难题，是没有一种完美的方案应对所有场景的，具体还是要根据业务场景去抉择吧。阿里RocketMQ去实现的分布式事务，现在也有除了很多分布式事务的协调器，比如LCN等，大家可以多去尝试。
 
-### 具体实现
+#### 具体实现
 
 分布式事务的完整架构图
 
@@ -1656,20 +1656,20 @@ public class OrderService {
 
 ####⑨基于MQ的分布式事务消息的定式重发
 
-### 总结
+#### 总结
 
-####①基于MQ的分布式事务解决方案优点：
+#### ①基于MQ的分布式事务解决方案优点：
 
 1. 通用性强
 2. 拓展方便
 3. 耦合度低,方案也比较成熟
 
-####②基于MQ的分布式事务解决方案缺点：
+#### ②基于MQ的分布式事务解决方案缺点：
 
 1. 基于消息中间件,只适合异步场景
 2. 消息会延迟处理，需要业务上能够容忍
 
-####③建议
+#### ③建议
 
 1. 尽量去避免分布式事务
 2. 尽量将非核心业务做成异步
