@@ -16,7 +16,7 @@
 
 为解决分布异构问题，人们提出了中间件（middleware)的概念。中间件时位于平台（硬件和操作系统）和应用之间的通用服务，如下图所示，这些服务具有标准的程序接口和协议。针对不同的操作系统和硬件平台，它们可以有符合接口的协议规范的多种实现。
 
-![中间件特点](../../images/mq/rabbitmq/1.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/1.jpg)
 
 也很难给中间件一个严格的定义，但中间件应具有如下的一些特点：
 
@@ -42,7 +42,7 @@
 
 ## 2. 中间件技术及架构的概述
 
-![](image\中间件技术.png)
+![图片加载失败的描述](../../images/mq/rabbitmq/1.png)
 
 > 学习中间件的方式和技巧
 
@@ -59,7 +59,7 @@
 
 在实际的项目中，大部分的企业项目开发中，在早起都采用的是单体的架构模式
 
-![](image\4.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/4.jpg)
 
 > 单体架构
 
@@ -74,7 +74,7 @@
 
 > 分布式架构
 
-![](image\5.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/5.jpg)
 
 **何谓分布式系统：**
 
@@ -102,7 +102,7 @@
 
 ## 3. 基于消息中间件的分布式系统的架构
 
-![](image\6.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/6.jpg)
 
 从上图中可以看出来，消息中间件的是
 
@@ -119,7 +119,7 @@
 
 比如你有10 W的并发请求下订单，我们可以在这些订单入库之前，我们可以把订单请求堆积到消息队列中，让它稳健可靠的入库和执行
 
-![](image\7.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/7.jpg)
 
 > 常见的消息中间件
 
@@ -130,9 +130,9 @@ ActiveMQ、RabbitMQ、Kafka、RocketMQ等
 它是一种接受数据、接受请求、存储数据、发送数据等功能的技术服务
 
 MQ消息队列：负责数据的传接受，存储和传递，所以性能要高于普通服务和技术
-![](image\8.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/8.jpg)
 
-谁来生产消息，存储消息和消费消息呢？![](image\9.jpg)
+谁来生产消息，存储消息和消费消息呢？![图片加载失败的描述](../../images/mq/rabbitmq/9.jpg)
 
 > 消息中间件的核心组成部分
 
@@ -150,7 +150,7 @@ MQ消息队列：负责数据的传接受，存储和传递，所以性能要高
 
 > 什么是协议
 
-![](image\10.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/10.jpg)
 
 所谓协议是指：
 
@@ -187,7 +187,7 @@ AMQP：（全称：Advanced Message Queuing Protocol）是高级消息队列协�
 2. 消息的持久化支持
 3. 高性能和高可靠的消息处理优势
 
-![](image\11.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/11.jpg)
 
 > MQTT协议
 
@@ -207,7 +207,7 @@ MQTT协议（Message Queueing Telemetry Transport）消息队列是 IBM开放的
 3. 网络不稳定的场景
 
 支持者：
-![](image\12.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/12.jpg)
 
 > OpenMessage协议
 
@@ -240,11 +240,11 @@ Kafka协议是基于 TCP/IP的二进制协议。消息内部是 通过长度来�
 
 简单来说就是将数据存入磁盘，而不是存在内存中随服务器重启断开而消失，使数据能够永久保存
 
-![](image\13.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/13.jpg)
 
 > 常见的持久化方式
 
-![](image\14.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/14.jpg)
 
 ## 6. 消息的分发策略
 
@@ -260,18 +260,18 @@ MQ消息 队列有如下几个角色
 
 > 场景分析一
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-fQ6t7C7S-1615813808736)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315134437071.png)]](image\15.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/15.jpg)
 
 比如我在 APP上下了一个订单，我们的系统和服务很多，我们如何得知这个消息被哪个系统或者哪些服务器或者系统进行消费，那这个时候就需要一个分发的策略。这就需要消费策略。或者称之为消费的方法论
 
 > 场景分析二
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-l0CNvOUV-1615813808737)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315134747313.png)]](image\16.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/16.jpg)
 
 在发送消息的过程中可能会出现异常，或者网络的抖动，故障等等因为造成消息的无法消费，比如用户在下订单，消费 MQ接受，订单系统出现故障，导致用户支付失败，那么这个时候就需要消息中间件就必须支持消息重试机制策略。也就是支持：出现问题和故障的情况下，消息不丢失还可以进行重发
 消息分发策略的机制和对比
 
-![](image\17.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/17.jpg)
 
 ## 7. 消息队列高可用和高可靠
 
@@ -283,29 +283,29 @@ MQ消息 队列有如下几个角色
 
 > 集群模式1 - Master-slave主从共享数据的部署方式
 
-![](image\18.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/18.jpg)
 
 > 集群模式2 - Master-slave主从同步部署方式
 
-![](image\19.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/19.jpg)
 
 解释：这种模式写入消息同样在 Master主节点上，但是主节点会同步数据到 slave节点形成副本，和 zookeeper或者 redis主从机制很雷同。这样可以达到负载均衡的效果，如果消费者有多个这样就可以去不同的节点进行消费，以为消息的拷贝和同步会占用很大的带宽和网络资源。在后去的 rabbitmq中会有使用
 
 > 集群模式3 - 多主集群同步部署模式
 
-![](image\20.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/20.jpg)
 
 解释：和上面的区别不是特别的大，但是它的写入可以往任意节点去写入
 
 > 集群模式4 - 多主集群转发部署模式
 
-![](image\21.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/21.jpg)
 
 解释：如果你插入的数据是 broker-1中国，元数据信息会存储数据的相关描述和记录存放的位置（队列）。它会对描述信息也就是元数据信息进行同步，如果消费者在 broker-2中进行消费，发现自己节点没有对应的信息，可以从对应的元数据信息中去查询，然后返回对应的消息信息，场景：比如买火车票或者黄牛买演唱会门票，比如第一个黄牛有顾客说要买的演唱会门票，但是没有但是他回去联系其他的黄牛询问，如果有就返回
 
 > 集群模式5 Master-slave与 Broker-cluster组合的方案
 
-![](image\22.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/22.jpg)
 
 解释：实现多主多从的热备机制来完成消息的高可用以及数据的热备机制，在生产规模达到一定的阶段的时候，这种使用的频率比较高
 
@@ -334,20 +334,20 @@ RabbitMQ是一个开源的遵循 AMQP协议实现的基于 Erlang语言编写，
 
 ### 02下载RabbitMQ
 
-![在这里插入图片描述](image\23.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/23.jpg)
 
 1. 下载地址：https://www.rabbitmq.com/download.html
 2. 环境准备：CentOS7.x + /Erlang
 
 RabbitMQ是采用 Erlang语言开发的，所以系统环境必须提供 Erlang环境，第一步就是安装 Erlang
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-WVkC8e8q-1615876872944)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315164044604.png)]](image\24.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/24.jpg)
 
 ### 03 安装Erlang
 
 > 查看系统版本号
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-CwebaVkt-1615876872945)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315164402305.png)]](image\25.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/25.jpg)
 
 > 安装下载
 
@@ -373,7 +373,7 @@ yum install -y socat
 
 ### 05 安装rabbitmq
 
-![](image\26.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/26.jpg)
 
 > 安装下载
 
@@ -395,7 +395,7 @@ systemctl enable rabbitmq-server
 systemctl stop rabbitmq-server
 ```
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-avl2IbJW-1615876872947)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315165942974.png)]](image\27.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/27.jpg)
 
 ## 2. RabbitMQWeb管理界面及授权操作
 
@@ -419,7 +419,7 @@ systemctl restart rabbitmq-server
 
 > 在浏览器访问
 
-![](image\28.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/28.jpg)
 
 ```
 # 10.关闭防火墙服务
@@ -461,12 +461,12 @@ rabbitmqctl set_permissions -p / admin ".*"".*"".*"
 > 网页登录成功
 
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ExrjWoEy-1615876872950)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315171829104.png)]](image\29.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/29.jpg)
 
 ### 03小结：
 
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-1j3nvTKw-1615876872951)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315172034335.png)]](image\30.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/30.jpg)
 
 ## 3. RabbitMQ之Docker安装
 
@@ -474,15 +474,15 @@ rabbitmqctl set_permissions -p / admin ".*"".*"".*"
 
 > 虚拟化容器技术 - Docker的安装
 
-![](image\31.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/31.jpg)
 
 > docker的相关命令
 
-![](image\32.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/32.jpg)
 
 > 安装rabbitmq
 
-![](image\33.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/33.jpg)
 
 `可以直接走图中代码，不用走下面两项！`
 
@@ -502,19 +502,19 @@ docker run -id --name=myrabbit -p 15672:15672 rabbitmq:management
 或者运行时设置用户和密码
 ```
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-787v1Med-1615876872953)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315173500241.png)]](image\34.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/34.jpg)
 
 > 启动
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-84RcXU0z-1615876872954)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315173924970.png)]](image\35.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/35.jpg)
 
 访问网页，访问成功！
 
 ## 4. RabbitMQ的角色分类
 
-![](image\36.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/36.jpg)
 
-![](image\37.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/37.jpg)
 
 # 三、入门案例
 
@@ -533,7 +533,7 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 ### 01 构建一个maven工程
 
 
-![](image\38.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/38.jpg)
 
 ### 02 导入依赖
 
@@ -550,7 +550,7 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 
 ### 03 第一种模型
 
-![](image\39.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/39.jpg)
 
 在上图的模型中，有以下概念：
 
@@ -636,33 +636,33 @@ AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。�
 
 ### 02 AMQP生产者流转过程
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-78cQpQXh-1615906714913)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315201857946.png)]](image\40.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/40.jpg)
 
 ### 03 AMQP消费者流转过程
 
-![](image\41.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/41.jpg)
 
 ## 3. RabbitMQ的核心组成部分
 
 ### 01 RabbitMQ的核心组成部分
 
-![](image\43.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/43.jpg)
 
-![](image\42.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/42.jpg)
 
 ### 02 RabbitMQ整体架构是什么样子的？
 
-![](image\44.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/44.jpg)
 
 ### 03 RabbitMQ的运行流程
 
-![](image\45.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/45.jpg)
 
 ### 04 RabbitMQ支持的消息模型
 
-![](image\46.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/46.jpg)
 
-![](image\47.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/47.jpg)
 
 1. 简单模式 Simple
 2. 工作模式 Work
@@ -677,7 +677,7 @@ AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。�
 
 > 图解
 
-![](image\48.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/48.jpg)
 
 **发布订阅模式的具体实现**
 
@@ -734,7 +734,7 @@ public class Producer{
 
 代码一样，使用线程启动测试而已！
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-uud19sfq-1615906714934)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210315222738258.png)]](image\49.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/49.jpg)
 
 此处没有通过代码去绑定交换机和队列，而是通过可视化界面去绑定的！
 
@@ -751,7 +751,7 @@ channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
 
 ## 6. RabbitMQ入门案例 - Topic 模式
 
-![](image\50.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/50.jpg)
 
 ```java
 //6.定义路由key
@@ -793,7 +793,7 @@ channel.basicPublish(exchangeName,course, null,message.getBytes());
 
 > 图解
 
-![[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-SIuV8TNN-1615906714938)(C:\Users\VULCAN\AppData\Roaming\Typora\typora-user-images\image-20210316085612814.png)]](image\51.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/51.jpg)
 
 当有多个消费者时，我们的消息会被哪个消费者消费呢，我们又该如何均衡消费者消费信息的多少呢？
 
@@ -851,7 +851,7 @@ public class Consumer{
 
 串行方式：将订单信息写入数据库成功后，发送注册邮件，再发送注册短信。以上三个任务全部完成后，返回给客户端
 
-![](image\52.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/52.jpg)
 
 ```java
 public void makeOrder(){
@@ -867,7 +867,7 @@ public void makeOrder(){
 
 并行方式：将订单信息写入数据库成功后，发送注册邮件的同时，发送注册短信。以上三个任务完成后，返回给客户端。与串行的差别是，并行的方式可以提高处理的时间
 
-![](image\53.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/53.jpg)
 
 ```java
 public void test(){
@@ -901,7 +901,7 @@ public void test(){
 
 > 异步消息队列的方式
 
-![](image\54.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/54.jpg)
 
 好处：
 
@@ -915,7 +915,7 @@ public void test(){
 
 ### 02 高内聚，低耦合
 
-![在这里插入图片描述](image\55.jpg)
+![在这里插入图片描述](../../images/mq/rabbitmq/55.jpg)
 
 好处：
 
@@ -1394,13 +1394,13 @@ public class TTLRabbitMQConfiguration{
 
 ```
 
-![](image\73.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/73.jpg)
 
 ## 3. 内存磁盘的监控
 
 ###  01 RabbitMQ内存警告
 
-![](image\74.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/74.jpg)
 
 ### 02 RabbitMQ的内存控制
 
@@ -1418,37 +1418,37 @@ rabbitmqctl set_vm_memory_high_watermark absolute 50MB
 
 fraction/value 为内存阈值。默认情况是：0.4/2GB，代表的含义是：当 RabbitMQ的内存超过40%时，就会产生警告并且会阻塞所有生产者的连接。通过此命令修改阈值在 Broker重启以后将会失效，通过修改配置文件设置的阈值则不会随着重启而消失，但修改了配置文件一样要重启 Broker才会生效
 
-![](image\75.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/75.jpg)
 
 > 配置文件方式 rabbitmq.conf
 
-![](image\76.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/76.jpg)
 
 ### 03 RabbitMQ的内存换页
 
-![](image\77.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/77.jpg)
 
 ### 04 RabbitMQ的磁盘预警
 
-![](image\78.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/78.jpg)
 
 ## 4.  集群
 
-![](image\79.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/79.jpg)
 
 ### 01 集群搭建
 
 配置的前提是你的 rabbitmq可以运行起来，比如`ps aix|grep rebbitmq`你能看到相关进程，又比如运行`rabbitmqct status`你可以看到类似如下信息而不报错：
 
-![](image\80.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/80.jpg)
 
 ### 02 单机多实例搭建
 
-![](image\81.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/81.jpg)
 
 > 启动第二个节点
 
-![](image\82.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/82.jpg)
 
 > 验证启动
 
@@ -1458,15 +1458,15 @@ ps aux|grep rabbitmq
 
 > rabbit-1操作作为主节点
 
-![](image\83.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/83.jpg)
 
 > rabbit-2操作作为从节点
 
-![](image\84.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/84.jpg)
 
 > 验证集群状态
 
-![](image\85.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/85.jpg)
 
 > Web监控
 
@@ -1474,11 +1474,11 @@ ps aux|grep rabbitmq
 rabbitmq-plugins enable rabbitmq_management
 ```
 
-![在这里插入图片描述](image\86.jpg)
+![在这里插入图片描述](../../images/mq/rabbitmq/86.jpg)
 
 > 小结
 
-![](image\87.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/87.jpg)
 
 ## 5. 分布式事务
 
@@ -1500,13 +1500,13 @@ rabbitmq-plugins enable rabbitmq_management
 
 协调者询问参与事务是否执行成功，参与者发回事务执行结果
 
-![image-20210501225839999](image\89.jpg)
+![image-20210501225839999](../../images/mq/rabbitmq/89.jpg)
 
 #####提交阶段
 如果事务在每个参与者上都执行成功，事务协调者发送通知让参与者提交事务;否则，协调者发送通知让参与者回滚事务。
 需要注意的是，在准备阶段，参与者执行了事务，但是还未提交。只有在提交阶段接收到协调者发来的通知后，才进行提交或者回滚。
 
-![image-20210501225752383](image\88.jpg)
+![image-20210501225752383](../../images/mq/rabbitmq/88.jpg)
 
 ##### 存在的问题
 
@@ -1540,7 +1540,7 @@ TCC 其实就是采用的补偿机制，其核心思想是:针对每个操作，
 - 之后将本地消息表中的消息转发到Kafka等消息队列中，如果转发成功则将消息从本地消息表中删除，否则继续重新转发。
 - 在分布式事务操作的另一方从消息队列中读取一个消息，并执行消息中的操作。
 
-![image-20210501231747242](image\90.jpg)
+![image-20210501231747242](../../images/mq/rabbitmq/90.jpg)
 
 > 优点：一种非常经典的实现，避免了分布式事务，实现了最终—致性。
 > 缺点：消息表会耦合到业务系统中，如果没有封装好的解决方案，会有很多杂活需要处理。
@@ -1553,7 +1553,7 @@ TCC 其实就是采用的补偿机制，其核心思想是:针对每个操作，
 - 第一阶段Prepared消息，会拿到消息的地址。第二阶段执行本地事务，第三阶段通过第一阶段拿到的地址去访问消息，并修改状态。
   也就是说在业务方法内要想消息队列提交两次请求，一次发送消息和一次确认消息。如果确认消息发送失败了，RabbitMQ会定期扫描消息集群中的事务消息，这时候发现了Prepared消息，它会向消息发送者确认，所以生产方需要实现一个check接口，RabbitMQ会根据发送端设置的第略来决定是回滚还是继续发送确认消息。这样就保证了消息发送与本地事务同时成功或同时失败。
 
-![image-20210501232113553](image\91.jpg)
+![image-20210501232113553](../../images/mq/rabbitmq/91.jpg)
 
 优点：实现了最终一致性，不需要依赖本地数据库事务。
 缺点：实现难度大，主流MQ不支持，RocketMQ事务消息部分代码也未开源。
@@ -1566,13 +1566,13 @@ TCC 其实就是采用的补偿机制，其核心思想是:针对每个操作，
 
 分布式事务的完整架构图
 
-![](image\92.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/92.jpg)
 
-![](image\93.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/93.jpg)
 
 ####①系统与系统之间的分布式事问题
 
-![](image\94.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/94.jpg)
 
 ####②系统间调用过程中事务回滚问题
 
@@ -1620,23 +1620,23 @@ public class OrderService {
 
 ####③基于MQ的分布式事务整体设计思路
 
-![](image\95.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/95.jpg)
 
 ####④基于MQ的分布式事务消息的可靠生产问题-定时重发
 
-![](image\96.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/96.jpg)
 
 如果这个时候MQ服务器出现了异常和故障，那么消息是无法获取到回执信息。怎么解决呢?
 
-![](image\97.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/97.jpg)
 
 ####⑤基于MQ的分布式事务消息的可靠消费
 
-![](image\98.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/98.jpg)
 
 ####⑥基于MQ的分布式事务消息的消息重发
 
-![](image\99.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/99.jpg)
 
 解决消息重试的集中方案
 
@@ -1646,11 +1646,11 @@ public class OrderService {
 
 ####⑦基于MQ的分布式事务消息的死信队列消息转移+人工处理
 
-![](image\100.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/100.jpg)
 
 如果死信队列报错就进行人工处理
 
-![](image\101.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/101.jpg)
 
 ####⑧基于MQ的分布式事务消息的死信队列消息重试注意事项
 
@@ -1673,3 +1673,14 @@ public class OrderService {
 
 1. 尽量去避免分布式事务
 2. 尽量将非核心业务做成异步
+
+---
+
+- [RabbitMQ 详解（KuangStudy）](https://www.kuangstudy.com/zl/rabbitmq)
+
+
+---
+
+扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.com](https://cxy35.com)
+
+![](https://oscimg.oschina.net/oscnet/up-285838b9c516db5bb1ba760f292f2346078.JPEG)
