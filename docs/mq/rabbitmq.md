@@ -324,8 +324,6 @@ MQ消息 队列有如下几个角色
 
 ### 1. RabbitMQ入门及安装
 
-https://www.bilibili.com/video/BV1dX4y1V73G?p=27
-
 #### 01 概述
 
 简单概述：
@@ -518,9 +516,58 @@ docker run -id --name=myrabbit -p 15672:15672 rabbitmq:management
 
 ## 三、入门案例
 
-### 1. RabbitMQ入门案例 - Simple 模式（简单模式）
+### 1. 什么是AMQP
 
-https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
+#### 01 什么是AMQP
+
+AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。是应用层协议的一个开发标准，为面向消息的中间件设计
+
+#### 02 AMQP生产者流转过程
+
+![图片加载失败的描述](../../images/mq/rabbitmq/40.jpg)
+
+#### 03 AMQP消费者流转过程
+
+![图片加载失败的描述](../../images/mq/rabbitmq/41.jpg)
+
+### 2. RabbitMQ的核心组成部分
+
+#### 01 RabbitMQ的核心组成部分
+
+![图片加载失败的描述](../../images/mq/rabbitmq/43.jpg)
+
+![图片加载失败的描述](../../images/mq/rabbitmq/42.jpg)
+
+#### 02 RabbitMQ整体架构是什么样子的？
+
+![图片加载失败的描述](../../images/mq/rabbitmq/44.jpg)
+
+#### 03 RabbitMQ的运行流程
+
+![图片加载失败的描述](../../images/mq/rabbitmq/45.jpg)
+
+#### 04 RabbitMQ支持的消息模型
+
+![图片加载失败的描述](../../images/mq/rabbitmq/46.jpg)
+
+![图片加载失败的描述](../../images/mq/rabbitmq/47.jpg)
+
+1. 简单模式 Simple
+2. 工作模式 Work
+3. 发布订阅模式
+4. 路由模式
+5. 主题 Topic模式
+6. 参数模式
+
+### 3. "Hello World!"（简单模式）
+
+![图片加载失败的描述](../../images/mq/rabbitmq/hello-world.png)
+
+在上图的模型中，有以下概念：
+
+1. 生产者，也就是要发送消息的程序
+2. 消费者：消息的接受者，会一直等待消息到来。
+3. 消息队列：图中红色部分。类似一个邮箱，可以缓存消息；生产者向其中投递消息，消费者从其中取出消息。
 
 1. jdk1.8
 2. 构建一个 maven工程
@@ -531,7 +578,6 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 7. 观察消息的在 rabbitmq-server服务中的进程
 
 #### 01 构建一个maven工程
-
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/38.jpg)
 
@@ -547,16 +593,6 @@ https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
     <version>5.10.0</version>
 </dependency>
 ```
-
-#### 03 第一种模型
-
-![图片加载失败的描述](../../images/mq/rabbitmq/39.jpg)
-
-在上图的模型中，有以下概念：
-
-1. 生产者，也就是要发送消息的程序
-2. 消费者：消息的接受者，会一直等待消息到来。
-3. 消息队列：图中红色部分。类似一个邮箱，可以缓存消息；生产者向其中投递消息，消费者从其中取出消息。
 
 > 生产者
 
@@ -628,56 +664,13 @@ public class Consumer{
 
 ```
 
-### 2. 什么是AMQP
-
-#### 01 什么是AMQP
-
-AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。是应用层协议的一个开发标准，为面向消息的中间件设计
-
-#### 02 AMQP生产者流转过程
-
-![图片加载失败的描述](../../images/mq/rabbitmq/40.jpg)
-
-#### 03 AMQP消费者流转过程
-
-![图片加载失败的描述](../../images/mq/rabbitmq/41.jpg)
-
-### 3. RabbitMQ的核心组成部分
-
-#### 01 RabbitMQ的核心组成部分
-
-![图片加载失败的描述](../../images/mq/rabbitmq/43.jpg)
-
-![图片加载失败的描述](../../images/mq/rabbitmq/42.jpg)
-
-#### 02 RabbitMQ整体架构是什么样子的？
-
-![图片加载失败的描述](../../images/mq/rabbitmq/44.jpg)
-
-#### 03 RabbitMQ的运行流程
-
-![图片加载失败的描述](../../images/mq/rabbitmq/45.jpg)
-
-#### 04 RabbitMQ支持的消息模型
-
-![图片加载失败的描述](../../images/mq/rabbitmq/46.jpg)
-
-![图片加载失败的描述](../../images/mq/rabbitmq/47.jpg)
-
-1. 简单模式 Simple
-2. 工作模式 Work
-3. 发布订阅模式
-4. 路由模式
-5. 主题 Topic模式
-6. 参数模式
-
-### 4. RabbitMQ入门案例 - Work 模式（工作模式）
+### 4. Work queues（工作模式）
 
 #### 01 Work模式轮询模式（Round-Robin）
 
 > 图解
 
-![图片加载失败的描述](../../images/mq/rabbitmq/51.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/work-queues.png)
 
 当有多个消费者时，我们的消息会被哪个消费者消费呢，我们又该如何均衡消费者消费信息的多少呢？
 
@@ -727,11 +720,11 @@ public class Consumer{
 
 创建两个一样的！
 
-### 5. RabbitMQ入门案例 - fanout 模式（发布订阅模式）
+### 5. Publish/Subscribe（发布订阅模式-fanout）
 
 > 图解
 
-![图片加载失败的描述](../../images/mq/rabbitmq/48.jpg)
+![图片加载失败的描述](../../images/mq/rabbitmq/publish-subscribe.png)
 
 **发布订阅模式的具体实现**
 
@@ -792,7 +785,9 @@ public class Producer{
 
 此处没有通过代码去绑定交换机和队列，而是通过可视化界面去绑定的！
 
-### 6. RabbitMQ入门案例 - direct 模式（路由模式）
+### 6. Routing（路由模式-direct）
+
+![图片加载失败的描述](../../images/mq/rabbitmq/routing.png)
 
 RabbitMQ 中的默认交换机是 direct 模式。
 
@@ -805,7 +800,9 @@ channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
 
 ```
 
-### 7. RabbitMQ入门案例 - topic 模式（主题模式）
+### 7. Topics（主题模式-topic）
+
+![图片加载失败的描述](../../images/mq/rabbitmq/topics.png)
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/50.jpg)
 
@@ -930,8 +927,6 @@ public void test(){
 ## 四、Springboot案例
 
 ### 1. Fanout 模式
-
-https://www.bilibili.com/video/BV1dX4y1V73G?p=44
 
 > 生产者
 
@@ -1228,8 +1223,6 @@ public class TopicEmailConsumer{
 ## 五、RabbitMQ高级
 
 ### 1.  过期时间TTL
-
-https://www.bilibili.com/video/BV1dX4y1V73G?p=44
 
 > 概述
 
