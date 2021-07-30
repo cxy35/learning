@@ -666,24 +666,40 @@ public class Consumer{
 
 ### 4. Work queues（工作模式）
 
-#### 01 Work模式轮询模式（Round-Robin）
-
-> 图解
-
 ![图片加载失败的描述](../../images/mq/rabbitmq/work-queues.png)
 
 当有多个消费者时，我们的消息会被哪个消费者消费呢，我们又该如何均衡消费者消费信息的多少呢？
 
 主要有两种模式：
 
-1. 轮询模式的分发：一个消费者一条，按均分配
-2. 公平分发：根据消费者的消费能力进行公平分发，处理快的处理的多，处理慢的处理的少；按劳分配
+1. **轮询分发模式**：一个消费者一条，按均分配
+2. **公平分发模式**：根据消费者的消费能力进行公平分发，处理快的处理的多，处理慢的处理的少；按劳分配
+
+#### 01 Work模式轮询分发模式（Round-Robin）
 
 > 生产者
 
 跟简单模式一样！
 
 > 消费者
+
+```java
+//简单模式
+public class Consumer{
+	//3.接受内容
+    channel.basicConsume("queue1",true,new DefaultConsumer(){
+        public void handle(String consumerTag, Delivery message) throws IOException {
+          System.out.println(new String("收到消息是" + new String(meassage.getBody()),"UTF-8"));
+        },new CancelCallback(){
+            public void handle(String consumerTag) throws IOException {
+                System.out.println("接受失败了");
+        }
+      });
+    //4.关闭
+    channel.close();
+    connection.close();
+}
+```
 
 创建两个一样的！
 
@@ -715,14 +731,11 @@ public class Consumer{
     channel.close();
     connection.close();
 }
-
 ```
 
 创建两个一样的！
 
 ### 5. Publish/Subscribe（发布订阅模式-fanout）
-
-> 图解
 
 ![图片加载失败的描述](../../images/mq/rabbitmq/publish-subscribe.png)
 
@@ -816,7 +829,7 @@ channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
 
 ---
 
-> 代码创建及绑定
+> 下面通过代码创建及绑定交换机和队列：
 
 ```java
 //5.准备交换机
