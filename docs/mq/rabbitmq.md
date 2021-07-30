@@ -810,10 +810,11 @@ channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
 //6.定义路由key
 String routeKey = "com.order.test.xxx";
 //7.指定交换机的类型
-String type = "direct";
+String type = "topic";
 channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
-
 ```
+
+---
 
 > 代码创建及绑定
 
