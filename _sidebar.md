@@ -92,13 +92,13 @@
 
 * MQ
 
-  - [为什么使用消息队列？消息队列有什么优点和缺点？ActiveMQ、RabbitMQ、RocketMQ、Kafka 都有什么优点和缺点？](docs/mq/mq-overview.md)
+  - [为什么使用消息队列？消息队列有什么优点和缺点？ActiveMQ、RabbitMQ、RocketMQ、Kafka 都有什么优点和缺点？](docs/mq/mq-why.md)
   - [如何保证消息队列的高可用？](docs/mq/mq-high-availability.md)
   - [如何保证消息不被重复消费？或者说，如何保证消息消费的幂等性？](docs/mq/mq-not-repeatedly-consumed.md)
   - [如何保证消息的可靠性传输？或者说，如何处理消息丢失的问题？](docs/mq/mq-reliable-transmission.md)
   - [如何保证消息的顺序性？](docs/mq/mq-order.md)
   - [消息队列常见问题解答](docs/mq/mq-faq.md)
-  - [RabbitMQ](docs/mq/rabbitmq.md)
+  - [RabbitMQ 详解](docs/mq/rabbitmq.md)
 
 * Elastic
 

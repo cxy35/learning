@@ -518,7 +518,7 @@ docker run -id --name=myrabbit -p 15672:15672 rabbitmq:management
 
 ## 三、入门案例
 
-### 1. RabbitMQ入门案例 - Simple 简单模式
+### 1. RabbitMQ入门案例 - Simple 模式（简单模式）
 
 https://www.bilibili.com/video/BV1dX4y1V73G?p=44 实现步骤
 
@@ -671,123 +671,7 @@ AMQP全称：Advanced Message Queuing Protocol（高级消息队列协议）。�
 5. 主题 Topic模式
 6. 参数模式
 
-### 4. RabbitMQ入门案例 - fanout 模式
-
-#### 01 RabbitMQ的模式之发布订阅模式
-
-> 图解
-
-![图片加载失败的描述](../../images/mq/rabbitmq/48.jpg)
-
-**发布订阅模式的具体实现**
-
-1. web操作查看视频
-2. 类型：fanout
-3. 特点：Fanout - 发布与订阅模式，是一种广播机制，它是没有路由 key的模式
-
-> 生产者
-
-```java
-//简单模式
-public class Producer{
-    //1.创建连接工厂
-    ConnectionFactory connectionFactory = new ConnectionFactory();
-    connectionFactory.setHost("10.15.0.9");
-    connectionFactory.setPort(5672);
-    connectionFactory.setUsername("admin");
-    connectionFactory.setPassword("admin");
-    connectionFactory.setVirtualHost("/");
-    Connection connection = connectionFactory.newConnection("生产者");
-    //2.创建通道
-    Channel channel = connection.createChannel();
-    //3.通过创建交换机，声明队列，绑定关系，路由key，发送消息和接受消息
-    /*参数1: 是否持久化，非持久化消息会存盘吗？会存盘，但是会随着重启服务器而丢失
-      参数2:是否独占队列 
-      参数3:是否自动删除，随着最后一个消费者消息完毕消息以后是否把队列自动删除
-  	  参数4:携带附属属性
-    */
-    String queueName = "queue1";
-    channel.queueDeclare(queueName,false,false,false,null);
-    //4.发送消息给队列queue
-    /*参数1: 交换机
-      参数2:队列、路由key
-      参数3:消息的状态控制
-  	  参数4:消息主题
-    */
-    //面试题：可以存在没有交换机的队列吗？不可能，虽然没有指定交换机但是一定会存在一个默认的交换机
-    String message = "Hello";
-    //5.准备交换机
-    String exchangeName = "fanout-exchange";
-    //6.定义路由key
-    String routeKey = "";
-    //7.指定交换机的类型
-    String type = "fanout";
-    channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
-    //8.关闭
-    channel.close();
-    connection.close();
-}
-
-```
-
-> 消费者
-
-代码一样，使用线程启动测试而已！
-
-![图片加载失败的描述](../../images/mq/rabbitmq/49.jpg)
-
-此处没有通过代码去绑定交换机和队列，而是通过可视化界面去绑定的！
-
-### 5. RabbitMQ入门案例 - Direct 模式
-
-```java
-//6.定义路由key
-String routeKey = "email";
-//7.指定交换机的类型
-String type = "direct";
-channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
-
-```
-
-### 6. RabbitMQ入门案例 - Topic 模式
-
-![图片加载失败的描述](../../images/mq/rabbitmq/50.jpg)
-
-```java
-//6.定义路由key
-String routeKey = "com.order.test.xxx";
-//7.指定交换机的类型
-String type = "direct";
-channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
-
-```
-
-> 代码创建及绑定
-
-```java
-//5.准备交换机
-String exchangeName = "direct_message_exchange";
-String exchangeType = "direct";
-//如果你用界面把queue和exchange的关系先绑定话，代码就不需要在编写这些声明代码可以让代码变得更简洁
-//如果用代码的方式去声明，我们要学习一下
-//6.声明交换机 所谓的持久化就是指，交换机会不会随着服务器重启造成丢失
-channel.exchangeDeclare(exchangeName,exchangeType,true);
-
-//7.声明队列
-channel.queueDeclare("queue5",true,false,false,null);
-channel.queueDeclare("queue6",true,false,false,null);
-channel.queueDeclare("queue7",true,false,false,null);
-
-//8.绑定队列和交换机的关系
-channel.queueBind("queue5",exchangeName,"order");
-channel.queueBind("queue6",exchangeName,"order");
-channel.queueBind("queue7",exchangeName,"course");
-
-channel.basicPublish(exchangeName,course, null,message.getBytes());
-
-```
-
-### 7. RabbitMQ入门案例 - Work模式
+### 4. RabbitMQ入门案例 - Work 模式（工作模式）
 
 #### 01 Work模式轮询模式（Round-Robin）
 
@@ -842,6 +726,122 @@ public class Consumer{
 ```
 
 创建两个一样的！
+
+### 5. RabbitMQ入门案例 - fanout 模式（发布订阅模式）
+
+> 图解
+
+![图片加载失败的描述](../../images/mq/rabbitmq/48.jpg)
+
+**发布订阅模式的具体实现**
+
+1. web操作查看视频
+2. 类型：fanout
+3. 特点：Fanout - 发布与订阅模式，是一种**广播机制**，**它是没有路由key的模式（即使设置了也没意义）**
+
+> 生产者
+
+```java
+//简单模式
+public class Producer{
+    //1.创建连接工厂
+    ConnectionFactory connectionFactory = new ConnectionFactory();
+    connectionFactory.setHost("10.15.0.9");
+    connectionFactory.setPort(5672);
+    connectionFactory.setUsername("admin");
+    connectionFactory.setPassword("admin");
+    connectionFactory.setVirtualHost("/");
+    Connection connection = connectionFactory.newConnection("生产者");
+    //2.创建通道
+    Channel channel = connection.createChannel();
+    //3.通过创建交换机，声明队列，绑定关系，路由key，发送消息和接受消息
+    /*参数1: 是否持久化，非持久化消息会存盘吗？会存盘，但是会随着重启服务器而丢失
+      参数2:是否独占队列 
+      参数3:是否自动删除，随着最后一个消费者消息完毕消息以后是否把队列自动删除
+  	  参数4:携带附属属性
+    */
+    String queueName = "queue1";
+    channel.queueDeclare(queueName,false,false,false,null);
+    //4.发送消息给队列queue
+    /*参数1: 交换机
+      参数2:队列、路由key
+      参数3:消息的状态控制
+  	  参数4:消息主题
+    */
+    //面试题：可以存在没有交换机的队列吗？不可能，虽然没有指定交换机但是一定会存在一个默认的交换机
+    String message = "Hello";
+    //5.准备交换机
+    String exchangeName = "fanout-exchange";
+    //6.定义路由key
+    String routeKey = "";
+    //7.指定交换机的类型
+    String type = "fanout";
+    channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
+    //8.关闭
+    channel.close();
+    connection.close();
+}
+
+```
+
+> 消费者
+
+代码一样，使用线程启动测试而已！
+
+![图片加载失败的描述](../../images/mq/rabbitmq/49.jpg)
+
+此处没有通过代码去绑定交换机和队列，而是通过可视化界面去绑定的！
+
+### 6. RabbitMQ入门案例 - direct 模式（路由模式）
+
+RabbitMQ 中的默认交换机是 direct 模式。
+
+```java
+//6.定义路由key
+String routeKey = "email";
+//7.指定交换机的类型
+String type = "direct";
+channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
+
+```
+
+### 7. RabbitMQ入门案例 - topic 模式（主题模式）
+
+![图片加载失败的描述](../../images/mq/rabbitmq/50.jpg)
+
+```java
+//6.定义路由key
+String routeKey = "com.order.test.xxx";
+//7.指定交换机的类型
+String type = "direct";
+channel.basicPublish(exchangeName,routeKey, null,message.getBytes());
+
+```
+
+> 代码创建及绑定
+
+```java
+//5.准备交换机
+String exchangeName = "direct_message_exchange";
+String exchangeType = "direct";
+//如果你用界面把queue和exchange的关系先绑定话，代码就不需要在编写这些声明代码可以让代码变得更简洁
+//如果用代码的方式去声明，我们要学习一下
+//6.声明交换机 所谓的持久化就是指，交换机会不会随着服务器重启造成丢失
+channel.exchangeDeclare(exchangeName,exchangeType,true);
+
+//7.声明队列
+channel.queueDeclare("queue5",true,false,false,null);
+channel.queueDeclare("queue6",true,false,false,null);
+channel.queueDeclare("queue7",true,false,false,null);
+
+//8.绑定队列和交换机的关系
+channel.queueBind("queue5",exchangeName,"order");
+channel.queueBind("queue6",exchangeName,"order");
+channel.queueBind("queue7",exchangeName,"course");
+
+channel.basicPublish(exchangeName,course, null,message.getBytes());
+
+```
 
 ### 8. RabbitMQ使用场景
 

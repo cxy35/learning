@@ -43,12 +43,14 @@ channel.txCommit
 
 设置持久化有两个步骤：
 
-1. 创建 queue 的时候将其设置为持久化，这样就可以保证 RabbitMQ 持久化 queue 的元数据，但是它是不会持久化 queue 里的数据的。
-2. 发送消息的时候将消息的 `deliveryMode` 设置为 2，就是将消息设置为持久化的，此时 RabbitMQ 就会将消息持久化到磁盘上去。
+1. **创建 queue 的时候将其设置为持久化**，这样就可以保证 RabbitMQ 持久化 queue 的元数据，但是它是不会持久化 queue 里的数据的。
+2. 发送消息的时候将消息的 `deliveryMode` 设置为 2，就是**将消息设置为持久化**的，此时 RabbitMQ 就会将消息持久化到磁盘上去。
 
 必须要同时设置这两个持久化才行，RabbitMQ 哪怕是挂了，再次重启，也会从磁盘上重启恢复 queue，恢复这个 queue 里的数据。
 
-队列和消息持久化：![队列和消息持久化](https://oscimg.oschina.net/oscnet/up-8ec4fee2aef6df28cf6d16da43b81f00bf2.png)
+队列和消息持久化：
+
+![队列和消息持久化](https://oscimg.oschina.net/oscnet/up-8ec4fee2aef6df28cf6d16da43b81f00bf2.png)
 
 注意，哪怕是你给 RabbitMQ 开启了持久化机制，也有一种可能，就是这个消息写到了 RabbitMQ 中，但是还没来得及持久化到磁盘上，同时也还没来得及投递到消费者，结果不巧，此时 RabbitMQ 挂了，就会导致内存里的一点点数据丢失。
 
@@ -64,17 +66,25 @@ RabbitMQ 如果丢失了数据，主要是因为你消费的时候，刚消费�
 
 1. 消费者服务宕机。解决方案：消费时开启手动 ack （注意参数值），消费完之后手动 ack 消息，告知 MQ 自己处理成功了，之后 MQ 会删除这条消息，否则会重新投递。
 
-ack-消费未确认会重新投递：![ack-消费未确认会重新投递](https://oscimg.oschina.net/oscnet/up-39c2850f8d2db939760640b2234626180a8.png)
+ack-消费未确认会重新投递：
 
-ack原理：![ack原理](https://oscimg.oschina.net/oscnet/up-c90139f5fbe1a218f862b4ff1707b91a407.png)
+![ack-消费未确认会重新投递](https://oscimg.oschina.net/oscnet/up-39c2850f8d2db939760640b2234626180a8.png)
+
+ack 原理：
+
+![ack 原理](https://oscimg.oschina.net/oscnet/up-c90139f5fbe1a218f862b4ff1707b91a407.png)
 
 2. 消费消息时发生异常，未成功。解决方案：消费异常时 nack 消息（注意参数值），告知 MQ 自己未处理成功，之后 MQ 会将这条消息重新投递到其他消费者。
 
-nack-消费失败会重新投递：![nack-消费失败会重新投递](https://oscimg.oschina.net/oscnet/up-faeb045b12e6cf0ddcdd1ee10aeb073f640.png)
+nack-消费失败会重新投递：
+
+![nack-消费失败会重新投递](https://oscimg.oschina.net/oscnet/up-faeb045b12e6cf0ddcdd1ee10aeb073f640.png)
 
 3. unack 消息积压，导致内存溢出。解决方案：可以通过 `channel.basicQos(10)` 这个方法来设置当前 channel 的 prefetch count，这样的话，就意味着 RabbitMQ 正在投递到 channel 过程中的 unack message，以及消费者服务在处理中的 unack message，以及异步 ack 之后还没完成 ack 的 unack message，所有这些 message 加起来，一个 channel 也不能超过 10 个。RabbitMQ 官方给出的建议是 prefetch count 一般设置在 100-300 之间。
 
-prefetch-解决unack消息积压：![prefetch-解决unack消息积压](https://oscimg.oschina.net/oscnet/up-1d52102b1acbd24b227edbac69adc670690.png)
+prefetch-解决unack消息积压：
+
+![prefetch-解决unack消息积压](https://oscimg.oschina.net/oscnet/up-1d52102b1acbd24b227edbac69adc670690.png)
 
 ### 1.4 总结
 
