@@ -940,7 +940,7 @@ public void test(){
 
 ## 四、Springboot案例
 
-### 1. Fanout 模式
+### 1. Publish/Subscribe（发布订阅模式-fanout）
 
 > 生产者
 
@@ -1085,7 +1085,7 @@ public class FanoutEmailConsumer{
 
 ```
 
-### 2. Direct 模式
+### 2. Routing（路由模式-direct）
 
 > 生产者
 
@@ -1154,7 +1154,7 @@ public class RabbitMqConfiguration{
 
 ```
 
-### 3. Topic 模式
+### 3. Topics（主题模式-topic）
 
 > 生产者
 
