@@ -1511,7 +1511,7 @@ rabbitmq-plugins enable rabbitmq_management
 
 在分布式系统中，要实现分布式事务，无外乎哪几种解决方案。
 
-##### 一、两阶段提交（2PC）需要数据库严商
+##### 一、两阶段提交（2PC）需要数据库厂商
 
 两阶段提交（Two-phase Commit，2PC），通过引协调者（coordinator）来协调参与者的行为，并最终决定这些参与者是否真正要执行事务。
 
