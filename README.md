@@ -249,6 +249,7 @@
 - [Java生鲜电商平台-API接口设计之token、timestamp、sign 具体架构与实现（APP/小程序，传输安全）](https://www.cnblogs.com/jurendage/p/12653865.html)
 - [如何保证API接口安全？](https://mp.weixin.qq.com/s/fhS4UkbhxXYpJbzvz_AcRQ)
 - [认证、授权、鉴权和权限控制](http://www.hyhblog.cn/2018/04/25/user_login_auth_terms/)
+- [傻傻分不清之 Cookie、Session、Token、JWT](https://juejin.cn/post/6844904034181070861)
 - [【项目实践】SpringBoot三招组合拳，手把手教你打出优雅的后端接口](https://juejin.cn/post/6844904101940117511)
 - [【项目实践】后端接口统一规范的同时，如何优雅得扩展规范](https://juejin.cn/post/6844904143912435719)
 - [【项目实践】在用安全框架前，我想先让你手撸一个登陆认证](https://juejin.cn/post/6866978103776772109)
