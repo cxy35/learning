@@ -104,12 +104,12 @@ vi /usr/local/mydata/etc/my.cnf
 [client]
 port = 3306
 socket = /usr/local/mydata/tmp/mysql.sock
-default_character_set = utf8
+default-character-set = utf8
 
 [mysql]
-default_character_set = utf8
+default-character-set = utf8
 prompt = "\\u:\\d> "
-auto_rehash
+auto-rehash
 
 [mysqld]
 port = 3306
@@ -117,25 +117,25 @@ basedir = /usr/local/mysql
 socket = /usr/local/mydata/tmp/mysql.sock
 tmpdir = /usr/local/mydata/tmp
 datadir = /usr/local/mydata/data
-log_bin = /usr/local/mydata/log/mysql_bin.log
-relay_log = /usr/local/mydata/log/mysql_relay_bin.log
-log_error = /usr/local/mydata/log/alert.log
-slow_query_log_file = /usr/local/mydata/log/mysql_slow.log
-default_time_zone = '+8:00'
-character_set_server = utf8
-collation_server = utf8_unicode_ci
+log-bin = /usr/local/mydata/log/mysql-bin.log
+relay_log = /usr/local/mydata/log/mysql-relay-bin.log
+log-error = /usr/local/mydata/log/alert.log
+slow-query-log-file = /usr/local/mydata/log/mysql_slow.log
+default-time-zone = '+8:00'
+character-set-server = utf8
+collation-server = utf8_unicode_ci
 init_connect = 'SET NAMES utf8'
-read_only = 1
+read_only = 0
 relay_log_purge = 0
-skip_name_resolve
-skip_external_locking
+skip-name-resolve
+skip-external-locking
 max_connections = 4000
 max_user_connections = 4000
 max_connect_errors = 90000000
 max_allowed_packet = 16M
 back_log = 5000
-wait_timeout = 120
-interactive_timeout = 120
+wait_timeout = 60
+interactive_timeout = 60
 sort_buffer_size = 2M
 join_buffer_size = 2M
 thread_cache_size = 32
@@ -150,7 +150,7 @@ bulk_insert_buffer_size = 16M
 #sql_mode = NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 sql_mode = ""
 explicit_defaults_for_timestamp = true
-server_id = 20001
+server-id = 20001
 sync_binlog = 100
 log_slave_updates = 1
 relay_log_info_repository = TABLE
@@ -163,22 +163,22 @@ max_binlog_cache_size = 1G
 max_binlog_size = 1G
 expire_logs_days = 7
 long_query_time = 10
-slow_query_log = 1
-default_storage_engine = innodb
-innodb_fast_shutdown = 1
-innodb_force_recovery = 0
-innodb_buffer_pool_size = 40G
+slow-query-log = 1
+default-storage-engine = innodb
+innodb-fast-shutdown = 1
+innodb-force-recovery = 0
+innodb-buffer-pool-size = 40G
 innodb_buffer_pool_instances = 2
 innodb_buffer_pool_dump_at_shutdown = 1
-innodb_file_per_table = 1
-innodb_write_io_threads = 16
-innodb_read_io_threads = 16
-innodb_thread_concurrency = 32
-innodb_flush_log_at_trx_commit = 2
+innodb-file-per-table = 1
+innodb-write-io-threads = 16
+innodb-read-io-threads = 16
+innodb-thread-concurrency = 32
+innodb-flush-log-at-trx-commit = 2
 innodb_log_buffer_size = 8M
 innodb_log_files_in_group = 4
-innodb_max_dirty_pages_pct = 80
-innodb_lock_wait_timeout = 120
+innodb-max-dirty-pages-pct = 80
+innodb-lock-wait-timeout = 120
 innodb_flush_method = O_DIRECT
 innodb_log_file_size = 10M
 innodb_data_file_path = ibdata1:10M:autoextend
@@ -188,10 +188,11 @@ innodb_io_capacity = 6000
 innodb_lru_scan_depth = 8000
 innodb_file_format = Barracuda
 innodb_file_format_max = Barracuda
-#replicate_ignore_db = mysql
-#replicate_ignore_db = test
-#replicate_ignore_db = performance_schema
-#replicate_ignore_db = information_schema
+#replicate-ignore-db = mysql
+#replicate-ignore-db = information_schema
+#replicate-ignore-db = test
+#replicate-ignore-db = performance_schema
+federated
 
 [mysqldump]
 quick
@@ -210,10 +211,10 @@ read_buffer = 8M
 write_buffer = 8M
 
 [mysqlhotcopy]
-interactive_timeout
+interactive-timeout
 
 [mysqld_safe]
-open_files_limit = 8192
+open-files-limit = 8192
 ```
 
 - 初始化 mysql 数据库实例。
