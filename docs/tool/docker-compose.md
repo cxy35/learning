@@ -61,8 +61,8 @@ services:
       - "3306:3306"
     volumes: # 将宿主机的文件或目录挂载到容器中（HOST:CONTAINER）
       - /home/mysql/conf:/etc/mysql/conf.d
-      - /home/mysql/log:/var/log/mysql
       - /home/mysql/data:/var/lib/mysql
+      - /home/mysql/log:/var/log/mysql
     environment: # 配置环境变量
       - MYSQL_ROOT_PASSWORD=123456
     networks: # 非必须，配置容器连接的网络，引用顶级 networks 下的条目

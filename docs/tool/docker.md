@@ -261,20 +261,15 @@ docker run -di --name nacos -p 8848:8848 --env MODE=standalone nacos/nacos-serve
 
 ```bash
 docker pull nginx:1.20.1
-# 先创建并运行一次容器（为了拷贝配置文件）
-docker run -di --name nginx -p 80:80 nginx:1.20.1
+mkdir -p /home/nginx/conf /home/nginx/html /home/nginx/logs
+# 先将对应版本默认的配置文件 nginx.conf 上传到 /home/nginx/conf，官网下载地址：http://nginx.org/en/download.html
+# 修改配置文件
+# vi /home/nginx/conf/nginx.conf
 
-mkdir -p /home/nginx
-# 将容器内的配置文件拷贝到指定目录
-docker cp nginx:/etc/nginx /home/nginx/conf
+docker run -di --name nginx -p 80:80 -v /home/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/html:/usr/share/nginx/html -v /home/nginx/logs:/var/log/nginx nginx:1.20.1
 
-# 关闭并删除容器
-docker stop nginx
-docker rm nginx
-
-# 重新创建并运行容器
-# -v /home/nginx/html:/usr/share/nginx/html -v /home/nginx/logs:/var/log/nginx
-docker run -di --name nginx -p 80:80 -v /home/nginx/conf:/etc/nginx nginx:1.20.1
+# 进入 Nginx 容器
+docker exec -it nginx /bin/bash
 ```
 
 ### MySQL
@@ -282,10 +277,9 @@ docker run -di --name nginx -p 80:80 -v /home/nginx/conf:/etc/nginx nginx:1.20.1
 ```bash
 # 这里默认拉取当前 5.7 的最新版本
 docker pull mysql:5.7
-mkdir -p /home/mysql/conf /home/mysql/log /home/mysql/data
-# -v /home/mysql/conf:/etc/mysql
+mkdir -p /home/mysql/conf /home/mysql/data /home/mysql/log
 # -e 设置参数
-docker run -di --name mysql -p 3306:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/log:/var/log/mysql -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7
+docker run -di --name mysql -p 3306:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -v /home/mysql/log:/var/log/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.7
 
 # 进入 MySQL 容器
 docker exec -it mysql /bin/bash
@@ -295,11 +289,17 @@ docker exec -it mysql /bin/bash
 
 ```bash
 docker pull redis:6.2.6
-# -v /home/redis/data:/data
-docker run -di --name redis -p 6379:6379 redis:6.2.6
+mkdir -p /home/redis/data
+# 先将对应版本默认的配置文件 redis.conf 上传到 /home/redis，官网下载地址：https://download.redis.io/releases/
+# 修改配置文件，如：设置密码等
+# vi /home/redis/redis.conf
+
+docker run -di --name redis -p 6379:6379 -v /home/redis/redis.conf:/etc/redis/redis.conf -v /home/redis/data:/data redis:6.2.6 redis-server /etc/redis/redis.conf --appendonly yes
 
 # 进入 Redis 容器，并使用 redis-cli 命令进行连接
+# docker exec -it redis /bin/bash
 docker exec -it redis redis-cli
+# docker exec -it redis redis-cli -a 123456
 ```
 
 ### RabbitMQ
