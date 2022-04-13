@@ -57,6 +57,9 @@ http {
     # keepalive_timeout  0;
     keepalive_timeout  120;
 
+    proxy_headers_hash_max_size 51200;
+    proxy_headers_hash_bucket_size 6400;
+
     client_header_buffer_size 512k;
     large_client_header_buffers 4 512k;
     client_max_body_size 10m;
@@ -84,7 +87,7 @@ http {
     # error_page  500 502 503 504  /50x.html;
 
     # upstream 负载均衡器 1 设置，用来处理普通请求。
-    upstream tomcat_test {
+    upstream test-api {
         server 127.0.0.1:8080 weight=1;
         server 127.0.0.1:8081 weight=1;
 	
@@ -122,12 +125,12 @@ http {
     }
 
     # upstream 负载均衡器2设置，主要用来处理文件的上传和下载，可以理解为一个文件服务器，所有文件相关的上传和下载都通过这组服务器。
-    upstream tomcat_test_static {
+    upstream test-static {
         server 127.0.0.1:8082 weight=1;
     }
 
     # server 虚拟主机设置，可以设置多个：基于 IP 的虚拟主机，基于域名的虚拟主机
-    # 虚拟主机-基于域名，反向代理 tomcat_test 和 tomcat_test_static 这两组服务器
+    # 虚拟主机-基于域名，反向代理 tomcat_test 和 test-static 这两组服务器
     server {
         # 监听的端口
         listen       80;
@@ -151,9 +154,10 @@ http {
 
         # location settings，可以用在 server 节点中。
         # 静态资源服务器 location，正则匹配，~为区分大小写，~*为不区分大小写
-        location ~*/(test/static|mystatic)/ {
+        location / {
+        # location /(test/static|mystatic)/ {
             # 方法1
-	        # proxy_pass http://tomcat_test_static;
+	        # proxy_pass http://test-static;
 	        # 方法2：指定相对路径，相对 nginx 安装目录下的 mydata 为根目录
             # 如 http://127.0.0.1/test/static/common/images/1.png 会映射到 nginx 安装目录 /mydata/test/static/common/images/1.png
             root mydata;
@@ -166,15 +170,19 @@ http {
         }
 
         # 普通服务器 location
-        location / {
+        location /test-api/ {
             # 请求转发的地址，/ 表示拦截到所有的请求
-	        proxy_pass http://tomcat_test;
+	        proxy_pass http://test-api;
 	        # 设置当发生重定向请求时，nginx 自动修正响应头数据（默认是 Tomcat 返回重定向，此时重定向的地址是 Tomcat 的地址，我们需要将之修改    使之成为 Nginx 的地址）
 	        proxy_redirect default;
 	        # 变量 $host 等于客户端请求头中的 Host 值。
             proxy_set_header Host $host;
             # 后端的 web 服务器可以通过 X-Forwarded-For 获取真实的IP地址， $remote_addr 客户端的 ip 地址
             proxy_set_header X-Forwarded-For $remote_addr;
+
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Remote_addr $remote_addr;
             
             # HTTP 代理模块 proxy，主要是用来转发请求到其他服务器
             # 如果后端服务器返回 502，504，执行超时等错误，自动将请求转发到 upstream 负载均衡池中的另一台服务器，实现 failover 。
@@ -183,24 +191,22 @@ http {
 
         # image expires settings
         # expires 属于 http Header 模块，主要用来 Nginx 返回给用户网页添加附件的 header 信息，可以在 http,server,location 中使用
-        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-        {
-            expires 30d;
-        }
+        # location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$ {
+        #    expires 30d;
+        # }
 
         # js/css/html expires settings
         # expires 属于 http Header 模块，主要用来 Nginx 返回给用户网页添加附件的 header 信息，可以在 http,server,location 中使用
-        location ~ .*\.(js|css|html)?$
-        {
-            expires 2h;
-        }
+        # location ~ .*\.(js|css|html)?$ {
+        #    expires 2h;
+        # }
 
         # 如果 http 模块设置了，则继承。此处设置了则覆盖。
-        # error_page  404              /404.html;
-        # error_page  500 502 503 504  /50x.html;
-        #location = /50x.html {
-        #    root   html;
-        #}
+        error_page  404              /404.html;
+        error_page  500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
     }
 }
 ```

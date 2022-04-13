@@ -61,6 +61,8 @@ cd /usr/local/nginx-1.16.1
 # --add-module=/usr/local/nginx-upstream-fair-master \
 # --add-module=/usr/local/nginx_upstream_check_module-master
 
+编译时可能会提示缺少第三方库，更多问题参考 `Nginx 常见问题` 这篇文章。
+
 # 创建上述相关目录
 mkdir -p /usr/local/nginx/{logs,temp}
 

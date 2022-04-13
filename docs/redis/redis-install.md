@@ -106,8 +106,9 @@ redis-cli
 # PONG
 ```
 
-如果在 `redis.conf` 配置文件配置了密码 `requirepass 123456` ，则可通过 `redis-cli -a 123456` 连接。
+如果在 `redis.conf` 配置文件配置了密码 `requirepass 123456` ，则可通过 `redis-cli -a 123456` 连接，或者用 `redis-cli` 连接之后再用 `auth 123456` 完成认证。
 
+如果需要除本机外其他网格也能连接，则需要在配置文件中将 `bind 127.0.0.1` 注释掉。
 ---
 
 也可以使用可视化工具来连接 Redis ，比如：`Redis Desktop Manager` 。
