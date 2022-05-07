@@ -1,0 +1,4 @@
+- 表和字段的注释：
+  - @org.hibernate.annotations.Table(appliesTo = "demo_simple", comment = "简单示例")
+  - @Column(columnDefinition = "int(10) default 0 comment '滑动条'")
+- 联表查询：EruptDao

@@ -41,8 +41,7 @@ cd /usr/local
 wget http://download.redis.io/releases/redis-5.0.8.tar.gz
 tar -zxvf redis-5.0.8.tar.gz
 cd redis-5.0.8/
-make
-make install
+make && make install
 ```
 
 ### 2.2 使用 Docker 安装

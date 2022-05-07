@@ -1,0 +1,114 @@
+pig
+├── pig-ui -- 前端工程[8080]
+├── pig-auth -- 授权服务提供[3000]
+└── pig-common -- 系统公共模块
+     ├── pig-common-bom -- 全局依赖管理控制
+     ├── pig-common-core -- 公共工具类核心包
+     ├── pig-common-datasource -- 动态数据源包
+     ├── pig-common-job -- xxl-job 封装
+     ├── pig-common-log -- 日志服务
+     ├── pig-common-mybatis -- mybatis 扩展封装
+     ├── pig-common-security -- 安全工具类
+     ├── pig-common-swagger -- 接口文档
+     ├── pig-common-feign -- feign 扩展封装
+     └── pig-common-test -- oauth2.0 单元测试扩展封装
+├── pig-register -- Nacos Server[8848]
+├── pig-gateway -- Spring Cloud Gateway网关[9999]
+└── pig-upms -- 通用用户权限管理模块
+     └── pig-upms-api -- 通用用户权限管理系统公共api模块
+     └── pig-upms-biz -- 通用用户权限管理系统业务处理模块[4000]
+└── pig-visual
+     └── pig-monitor -- 服务监控 [5001]
+     ├── pig-codegen -- 图形化代码生成 [5002]
+     ├── pig-sentinel-dashboard -- 流量高可用 [5003]
+     └── pig-xxl-job-admin -- 分布式定时任务管理台 [5004]
+
+
+========================================================
+
+
+PIGX
+├── PIGX-ui -- 前端工程[8080]
+├── PIGX-auth -- 授权服务提供[3000]
+├── PIGX-common -- 系统公共模块
+├    ├── PIGX-common-bom -- 公共依赖版本
+├    ├── PIGX-common-core -- 公共工具类核心包
+├    ├── PIGX-common-data -- 数据相关
+├    ├── PIGX-common-datasource -- 动态数据源相关
+├    ├── PIGX-common-feign -- feign 通用封装
+├    ├── PIGX-common-gateway -- 动态路由定义
+├    ├── PIGX-common-gray -- 灰度路由控制封装
+├    ├── PIGX-common-job -- 定时任务
+├    ├── PIGX-common-log -- 日志服务
+├    ├── PIGX-common-oss -- 通用文件系统
+├    ├── PIGX-common-security -- 安全工具类
+├    ├── PIGX-common-sentinel -- sentinel分装
+├    ├── PIGX-common-sequence -- 全局发号器
+├    ├── PIGX-common-swagger -- Swagger Api文档生成
+├    ├── PIGX-common-test -- oauth 2.0 单元测试方案
+├    ├── PIGX-common-xss  -- xss 安全过滤组件
+├    └── PIGX-common-transaction -- 分布式事务工具包
+├── PIGX-register -- 注册中心、配置中心[8848]
+├── PIGX-gateway -- Spring Cloud Gateway网关[9999]
+├── PIGX-upms -- 通用用户权限管理模块
+├    └── PIGX-upms-api -- 通用用户权限管理系统公共api模块
+├    └── PIGX-upms-biz -- 通用用户权限管理系统业务处理模块[4000]
+└── PIGX-visual  -- 图形化模块
+├    ├── PIGX-monitor -- Spring Boot Admin监控 [5001]
+├    ├── PIGX-daemon-elastic-job -- 分布式调度中心[elastic-job 版本]
+├    ├── PIGX-daemon-quartz -- 分布式调度中心[quartz]
+├    ├── PIGX-code-gen -- 图形化代码生成[5003]
+├    ├── PIGX-sso-client-demo -- sso 客户端接入示例
+├    ├── PIGX-tx-manager -- PIGX分布式事务解决方案[5004]
+├    ├── PIGX-bi-platform -- 报表在线设计模块[5006]
+├    ├── PIGX-oa-platform -- 工作流模块[5005]
+├    ├── PIGX-pay-platform -- 微信支付宝收单模块[5010]
+├    ├── PIGX-mp-platform -- 微信管理模块[6000]
+├    └── PIGX-sentinel-dashboard -- sentinel 控制台[5005]
+
+
+========================================================
+
+
+依赖关系：
+pig-common-security -> pig-common-core/pig-upms-api
+pig-gateway -> pig-common-core/pig-common-swagger
+pig-auth -> pig-upms-api/pig-common-security/pig-common-feign/pig-common-log
+pig-upms-api -> pig-common-core/pig-common-feign/pig-common-mybatis
+pig-upms-biz -> pig-upms-api/pig-common-security/pig-common-log/pig-common-mybatis/pig-common-swagger/pig-common-test
+
+
+核心功能：
+pig-gateway：
+  验证码过滤器ValidateCodeGatewayFilter（可通过ignore-clients参数配置某些client无需验证）
+  前端密码解密过滤器PasswordDecoderFilter
+pig-auth：
+  oauth内部token相关接口TokenEndpoint
+  token管理相关接口/登出接口PigTokenEndpoint
+  登录成功失败等个性化回调
+  通过security.oauth2.ignore.urls或@Inner（PermitAllUrlProperties会把这些请求自动加入urls）配置无需鉴权的请求，另外@Inner默认（value=true）仅用于内部服务之间的调用，因此推荐@Inner
+pig-upms-api：
+  通用实体类
+  通用远程调用接口
+  需要配置spring.factories
+
+
+开源版本待完善的功能（可参考ruoyi）：
+TODO 界面布局设置
+TODO 用户管理-导入导出、列表左侧部门树、分配角色
+TODO 菜单管理-菜单类型（目录、左菜单、顶菜单）
+TODO 角色管理-数据权限、分配用户
+TODO 部门管理-导入导出
+TODO 字典管理（导出、数据完善、刷新缓存）
+TODO 日志管理（登录日志、操作日志）
+TODO 岗位管理
+TODO 通知公告
+TODO 参数管理（刷新缓存）
+TODO 表单构建
+
+
+========================================================
+
+
+QA：
+- demo-biz启动报错：Client not connected,current status:STARTING。解决：服务端需要开放9848和9849端口
