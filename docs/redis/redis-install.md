@@ -90,6 +90,8 @@ daemonize yes
 cd /usr/local/redis-5.0.8
 
 redis-server redis.conf
+
+# 如果报命令找不到，则切换到 /usr/local/redis-5.0.8/src 目录下
 ```
 
 ## 4 连接
