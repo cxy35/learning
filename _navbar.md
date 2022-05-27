@@ -8,7 +8,6 @@
 * 个人站点
 
   * [独立站点](https://www.cxy35.com)
-  * [独立站点2](https://www.xuxianfang.com)
   * [CSDN](https://blog.csdn.net/cxy35)
   * [OSCHINA](https://my.oschina.net/cxy35)
   * [GitHub](https://github.com/cxy35)
