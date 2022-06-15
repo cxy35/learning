@@ -32,7 +32,7 @@ mv jdk1.8.0_321 jdk
 # 在文件末尾添加下面内容并保存成功
 JAVA_HOME=/usr/local/mydata/soft/jdk
 PATH=$PATH:$JAVA_HOME/bin
-CLASSPATH=$:CLASSPATH:$JAVA_HOME/lib/
+CLASSPATH=$CLASSPATH:$JAVA_HOME/lib
 export JAVA_HOME PATH CLASSPATH
 ```
 
