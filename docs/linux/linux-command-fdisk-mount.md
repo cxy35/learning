@@ -96,8 +96,8 @@ Command (m for help): w 注：保存退出，q 不保存退出
 
 ```bash
 # 分区格式化
-# mkfs - 支持 ext2、ext3（日志）、vfat、msdos、jfs、reiserfs 等
-mkfs.ext3 /dev/xvdf1
+# mkfs - 支持 ext2、ext3、ext4、vfat、msdos、jfs、reiserfs 等
+mkfs.ext4 /dev/xvdf1
 
 # 分区挂载
 # mount 挂载设备 挂载点
@@ -108,12 +108,11 @@ Filesystem     Type   Size  Used Avail Use% Mounted on
 /dev/xvda3     ext4    16G  4.5G   11G  30% /
 tmpfs          tmpfs   32G   80K   32G   1% /dev/shm
 /dev/xvda1     ext4   194M   46M  139M  25% /boot
-/dev/xvde1     ext3    99G   40G   55G  43% /usr/local/mysqldata
-/dev/xvdf1     ext3    53G  976M   50G   2% /usr/local/mydata
+/dev/xvdf1     ext4    53G  976M   50G   2% /usr/local/mydata
 
 # 将挂载点写入注册表，系统启动后自动挂载
 vi /etc/fstab
-新增一行：/dev/xvdf1(分区) /usr/local/mydata(挂载点) ext3(类型) defaults 0 0
+新增一行：/dev/xvdf1 /usr/local/mydata ext4 defaults 0 0
 
 # 分区取消挂载
 umount /dev/xvdf1

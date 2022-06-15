@@ -1,12 +1,12 @@
-手把手带你在 Linux 上安装 Nginx-1.16.1 。
+手把手带你在 Linux 上安装 Nginx-1.22.0 。
 <!-- more -->
 
 ## 1 准备工作
 
 ### 1.1 下载安装包
 
-- Nginx 下载地址：[http://nginx.org/en/download.html](http://nginx.org/en/download.html)
-- 下载当前稳定版本 Stable version ，如：`nginx-1.16.1.tar.gz`
+- 访问 [http://nginx.org/en/download.html](http://nginx.org/en/download.html) 下载对应**稳定版（Stable version）**的安装包，如：`nginx-1.22.0.tar.gz`。
+- 上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 
 ### 1.2 安装编译工具及库文件
 
@@ -21,35 +21,36 @@
 yum -y install gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel make libtool
 ```
 
-## 2 安装 Nginx
+## 2 安装
 
-- 上传 `nginx-1.16.1.tar.gz` 或通过 `wget http://nginx.org/download/nginx-1.16.1.tar.gz` 在线下载。
-- 解压到 `/usr/local` 目录下。
+### 2.1 解压
 
 ```bash
-tar -xzvf nginx-1.16.1.tar.gz -C /usr/local
+# 其中 nginx-1.22.0.tar.gz 换成实际的名称
+cd /usr/local/mydata/temp
+tar -xvzf nginx-1.22.0.tar.gz
 ```
 
-- 编译安装
+### 2.2 编译安装
 
 ```bash
-# 进入 nginx-1.16.1 目录
-cd /usr/local/nginx-1.16.1
+# 进入 nginx-1.22.0 目录
+cd /usr/local/mydata/temp/nginx-1.22.0
 
 # 执行 cofigure 命令创建一个 makeFile 文件，如果没有，编译的时候会报错
 # \ 表示命令还没有输入完，换行的意思
-# --prefix=/usr/local/nginx 指定 Nginx 安装目录
+# --prefix=/usr/local/mydata/soft/nginx 指定 Nginx 安装目录
 ./configure \
---prefix=/usr/local/nginx \
---error-log-path=/usr/local/nginx/logs/error.log \
---http-log-path=/usr/local/nginx/logs/access.log \
---pid-path=/usr/local/nginx/logs/nginx.pid \
---lock-path=/usr/local/nginx/logs/nginx.lock \
---http-client-body-temp-path=/usr/local/nginx/temp/client-body \
---http-proxy-temp-path=/usr/local/nginx/temp/proxy \
---http-fastcgi-temp-path=/usr/local/nginx/temp/fastcgi \
---http-uwsgi-temp-path=/usr/local/nginx/temp/uwsgi \
---http-scgi-temp-path=/usr/local/nginx/temp/scgi \
+--prefix=/usr/local/mydata/soft/nginx \
+--error-log-path=/usr/local/mydata/soft/nginx/logs/error.log \
+--http-log-path=/usr/local/mydata/soft/nginx/logs/access.log \
+--pid-path=/usr/local/mydata/soft/nginx/logs/nginx.pid \
+--lock-path=/usr/local/mydata/soft/nginx/logs/nginx.lock \
+--http-client-body-temp-path=/usr/local/mydata/soft/nginx/temp/client-body \
+--http-proxy-temp-path=/usr/local/mydata/soft/nginx/temp/proxy \
+--http-fastcgi-temp-path=/usr/local/mydata/soft/nginx/temp/fastcgi \
+--http-uwsgi-temp-path=/usr/local/mydata/soft/nginx/temp/uwsgi \
+--http-scgi-temp-path=/usr/local/mydata/soft/nginx/temp/scgi \
 --with-http_stub_status_module \
 --with-http_ssl_module \
 --with-http_gzip_static_module \
@@ -58,67 +59,143 @@ cd /usr/local/nginx-1.16.1
 
 # 增加第三方模块（需要提前准备模块源码，供编译时用）
 # \
-# --add-module=/usr/local/nginx-upstream-fair-master \
-# --add-module=/usr/local/nginx_upstream_check_module-master
+# --add-module=/usr/local/mydata/soft/nginx/nginx-upstream-fair-master \
+# --add-module=/usr/local/mydata/soft/nginx/nginx_upstream_check_module-master
 
 编译时可能会提示缺少第三方库，更多问题参考 `Nginx 常见问题` 这篇文章。
 
 # 创建上述相关目录
-mkdir -p /usr/local/nginx/{logs,temp}
+mkdir -p /usr/local/mydata/soft/nginx/{logs,temp}
 
 # 编译安装
 make && make install
 
-# 执行完成之后，在 Nginx 安装目录下( /usr/local/nginx )多个几个目录：conf/html/sbin
+# 执行完成之后，在 Nginx 安装目录下( /usr/local/mydata/soft/nginx )多个几个目录：conf/html/logs/sbin/temp
 
 # 切换到 Nginx 安装目录
-cd /usr/local/nginx
+cd /usr/local/mydata/soft/nginx
 
 # 查看 Nginx 版本
-/usr/local/nginx/sbin/nginx -v
-# nginx version: nginx/1.16.1
+/usr/local/mydata/soft/nginx/sbin/nginx -v
+# nginx version: nginx/1.22.0
+
+# 删除临时文件
+rm -rf /usr/local/mydata/temp/nginx-1.22.0
 
 # 查看 Nginx 安装时的配置参数
-/usr/local/nginx/sbin/nginx -V
-# configure arguments: --prefix=/usr/local/nginx --error-log-path=/usr/local/nginx/logs/error.log --http-log-path=/usr/local/nginx/logs/access.log --pid-path=/usr/local/nginx/logs/nginx.pid --lock-path=/usr/local/nginx/logs/nginx.lock --http-client-body-temp-path=/usr/local/nginx/temp/client-body --http-proxy-temp-path=/usr/local/nginx/temp/proxy --http-fastcgi-temp-path=/usr/local/nginx/temp/fastcgi --http-uwsgi-temp-path=/usr/local/nginx/temp/uwsgi --http-scgi-temp-path=/usr/local/nginx/temp/scgi --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-file-aio --with-http_realip_module
+/usr/local/mydata/soft/nginx/sbin/nginx -V
+# configure arguments: --prefix=/usr/local/mydata/soft/nginx --error-log-path=/usr/local/mydata/soft/nginx/logs/error.log --http-log-path=/usr/local/mydata/soft/nginx/logs/access.log --pid-path=/usr/local/mydata/soft/nginx/logs/nginx.pid --lock-path=/usr/local/mydata/soft/nginx/logs/nginx.lock --http-client-body-temp-path=/usr/local/mydata/soft/nginx/temp/client-body --http-proxy-temp-path=/usr/local/mydata/soft/nginx/temp/proxy --http-fastcgi-temp-path=/usr/local/mydata/soft/nginx/temp/fastcgi --http-uwsgi-temp-path=/usr/local/mydata/soft/nginx/temp/uwsgi --http-scgi-temp-path=/usr/local/mydata/soft/nginx/temp/scgi --with-http_stub_status_module --with-http_ssl_module --with-http_gzip_static_module --with-file-aio --with-http_realip_module
 
 # 启动
-/usr/local/nginx/sbin/nginx
+/usr/local/mydata/soft/nginx/sbin/nginx
 
 # 检查是否启动
 ps -ef|grep nginx
-# root     26063     1  0 14:14 ?        00:00:00 nginx: master process /usr/local/nginx/sbin/nginx
+# root     26063     1  0 14:14 ?        00:00:00 nginx: master process /usr/local/mydata/soft/nginx/sbin/nginx
 # nobody   26064 26063  0 14:14 ?        00:00:00 nginx: worker process      
 # root     26066 22818  0 14:15 pts/1    00:00:00 grep nginx
 
 # 关闭
-/usr/local/nginx/sbin/nginx -s stop
-# /usr/local/nginx/sbin/nginx -s quit
+/usr/local/mydata/soft/nginx/sbin/nginx -s stop
+# /usr/local/mydata/soft/nginx/sbin/nginx -s quit
 
 # 重启
-/usr/local/nginx/sbin/nginx -s reopen
+/usr/local/mydata/soft/nginx/sbin/nginx -s reopen
 
 # 重新载入配置文件 nginx.conf ，有失效的风险
-/usr/local/nginx/sbin/nginx -s reload
+/usr/local/mydata/soft/nginx/sbin/nginx -s reload
 
 # 检查配置文件 nginx.conf 的正确性
-/usr/local/nginx/sbin/nginx -t
+/usr/local/mydata/soft/nginx/sbin/nginx -t
 ```
 
 启动后，访问 http://127.0.0.1 验证，效果如下：
 
 ![](https://oscimg.oschina.net/oscnet/up-2817c8f57921388ed8b69729f77eff74a1f.png)
 
+如果无法访问，排查下防火墙端口是否开放。
 
 ## 3 配置 Nginx
 
-[Nginx 参数配置优化](https://mp.weixin.qq.com/s/wS-ly5O_xSJbVzJ24_yAKQ)
+```bash
+cp /usr/local/mydata/soft/nginx/conf/nginx.conf /usr/local/mydata/soft/nginx/conf/nginx.conf.bak
+echo '' > /usr/local/mydata/soft/nginx/conf/nginx.conf
+vi /usr/local/mydata/soft/nginx/conf/nginx.conf
+```
+
+新增如下配置：
 
 ```bash
-vi /usr/local/nginx/conf/nginx.conf
+user root;
+worker_processes  2;
 
-# ......
+events {
+    multi_accept on;
+    worker_connections  20480;
+}
+
+http {
+
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    keepalive_timeout  120;
+
+    proxy_headers_hash_max_size 51200;
+    proxy_headers_hash_bucket_size 6400;
+
+    client_header_buffer_size 512k;
+    large_client_header_buffers 4 512k;
+
+    gzip  on;
+
+    # upstream szzlApi {
+    #     server 127.0.0.1:9070 weight=1;
+    # }
+
+    server {
+        listen       80;
+        server_name  localhost-80;
+      
+        proxy_connect_timeout 300s;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+
+        if ($time_iso8601 ~ '(\d{4}-\d{2}-\d{2})') {
+            set $date_yyyy_MM_dd $1;
+        }
+
+        access_log off;
+        # access_log logs/access-$date_yyyy_MM_dd.log combined;
+
+        location / {
+            root   mydata;
+        }
+
+        location ~*/szzlApi/ {
+            proxy_pass http://127.0.0.1:9070;
+            # proxy_pass http://szzlApi;
+            proxy_set_header Host $host:$server_port;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Remote_addr $remote_addr;
+        }
+        
+        # redirect server error pages to the static page /50x.html
+        error_page   404              /404.html;
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+}
 ```
+
+执行：`/usr/local/mydata/soft/nginx/sbin/nginx -s reload` 重新加载，使配置生效。
+
 
 ---
 

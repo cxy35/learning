@@ -146,6 +146,7 @@
 
 * 工具
 
+  - [JDK 安装 - Linux](docs/tool/jdk-install-linux.md)
   - [IntelliJ IDEA 常用快捷键](docs/tool/idea-keymap.md)
   - [IntelliJ IDEA 常用配置](docs/tool/idea-settings.md)
   - [IntelliJ IDEA 常用插件](docs/tool/idea-plugins.md)
