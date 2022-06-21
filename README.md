@@ -205,6 +205,7 @@
 > 一些常用工具的使用教程。
 
 - [JDK 安装 - Linux](docs/tool/jdk-install-linux.md)
+- [Nacos 安装 - Linux](docs/tool/nacos-install-linux.md)
 - [IntelliJ IDEA 常用快捷键](docs/tool/idea-keymap.md)
 - [IntelliJ IDEA 常用配置](docs/tool/idea-settings.md)
 - [IntelliJ IDEA 常用插件](docs/tool/idea-plugins.md)

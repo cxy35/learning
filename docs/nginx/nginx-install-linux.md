@@ -1,4 +1,4 @@
-手把手带你在 Linux 上安装 Nginx-1.22.0 。
+手把手带你在 Linux 上安装 `Nginx` 。
 <!-- more -->
 
 ## 1 准备工作
@@ -34,7 +34,7 @@ tar -xvzf nginx-1.22.0.tar.gz
 ### 2.2 编译安装
 
 ```bash
-# 进入 nginx-1.22.0 目录
+# 进入 nginx-1.22.0 目录，其中 nginx-1.22.0 换成实际的名称
 cd /usr/local/mydata/temp/nginx-1.22.0
 
 # 执行 cofigure 命令创建一个 makeFile 文件，如果没有，编译的时候会报错
@@ -70,7 +70,7 @@ mkdir -p /usr/local/mydata/soft/nginx/{logs,temp}
 # 编译安装
 make && make install
 
-# 执行完成之后，在 Nginx 安装目录下( /usr/local/mydata/soft/nginx )多个几个目录：conf/html/logs/sbin/temp
+# 执行完成之后，在 Nginx 安装目录下( /usr/local/mydata/soft/nginx )多了几个目录：conf/html/logs/sbin/temp
 
 # 切换到 Nginx 安装目录
 cd /usr/local/mydata/soft/nginx
@@ -78,9 +78,6 @@ cd /usr/local/mydata/soft/nginx
 # 查看 Nginx 版本
 /usr/local/mydata/soft/nginx/sbin/nginx -v
 # nginx version: nginx/1.22.0
-
-# 删除临时文件
-rm -rf /usr/local/mydata/temp/nginx-1.22.0
 
 # 查看 Nginx 安装时的配置参数
 /usr/local/mydata/soft/nginx/sbin/nginx -V
@@ -94,6 +91,9 @@ ps -ef|grep nginx
 # root     26063     1  0 14:14 ?        00:00:00 nginx: master process /usr/local/mydata/soft/nginx/sbin/nginx
 # nobody   26064 26063  0 14:14 ?        00:00:00 nginx: worker process      
 # root     26066 22818  0 14:15 pts/1    00:00:00 grep nginx
+
+# 删除临时文件
+rm -rf /usr/local/mydata/temp/nginx-1.22.0
 
 # 关闭
 /usr/local/mydata/soft/nginx/sbin/nginx -s stop

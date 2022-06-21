@@ -75,7 +75,7 @@ Command (m for help): m
 　　p print the partition table 注：p 列出分区表；
 　　q quit without saving changes 注：q 不保存退出；
 　　s create a new empty Sun disklabel
-　　t change a partition's system id 注：t 改变分区类型；
+　　t change a partitions system id 注：t 改变分区类型；
 　　u change display/entry units
 　　v verify the partition table
 　　w write table to disk and exit 注：w 把分区表写入硬盘保存并退出；

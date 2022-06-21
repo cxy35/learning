@@ -1,4 +1,4 @@
-手把手带你使用多种姿势安装 Redis 。
+手把手带你使用多种姿势安装 `Redis` 。
 <!-- more -->
 
 ## 1 简介
@@ -32,16 +32,37 @@ Redis(Remote Dictionary Service) 是一个使用 ANSI C 编写的开源、支持
 
 ### 2.1 编译安装（推荐）
 
-```bash
-# 准备 gcc 环境
-yum install gcc-c++
+#### 2.1.1 下载安装包
 
-# 下载并安装
-cd /usr/local
-wget http://download.redis.io/releases/redis-5.0.8.tar.gz
-tar -zxvf redis-5.0.8.tar.gz
-cd redis-5.0.8/
-make && make install
+- 访问 [https://redis.io/download/](https://redis.io/download/) 下载对应**稳定版**的安装包，如：`redis-6.2.7.tar.gz`。
+- 上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
+
+#### 2.1.2 准备 gcc 环境
+
+```bash
+# 安装 gcc-c++
+yum install gcc-c++
+```
+
+#### 2.1.2 安装
+
+```bash
+# 解压
+# 其中 redis-6.2.7.tar.gz 换成实际的名称
+cd /usr/local/mydata/temp
+tar -xvzf redis-6.2.7.tar.gz
+
+# 进入 redis-6.2.7 目录，其中 redis-6.2.7 换成实际的名称
+cd /usr/local/mydata/temp/redis-6.2.7
+# 创建安装目录
+mkdir -p /usr/local/mydata/soft/redis
+# 编译安装，指定安装目录
+make
+make PREFIX=/usr/local/mydata/soft/redis install
+
+# 执行完成之后，在 Redis 安装目录下( /usr/local/mydata/soft/redis )多了 bin 目录
+# 拷贝配置文件
+cp /usr/local/mydata/temp/redis-6.2.7/redis.conf /usr/local/mydata/soft/redis
 ```
 
 ### 2.2 使用 Docker 安装
@@ -74,54 +95,62 @@ docker exec -it redis redis-cli -a 123456
 
 在线体验地址：[http://try.redis.io/](http://try.redis.io/) 
 
-## 3 启动
+## 3 配置
 
-首先，修改 `redis.conf` 配置文件，将里面的 `daemonize no` 改成 `daemonize yes`，让服务在后台启动：
+执行：`vi /usr/local/mydata/soft/redis/redis.conf` 打开配置文件，按需修改配置。
+
+- 服务后台启动
+
+将 `daemonize no` 改成 `daemonize yes` 。
+
+- 配置密码
+
+取消注释，并修改密码：`requirepass 123456` ，之后可用 `redis-cli` 连接之后再用 `auth 123456` 完成认证（推荐），或者通过 `redis-cli -a 123456` 直接连接。
+
+- 远程登录
+
+如果需要除本机外其他网格也能连接，则需要在配置文件中将 `bind 127.0.0.1` 注释掉。
+
+## 4 启动
+
+通过 `redis-server` 命令启动 `Redis` ，如下：
 
 ```bash
-vi /usr/local/redis-5.0.8/redis.conf
+# 切换到 Redis 安装目录
+cd /usr/local/mydata/soft/redis
 
-daemonize yes
+# 启动
+/usr/local/mydata/soft/redis/bin/redis-server /usr/local/mydata/soft/redis/redis.conf
+
+# 检查是否启动
+ps -ef|grep redis
+# root     17529     1  0 15:15 ?        00:00:00 /usr/local/mydata/soft/redis/bin/redis-server 127.0.0.1:6379
+# root     17540 26376  0 15:15 pts/0    00:00:00 grep --color=auto redis
+
+# 删除临时文件
+rm -rf /usr/local/mydata/temp/redis-6.2.7
 ```
 
-然后，通过 `redis-server redis.conf` 命令启动 Redis ，如下：
+启动成功之后，通过 `redis-cli` 命令进入到控制台，然后通过 `ping` 命令进行连通性测试，如果看到 `pong` ，表示连接成功了，如下：
 
 ```bash
-cd /usr/local/redis-5.0.8
-
-redis-server redis.conf
-
-# 如果报命令找不到，则切换到 /usr/local/redis-5.0.8/src 目录下
-```
-
-## 4 连接
-
-通过 `redis-cli` 命令进入到控制台，然后通过 `ping` 命令进行连通性测试，如果看到 `pong` ，表示连接成功了，如下：
-
-```bash
-cd /usr/local/redis-5.0.8
-
-redis-cli
+/usr/local/mydata/soft/redis/bin/redis-cli
 
 # 127.0.0.1:6379> ping
 # PONG
+# 127.0.0.1:6379> exit
+
+# 注意：如果在 `redis.conf` 配置文件配置了密码 `requirepass 123456` ，则可用 `redis-cli` 连接之后再用 `auth 123456` 完成认证（推荐），或者通过 `redis-cli -a 123456` 直接连接。
 ```
 
-如果在 `redis.conf` 配置文件配置了密码 `requirepass 123456` ，则可通过 `redis-cli -a 123456` 连接，或者用 `redis-cli` 连接之后再用 `auth 123456` 完成认证。
-
-如果需要除本机外其他网格也能连接，则需要在配置文件中将 `bind 127.0.0.1` 注释掉。
----
-
-也可以使用可视化工具来连接 Redis ，比如：`Redis Desktop Manager` 。
+另外，也可以使用可视化工具来连接 Redis ，比如：`Redis Desktop Manager` 。
 
 ## 5 关闭
 
-通过 `shutdown` 命令关闭 Redis ，如下：
+通过 `shutdown` 命令关闭 `Redis` ，如下：
 
 ```bash
-cd /usr/local/redis-5.0.8
-
-redis-cli
+/usr/local/mydata/soft/redis/bin/redis-cli
 
 # 127.0.0.1:6379> shutdown
 # not connected> exit
