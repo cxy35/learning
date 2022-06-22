@@ -8,7 +8,7 @@
 - 访问 [http://nginx.org/en/download.html](http://nginx.org/en/download.html) 下载对应**稳定版（Stable version）**的安装包，如：`nginx-1.22.0.tar.gz`。
 - 上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 
-### 1.2 安装编译工具及库文件
+### 1.2 安装相关依赖环境
 
 ```bash
 # 根据系统实际情况选择安装
@@ -115,7 +115,7 @@ rm -rf /usr/local/mydata/temp/nginx-1.22.0
 
 如果无法访问，排查下防火墙端口是否开放。
 
-## 3 配置 Nginx
+## 3 配置
 
 ```bash
 cp /usr/local/mydata/soft/nginx/conf/nginx.conf /usr/local/mydata/soft/nginx/conf/nginx.conf.bak

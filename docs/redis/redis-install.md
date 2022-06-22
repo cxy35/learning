@@ -37,7 +37,7 @@ Redis(Remote Dictionary Service) 是一个使用 ANSI C 编写的开源、支持
 - 访问 [https://redis.io/download/](https://redis.io/download/) 下载对应**稳定版**的安装包，如：`redis-6.2.7.tar.gz`。
 - 上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 
-#### 2.1.2 准备 gcc 环境
+#### 2.1.2 安装 gcc 环境
 
 ```bash
 # 安装 gcc-c++

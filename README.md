@@ -153,6 +153,7 @@
 - [如何保证消息的可靠性传输？或者说，如何处理消息丢失的问题？](docs/mq/mq-reliable-transmission.md)
 - [如何保证消息的顺序性？](docs/mq/mq-order.md)
 - [消息队列常见问题解答](docs/mq/mq-faq.md)
+- [RabbitMQ 安装 - Linux](docs/mq/rabbitmq-install-linux.md)
 - [RabbitMQ 详解](docs/mq/rabbitmq.md)
 
 
