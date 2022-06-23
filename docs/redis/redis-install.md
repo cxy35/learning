@@ -25,7 +25,7 @@ Redis(Remote Dictionary Service) 是一个使用 ANSI C 编写的开源、支持
  
 主要有 4 种方式获取 Redis ：
 
-1. 编译安装（推荐）。
+1. 编译安装（**推荐**）。
 2. 使用 Docker 安装。
 3. 直接安装。
 4. 在线体验。

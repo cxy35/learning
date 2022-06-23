@@ -6,7 +6,7 @@
 ### 1.1 依赖软件和版本说明
 
 - `RabbitMQ` 需要 `Erlang` 和 `Socat` 环境，`RabbitMQ` 版本和 `Erlang` 版本兼容性关系可参考 [https://www.rabbitmq.com/which-erlang.html](https://www.rabbitmq.com/which-erlang.html) 。
-- **特别注意操作系统版本**：`CentOS 6.x` 对应 `el6` 的安装包版本，`CentOS 7.x` 对应 `el7` 的安装包版本，`CentOS 8.x` 对应 `el8` 的安装包版本。
+- **特别注意操作系统版本**，可以执行 `cat /etc/centos-release` 查看，`CentOS 6.x` 对应 `el6` 的安装包版本，`CentOS 7.x` 对应 `el7` 的安装包版本，`CentOS 8.x` 对应 `el8` 的安装包版本。
 
 ### 1.2 下载安装包
 
@@ -117,7 +117,7 @@ systemctl status rabbitmq-server
 systemctl enable rabbitmq-server
 ```
 
-启动成功后，访问 [http://127.0.0.1:15672/](http://127.0.0.1:15672/)，可以看到登录页面，如果无法访问，排查下防火墙端口是否开放。。
+启动成功后，访问 [http://127.0.0.1:15672/](http://127.0.0.1:15672/)，可以看到登录页面，如果无法访问，排查下防火墙端口是否开放。
 
 ## 5 卸载
 
@@ -149,6 +149,7 @@ find / -name erlang
 find / -name socat
 rm -rf /run/rabbitmq /etc/rabbitmq /var/lib/rabbitmq /var/log/rabbitmq /usr/lib/rabbitmq /usr/lib64/erlang /usr/share/java/erlang /usr/bin/socat
 ```
+
 
 ---
 

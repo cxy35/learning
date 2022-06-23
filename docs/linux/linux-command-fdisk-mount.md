@@ -104,20 +104,23 @@ mkfs.ext4 /dev/xvdf1
 mkdir /usr/local/mydata
 mount /dev/xvdf1 /usr/local/mydata
 df -hT
-Filesystem     Type   Size  Used Avail Use% Mounted on
-/dev/xvda3     ext4    16G  4.5G   11G  30% /
-tmpfs          tmpfs   32G   80K   32G   1% /dev/shm
-/dev/xvda1     ext4   194M   46M  139M  25% /boot
-/dev/xvdf1     ext4    53G  976M   50G   2% /usr/local/mydata
+# Filesystem     Type   Size  Used Avail Use% Mounted on
+# /dev/xvda3     ext4    16G  4.5G   11G  30% /
+# tmpfs          tmpfs   32G   80K   32G   1% /dev/shm
+# /dev/xvda1     ext4   194M   46M  139M  25% /boot
+# /dev/xvdf1     ext4    53G  976M   50G   2% /usr/local/mydata
+
+# 初始化默认目录
+mkdir -p /usr/local/mydata/{backup,project,soft,temp}
 
 # 将挂载点写入注册表，系统启动后自动挂载
 vi /etc/fstab
 新增一行：/dev/xvdf1 /usr/local/mydata ext4 defaults 0 0
 
 # 分区取消挂载
-umount /dev/xvdf1
+# umount /dev/xvdf1
 # 或
-umount /usr/local/mydata
+# umount /usr/local/mydata
 ```
 
 

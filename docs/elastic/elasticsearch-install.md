@@ -1,21 +1,21 @@
-手把手带你安装 Elasticsearch。
+手把手带你安装 `Elasticsearch` 。
 <!-- more -->
 
 ## 1 准备工作
 
-从 [https://www.elastic.co/cn/downloads/elasticsearch](https://www.elastic.co/cn/downloads/elasticsearch) 中下载最新稳定版本的安装文件，如：`https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.1-linux-x86_64.tar.gz`，历史版本可以访问：[https://www.elastic.co/downloads/past-releases](https://www.elastic.co/downloads/past-releases)。如果是在 `Linux` 下安装，可以直接使用 `wget` 命令。
-
-![](https://oscimg.oschina.net/oscnet/up-174e727756aeeaea0beef15f93c93a2bac6.png)
-
-另外，如果想要更快速的下载（但版本不一定是最新的），可以访问：[https://elasticsearch.cn/download/](https://elasticsearch.cn/download/)，里面包含 `Elastic` 技术栈所需所有安装文件的下载。
+- 访问 [https://www.elastic.co/cn/downloads/elasticsearch](https://www.elastic.co/cn/downloads/elasticsearch) 下载对应**稳定版**的安装包，如：`elasticsearch-7.17.0-linux-x86_64.tar.gz`。如果速度慢，也可以访问 [https://elasticsearch.cn/download/](https://elasticsearch.cn/download/)，里面包含 `Elastic` 技术栈所需所有安装文件的下载。
+- 其他下载（非必须）：可视化：`kibana-7.17.0-linux-x86_64.tar.gz`；中文分词器：`elasticsearch-analysis-ik-7.17.0.zip` 等。注意：版本号建议与 `Elasticsearch` 保持一致。
+- 上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 
 ## 2 安装
 
 ```bash
-cd /usr/local/elastic
-wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.13.1-linux-x86_64.tar.gz
-tar -xvzf elasticsearch-7.13.1-linux-x86_64.tar.gz
-cd elasticsearch-7.13.1
+# 其中 elasticsearch-7.17.0-linux-x86_64.tar.gz 换成实际的名称
+cd /usr/local/mydata/temp
+# wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.17.0-linux-x86_64.tar.gz
+tar -xzvf elasticsearch-7.17.0-linux-x86_64.tar.gz -C /usr/local/mydata/soft
+cd /usr/local/mydata/soft
+mv elasticsearch-7.17.0 elasticsearch
 ```
 
 ---
@@ -33,29 +33,33 @@ cd elasticsearch-7.13.1
 |repo|共享文件系统存储库位置。可以容纳多个位置。文件系统存储库可以放在此处指定的任何目录的任何子目录中。|没有配置|path.repo|
 |script|脚本文件的位置|$ES_HOME/scripts|path.scripts|
 
-默认情况下，所有文件和目录都包含在 $ES_HOME 中 - 解压缩归档时创建的目录。但是，建议更改 config 目录，数据目录和 logs 目录的默认位置，以便以后不删除重要数据。
-
 ## 3 配置
 
-修改配置文件 `./config/elasticsearch.yml`，常用配置如下：
+```bash
+cd /usr/local/mydata/soft/elasticsearch
+# 备份配置文件
+cp ./config/elasticsearch.yml ./config/elasticsearch.yml.bak
+# 修改配置文件，如下：
+vi ./config/elasticsearch.yml
+```
 
 ```yml
-#配置集群名称，默认elasticsearch
+# 配置集群名称，默认 elasticsearch
 #cluster.name: my-application
 
-#配置数据目录
+# 配置数据目录，默认 $ES_HOME/data
 #path.data: /path/to/data
 
-#配置日志目录
+# 配置日志目录，默认 $ES_HOME/logs
 #path.logs: /path/to/logs
 
-#配置允许访问的IP地址，默认只允许本机访问
+# 配置允许访问的 IP 地址，默认只允许本机访问，这里放开注释并修改
 network.host: 0.0.0.0
 
-#配置端口，默认9200
+# 配置端口，默认 9200
 #http.port: 9200
 
-discovery.seed_hosts: ["host1"]
+discovery.seed_hosts: ["localhost"]
 ```
 
 另外，也可以在启动时配置 Elasticsearch，见下文。
@@ -67,46 +71,45 @@ discovery.seed_hosts: ["host1"]
 ```bash
 groupadd elastic
 useradd elastic -g elastic
-#passwd es
+# passwd es
 
-cd /usr/local/elastic
-chown -R elastic:elastic elasticsearch-7.13.1
+# 修改目录权限
+chown -R elastic:elastic /usr/local/mydata/soft/elasticsearch
 
+# 切换用户
 su elastic
 ```
 
 ```bash
-cd /usr/local/elastic/elasticsearch-7.13.1
-
-#前台运行
+cd /usr/local/mydata/soft/elasticsearch
+# 前台运行
 # ./bin/elasticsearch
-
-#后台运行
+# 后台运行
 nohup ./bin/elasticsearch &
 
-#启动时指定 JVM 的内存大小
+# 启动时指定 JVM 的内存大小
 # ES_JAVA_OPTS="-Xms512m -Xmx512m" ./bin/elasticsearch
 ```
 
 ---
 
-浏览器访问 [http://localhost:9200](http://localhost:9200) 验证是否启动成功。
+浏览器访问 [http://localhost:9200](http://localhost:9200) 验证是否启动成功。如果无法访问，排查下防火墙端口是否开放。
 
 或者通过命令验证：`curl 'http://localhost:9200'`。
 
 ```
 {
-  "name" : "myname",
+  "name" : "localhost.localdomain",
   "cluster_name" : "elasticsearch",
-  "cluster_uuid" : "NnoeViFTRMy8vBEyiFHfZg",
+  "cluster_uuid" : "_na_",
   "version" : {
-    "number" : "7.13.1",
+    "number" : "7.17.0",
     "build_flavor" : "default",
     "build_type" : "tar",
-    "build_hash" : "9a7758028e4ea59bcab41c12004603c5a7dd84a9",
-    "build_date" : "2021-05-28T17:40:59.346932922Z",
+    "build_hash" : "bee86328705acaa9a6daede7140defd4d9ec56bd",
+    "build_date" : "2022-01-28T08:36:04.875279988Z",
     "build_snapshot" : false,
-    "lucene_version" : "8.8.2",
+    "lucene_version" : "8.11.1",
     "minimum_wire_compatibility_version" : "6.8.0",
     "minimum_index_compatibility_version" : "6.0.0-beta1"
   },
@@ -116,17 +119,18 @@ nohup ./bin/elasticsearch &
 
 ---
 
-默认情况下，`Elasticsearch` 从 `$ES_HOME/config/elasticsearch.yml` 文件加载其配置。也可以在命令行中使用 `-E` 语法指定可在配置文件中指定的任何配置。这种情况特别适合同样一个 Elasticsearch 的安装运行多个 Elasticsearch 的实例，这样我们可以轻松建立 replica。
+默认情况下，`Elasticsearch` 从 `$ES_HOME/config/elasticsearch.yml` 文件加载其配置。也可以在命令行中使用 `-E` 语法指定可在配置文件中指定的任何配置。这种情况特别适合同样一个 Elasticsearch 的安装运行多个 Elasticsearch 的实例，这样我们可以轻松建立 replica 。
 
 ```bash
-#启动时指定数据目录
-# ./bin/elasticsearch -E path.data=/data/elasticsearch
+cd /usr/local/mydata/soft/elasticsearch
+# 启动时指定数据目录
+# ./bin/elasticsearch -E path.data=/path/to/data
 
-#启动时指定 node 名字，默认为 elasticsearch
-# ./bin/elasticsearch -E node.name=mynodename
+# 启动时指定 node 名字，默认为 elasticsearch
+# ./bin/elasticsearch -E node.name=node-1
 
-#启动时同时指定多个参数
-# ./bin/elasticsearch -d -E cluster.name=my_cluster -E node.name=node_1 -E http.host="localhost","mac"
+# 启动时同时指定多个参数
+# ./bin/elasticsearch -d -E cluster.name=my-application -E node.name=node-1 -E http.host="localhost","mac"
 ```
 
 提示：通常，应将任何群集范围的设置（如：`cluster.name`）添加到 `elasticsearch.yml` 配置文件中，而可以在命令行上指定任何特定于节点的设置（如：`node.name`）。
@@ -140,7 +144,11 @@ kill -9 xxx
 
 ## 6 启用安全认证
 
-修改配置文件 `./config/elasticsearch.yml`，在最后面增加如下配置：
+```bash
+cd /usr/local/mydata/soft/elasticsearch
+# 修改配置文件，在最后面增加如下配置：
+vi ./config/elasticsearch.yml
+```
 
 ```yml
 discovery.type: single-node
@@ -153,8 +161,7 @@ xpack.security.transport.ssl.enabled: true
 关闭并重新启动 Elasticsearch，之后执行命令，分别为每个内置用户手动设置密码：
 
 ```bash
-cd /usr/local/elastic/elasticsearch-7.13.1
-
+cd /usr/local/mydata/soft/elasticsearch
 ./bin/elasticsearch-setup-passwords interactive
 Initiating the setup of passwords for reserved users elastic,apm_system,kibana,kibana_system,logstash_system,beats_system,remote_monitoring_user.
 You will be prompted to enter passwords as the process progresses.
@@ -186,7 +193,6 @@ Changed password for user [elastic]
 
 ```bash
 curl -u elastic:123456 'http://localhost:9200'
-
 # 或 curl 'http://elastic:123456@localhost:9200'
 ```
 
@@ -196,7 +202,7 @@ curl -u elastic:123456 'http://localhost:9200'
 
 - 报错描述：`system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk`。
 - 报错原因：Centos6 不支持 SecComp，而 ES 默认 bootstrap.system_call_filter 为 true 进行检测，所以导致检测失败，失败后直接导致 ES 不能启动。
-- 报错解决：修改配置文件 `./config/elasticsearch.yml`，在 Memory 下面增加如下配置：
+- 报错解决：修改配置文件 `elasticsearch.yml`，在 Memory 下面增加如下配置：
 
 ```yml
 bootstrap.memory_lock: false
