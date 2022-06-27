@@ -50,7 +50,7 @@ rm -rf /usr/local/mysql /usr/share/mysql /usr/lib64/mysql /var/lib/mysql
 
 MySQL 下载地址：[https://downloads.mysql.com/archives/community/](https://downloads.mysql.com/archives/community/)
 
-- 通用安装（**推荐**）：`Operating System:` 下拉项选择 `Linux - Generic` ，然后下载后缀为 `.tar.gz` 的二进制文件，如 `mysql-5.6.42-linux-glibc2.12-x86_64.tar.gz` 或 `mysql-5.7.29-linux-glibc2.12-x86_64.tar.gz` 。上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。。
+- 通用安装（**推荐**）：`Operating System:` 下拉项选择 `Linux - Generic` ，然后下载后缀为 `.tar.gz` 的二进制文件，如 `mysql-5.6.42-linux-glibc2.12-x86_64.tar.gz` 或 `mysql-5.7.29-linux-glibc2.12-x86_64.tar.gz` 。上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 - rpm 安装：如 `MySQL-5.6.42-1.el6.x86_64.rpm-bundle.tar` 。
 - yun 安装。
 
@@ -89,8 +89,10 @@ mv mysql-5.6.42-linux2.6-x86_64 mysql
 - 准备数据库实例需要的目录。
 
 ```bash
-# 创建数据库实例的相关目录
+# 创建数据库实例的相关目录和文件
 mkdir -p /usr/local/mydata/soft/mysql/{data,etc,log,tmp}
+touch /usr/local/mydata/soft/mysql/log/alert.log
+touch /usr/local/mydata/soft/mysql/log/mysql_slow.log
 
 # 修改目录权限
 chown -R mysql:mysql /usr/local/mydata/soft/mysql
@@ -282,7 +284,7 @@ chown -R mysql:mysql /usr/local/mydata/soft/mysql/data
 
 # 推荐用下面的方法登录，推荐！！！
 ###### V5.6 默认无密码 ######
-###### V5.7 初始化的时候会生成一个临时密码 ######
+###### V5.7 初始化的时候会生成一个临时密码，先拷贝出来 ######
 /usr/local/mydata/soft/mysql/bin/mysql -uroot -p -S /usr/local/mydata/soft/mysql/tmp/mysql.sock
 
 # 检查是否启动
@@ -400,17 +402,17 @@ unix  2      [ ACC ]     STREAM     LISTENING     23737  6602/mysqld         /us
 ### 3.1 设置 root 密码
 
 ```bash
-# 设置root的密码
-/usr/local/mydata/soft/mysql/bin/mysqladmin -u root password '123456' -S /usr/local/mydata/soft/mysql/tmp/mysql.sock
+# 先登录，再执行
+mysql> alter user 'root'@'localhost' identified by '123456';
 
 # 或
-# alter user 'root'@'localhost' identified by '123456';
+/usr/local/mydata/soft/mysql/bin/mysqladmin -u root password '123456' -S /usr/local/mydata/soft/mysql/tmp/mysql.sock
 ```
 
 ### 3.2 登录
 
 ```bash
-# 登录mysql
+# 登录 mysql
 # /usr/local/mydata/soft/mysql/bin/mysql -uroot -p
 /usr/local/mydata/soft/mysql/bin/mysql -uroot -p -S /usr/local/mydata/soft/mysql/tmp/mysql.sock
 
@@ -418,24 +420,24 @@ unix  2      [ ACC ]     STREAM     LISTENING     23737  6602/mysqld         /us
 # vim /usr/local/bin/my
 # 加入以下内容：/usr/local/mydata/soft/mysql/bin/mysql -uroot -p123456 -S /usr/local/mydata/soft/mysql/tmp/mysql.sock
 # chmod +x /usr/local/bin/my
-# my
+# /usr/local/bin/my
 ```
 
 ### 3.3 授权远程访问
 
 ```bash
 # 配置授权
-mysql>GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
-mysql>flush privileges;
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
+mysql> flush privileges;
 ```
 
 ### 3.4 新建用户并授权
 
 ```bash
 # 新建 grid 用户并授权（无 DROP 权限），用于业务操作。因为 root 用户对从库的只读设置无效，操作有风险。
-mysql>CREATE USER 'grid'@'%' IDENTIFIED BY 'grid@123456';
-mysql>GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `mydbname`.* TO 'grid'@'%';
-mysql>flush privileges;
+mysql> CREATE USER 'grid'@'%' IDENTIFIED BY 'grid@123456';
+mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `mydbname`.* TO 'grid'@'%';
+mysql> flush privileges;
 ```
 
 ### 3.5 参数配置优化
