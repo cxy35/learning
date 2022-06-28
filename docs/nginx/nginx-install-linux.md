@@ -174,9 +174,10 @@ http {
             root   mydata;
         }
 
-        location ~*/szzlApi/ {
-            proxy_pass http://127.0.0.1:9070;
+        # location ~*/szzlApi/ {
+        location /szzlApi/ {
             # proxy_pass http://szzlApi;
+            proxy_pass http://127.0.0.1:9070/szzlApi/;
             proxy_set_header Host $host:$server_port;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $remote_addr;
