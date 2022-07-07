@@ -178,6 +178,17 @@ http {
         location /szzlApi/ {
             # proxy_pass http://szzlApi;
             proxy_pass http://127.0.0.1:9070/szzlApi/;
+            # proxy_pass http://127.0.0.1:9070;
+            proxy_set_header Host $host:$server_port;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Remote_addr $remote_addr;
+            # rewrite ^/szzlApi/(.*)$ /$1 break;
+        }
+
+        location /aaaa-fileservice/ {
+            proxy_pass http://127.0.0.1:9071/aaaa-fileservice/;
             proxy_set_header Host $host:$server_port;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $remote_addr;
