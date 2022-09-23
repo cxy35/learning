@@ -281,11 +281,13 @@ chown -R mysql:mysql /usr/local/mydata/soft/mysql/data
 
 # 推荐用下面的方法停止，推荐！！！
 /usr/local/mydata/soft/mysql/bin/mysqladmin -uroot -p -S /usr/local/mydata/soft/mysql/tmp/mysql.sock shutdown
+# 123456
 
 # 推荐用下面的方法登录，推荐！！！
 ###### V5.6 默认无密码 ######
 ###### V5.7 初始化的时候会生成一个临时密码，先拷贝出来 ######
 /usr/local/mydata/soft/mysql/bin/mysql -uroot -p -S /usr/local/mydata/soft/mysql/tmp/mysql.sock
+# 123456
 
 # 检查是否启动
 ps -ef|grep mysql 或 netstat -anp|grep mysql
@@ -295,6 +297,8 @@ root     30497  1836  0 16:57 pts/0    00:00:00 grep mysql
 ```
 
 ### 2.2 rpm 安装
+
+另一种安装方式。
 
 - 上传 `MySQL-5.6.42-1.el6.x86_64.rpm-bundle.tar` 。
 
@@ -363,6 +367,8 @@ unix  2      [ ACC ]     STREAM     LISTENING     23737  6602/mysqld         /us
 ```
 
 ### 2.3 yum 安装
+
+另一种安装方式。
 
 - 安装。
 
