@@ -65,9 +65,9 @@ cp /usr/local/nginx-1.16.1/objs/nginx /usr/local/nginx/sbin/nginx
 
 ```
 # 创建存放证书的目录
-mkdir /usr/local/ssl
+mkdir /usr/local/nginx/cert
 
-cd /usr/local/ssl
+cd /usr/local/nginx/cert
 
 # 创建服务器私钥，命令会让你输入一个口令。
 openssl genrsa -des3 -out server.key 1024
@@ -89,15 +89,25 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 ```bash
 server {
-    listen       80;
-    server_name  localhost;
+    listen       443 ssl;
+    server_name  www.aaa.com;
     
-    listen 443 ssl;
-    ssl_certificate     /usr/local/ssl/server-nopassword.crt;
-    ssl_certificate_key /usr/local/ssl/server-nopassword.key;
-    #rewrite ^(.*)$ https://$host$1 permanent;
+    ssl_certificate     ../cert/server-nopassword.crt;
+    ssl_certificate_key ../cert/server-nopassword.key;
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+    # ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
 
     #...
+}
+
+server {
+    listen       80;
+    server_name  localhost-80;
+    # 将 http 请求重定向到 https
+    rewrite ^(.*)$ https://$host$1 permanent;
 }
 ```
 
