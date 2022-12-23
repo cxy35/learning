@@ -28,15 +28,15 @@ Elasticsearch 是一个基于 Lucene 的搜索服务器。它提供了一个分�
 
 ## 3 安装
 
-详情见 [Elasticsearch 安装](https://www.cxy35.com/#/docs/elastic/elasticsearch-install)
+详情见 [Elasticsearch 安装](https://www.cxy35.top/#/docs/elastic/elasticsearch-install)
 
 ## 4 常用命令
 
-详情见 [Elasticsearch 常用命令](https://www.cxy35.com/#/docs/elastic/elasticsearch-command)
+详情见 [Elasticsearch 常用命令](https://www.cxy35.top/#/docs/elastic/elasticsearch-command)
 
 
 ---
 
-扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.com](https://cxy35.com)
+扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.top](https://cxy35.top)
 
 ![](https://oscimg.oschina.net/oscnet/up-285838b9c516db5bb1ba760f292f2346078.JPEG)

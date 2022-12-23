@@ -9,7 +9,7 @@
 
 ## 更好的阅读体验
 
-- 文档地址：[https://www.cxy35.com](https://www.cxy35.com)
+- 文档地址：[https://www.cxy35.top](https://www.cxy35.top)
 - 文档地址（备用）：[https://cxy35.github.io/learning](https://cxy35.github.io/learning)
 
 ## Spring Boot
@@ -291,6 +291,6 @@
 
 ## 微信公众号
 
-扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://www.cxy35.com](https://www.cxy35.com)
+扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://www.cxy35.top](https://www.cxy35.top)
 
 ![微信公众号图片](https://oscimg.oschina.net/oscnet/up-285838b9c516db5bb1ba760f292f2346078.JPEG)

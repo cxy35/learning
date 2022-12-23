@@ -115,7 +115,7 @@ public class Swagger2Config {
                         .title("这是网站的标题...")
                         .description("这是网站的描述...")
                         .version("v1.0")
-                        .contact(new Contact("这是联系人名称", "https://cxy35.com", "123456@qq.com"))
+                        .contact(new Contact("这是联系人名称", "https://cxy35.top", "123456@qq.com"))
                         .license("这是网站使用的协议...")
                         .licenseUrl("https://www.baidu.com")
                         .build());
@@ -256,6 +256,6 @@ public void configure(WebSecurity web) throws Exception {
 
 ---
 
-扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.com](https://cxy35.com)
+扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.top](https://cxy35.top)
 
 ![](https://oscimg.oschina.net/oscnet/up-285838b9c516db5bb1ba760f292f2346078.JPEG)

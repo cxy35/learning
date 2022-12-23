@@ -249,7 +249,7 @@ Maven 为了支持构建的灵活性，内置了三大特性，即**属性、Pro
 
 ## 9 常用命令
 
-[Maven 常用命令](https://www.cxy35.com/#/docs/tool/maven-command.md)
+[Maven 常用命令](https://www.cxy35.top/#/docs/tool/maven-command.md)
 
 - mvn clean：清理 target 目录。
 - mvn clean compile：清理，编译主代码与资源。
@@ -287,6 +287,6 @@ Maven 为了支持构建的灵活性，内置了三大特性，即**属性、Pro
 
 ---
 
-扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 ##程序员的35，35的程序员## 。独立站点：[https://cxy35.com](https://cxy35.com)
+扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 ##程序员的35，35的程序员## 。独立站点：[https://cxy35.top](https://cxy35.top)
 
 ![](https://oscimg.oschina.net/oscnet/up-285838b9c516db5bb1ba760f292f2346078.JPEG)

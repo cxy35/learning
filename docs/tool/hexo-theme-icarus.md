@@ -3,7 +3,7 @@ hexo-theme-icarus 主题配置大全，图文并茂，持续更新中。
 
 官方效果图：![](https://oscimg.oschina.net/oscnet/up-13d2d39a8b06e29b618c516c45b1c76bd8c.png)
 
-我的站点：[https://cxy35.com](https://cxy35.com)
+我的站点：[https://cxy35.top](https://cxy35.top)
 
 ## 1 安装 Icarus 主题
 
@@ -325,6 +325,6 @@ https://yoursite.com/?error=redirect_uri_mismatch&error_description=The+redirect
 
 ---
 
-扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.com](https://cxy35.com)
+扫码关注微信公众号 **程序员35** ，获取最新技术干货，畅聊 #程序员的35，35的程序员# 。独立站点：[https://cxy35.top](https://cxy35.top)
 
 ![](https://oscimg.oschina.net/oscnet/up-285838b9c516db5bb1ba760f292f2346078.JPEG)
