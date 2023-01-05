@@ -66,10 +66,11 @@
           var footer = [
             '<hr/>',
             '<footer style="text-align: center">',
-            '<span>© 2019-2023 cxy35.top 版权所有.',
-            '<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010202002504" target="_blank"><img src="images/other/galwba.png" style="float:left;"/> 浙公网安备 33010202002504号 </a>',
-            '<a href="https://beian.miit.gov.cn" target="_blank"> 浙ICP备2023000172号-1 </a>',
-            '</span>',
+            '<div>',
+            '<span>© 2019-2023 cxy35.top 版权所有</span>',
+            '<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010202002504" target="_blank" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color:#939393;margin:0 10px;"><img src="images/other/galwba.png" style="float:left;">浙公网安备 33010202002504号</a>',
+            '<a href="https://beian.miit.gov.cn" target="_blank" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color:#939393;">浙ICP备2023000172号-1</a>',
+            '</div>',
             '</footer>'
           ].join('');
           hook.afterEach(function (html) {
