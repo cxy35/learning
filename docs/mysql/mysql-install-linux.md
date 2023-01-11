@@ -479,6 +479,7 @@ mysql> flush privileges;
 
 ```bash
 # 新建 grid 用户并授权（无 DROP 权限），用于业务操作。因为 root 用户对从库的只读设置无效，操作有风险。
+# 开放某个库的所有表：`mydbname`.*，开放所有库的所有表：*.*
 mysql> CREATE USER 'grid'@'%' IDENTIFIED BY 'grid@123456';
 mysql> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON `mydbname`.* TO 'grid'@'%';
 mysql> flush privileges;
