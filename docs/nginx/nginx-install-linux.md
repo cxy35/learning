@@ -5,7 +5,7 @@
 
 ### 1.1 下载安装包
 
-- 访问 [http://nginx.org/en/download.html](http://nginx.org/en/download.html) 下载对应**稳定版（Stable version）**的安装包，如：`nginx-1.22.0.tar.gz`。
+- 访问 [http://nginx.org/en/download.html](http://nginx.org/en/download.html) 下载对应**稳定版（Stable version）**的源码包，如：`nginx-1.22.0.tar.gz`，下面会进行编译安装。
 - 上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 
 ### 1.2 安装相关依赖环境

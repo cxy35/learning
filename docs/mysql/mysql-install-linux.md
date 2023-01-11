@@ -52,29 +52,15 @@ MySQL 下载地址：[https://downloads.mysql.com/archives/community/](https://d
 
 - 通用安装（**推荐**）：`Operating System:` 下拉项选择 `Linux - Generic` ，然后下载后缀为 `.tar.gz` 的二进制文件，如 `mysql-5.6.42-linux-glibc2.12-x86_64.tar.gz` 或 `mysql-5.7.29-linux-glibc2.12-x86_64.tar.gz` 。上传到服务器的 `/usr/local/mydata/temp` 目录下。如果没有，则手动新建。
 - rpm 安装：如 `MySQL-5.6.42-1.el6.x86_64.rpm-bundle.tar` 。
-- yun 安装。
+- yum 安装。
+- 源码编译安装：`Operating System:` 下拉项选择 `Source Code` ，然后下载后缀为 `.tar.gz` 的源码文件，如 `mysql-5.6.42.tar.gz` 或 `mysql-boost-5.7.29.tar.gz` 。上传到服务器的 `/usr/local/mydata/temp` 目录下。
 
 ## 2 安装 MySQL
-
- 安装 MySQL 主要有两种方法：
-
-1. 通过源码自行编译安装，这种适合高级用户定制 MySQL 的特性，这里不做说明。
-2. 通过编译过的二进制文件进行安装。二进制文件安装的方法又分为两种：  
-    2.1. 不针对特定平台的通用安装方法，使用后缀为 `.tar.gz` 的二进制文件。  
-    2.2. 使用 rpm 或其他包进行安装，这种安装进程会自动完成系统的相关配置，所以比较方便。
 
 ### 2.1 通用安装（**推荐**）
 
 - 上传 `mysql-5.6.42-linux-glibc2.12-x86_64.tar.gz` 或 `mysql-5.7.29-linux-glibc2.12-x86_64.tar.gz` 。
 
-- 添加 mysql 组和 mysql 用户，用于设置 mysql 安装目录文件所有者和所属组。
-
-```bash
-groupadd mysql
-
-# -r 参数表示 mysql 用户是系统用户，不可用于登录系统
-useradd -r -g mysql mysql
-```
 
 - 将二进制文件解压到 `/usr/local/mydata/soft` ，并重命名为 mysql 。
 
@@ -86,16 +72,21 @@ cd /usr/local/mydata/soft
 mv mysql-5.6.42-linux2.6-x86_64 mysql
 ```
 
-- 准备数据库实例需要的目录。
+- 创建数据库实例的相关目录和文件
 
 ```bash
-# 创建数据库实例的相关目录和文件
 mkdir -p /usr/local/mydata/soft/mysql/{data,etc,log,tmp}
 touch /usr/local/mydata/soft/mysql/log/alert.log
 touch /usr/local/mydata/soft/mysql/log/mysql_slow.log
+```
 
-# 修改目录权限
-chown -R mysql:mysql /usr/local/mydata/soft/mysql
+- 添加 mysql 组和 mysql 用户，用于设置 mysql 安装目录文件所有者和所属组。
+
+```bash
+groupadd mysql
+
+# -r 参数表示 mysql 用户是系统用户，不可用于登录系统
+useradd -r -g mysql mysql
 ```
 
 - 复制并修改配置文件。
@@ -247,11 +238,8 @@ chown -R mysql:mysql /usr/local/mydata/soft/mysql
 # A temporary password is generated for root@localhost: Uk*ui4)!,sM+
 ###### V5.7 初始化命令 ######
 
-# 修改 mysql 目录与文件的所有者为 root，非必须
-# chown -R root:root /usr/local/mydata/soft/mysql
-
-# 修改 mydata 目录与文件的所有者为 mysql（目录权限，重要！！！）
-chown -R mysql:mysql /usr/local/mydata/soft/mysql/data
+# 修改 mysql 目录与文件的所有者为 mysql（目录权限，重要！！！）
+chown -R root:root /usr/local/mydata/soft/mysql
 ```
 
 - 启动 mysql（如果需要可通过将 mysql 配置成服务注册开机启动）。
@@ -297,8 +285,6 @@ root     30497  1836  0 16:57 pts/0    00:00:00 grep mysql
 ```
 
 ### 2.2 rpm 安装
-
-另一种安装方式。
 
 - 上传 `MySQL-5.6.42-1.el6.x86_64.rpm-bundle.tar` 。
 
@@ -368,8 +354,6 @@ unix  2      [ ACC ]     STREAM     LISTENING     23737  6602/mysqld         /us
 
 ### 2.3 yum 安装
 
-另一种安装方式。
-
 - 安装。
 
 ```bash
@@ -402,6 +386,60 @@ ps -ef|grep mysql 或 netstat -anp|grep mysql
 tcp        0      0 0.0.0.0:3306                0.0.0.0:*                   LISTEN      6602/mysqld         
 unix  2      [ ACC ]     STREAM     LISTENING     23737  6602/mysqld         /usr/local/mydata/soft/mysql/data/mysql.sock
 ```
+
+### 2.4 源码编译安装
+
+> 这种安装方式一般适用于特殊的操作系统（如：银河麒麟 V10 等），采用的 Linux 内核是 `aarch64`，MySQL 官方可能没有提供编译好的二进制文件，所以需要自己编译安装。
+
+- 上传 `mysql-5.6.42.tar.gz` 或 `mysql-boost-5.7.29.tar.gz` 。
+
+- 安装相关依赖环境
+
+```bash
+yum install -y ncurses-devel rpcgen cmake gcc gcc-c++ bison bison-devel  \
+ncurses autoconf automake libaio-devel bison perl-Time-HiRes libatomic \
+openssl-devel.aarch64 openssl-devel.aarch64 libtirpc libtirpc-devel
+```
+
+- 解压源码文件。
+
+```bash
+# 其中 mysql-boost-5.7.29.tar.gz 换成实际的名称
+cd /usr/local/mydata/temp
+tar -xzvf mysql-boost-5.7.29.tar.gz
+```
+
+- 编译
+
+```bash
+cd /usr/local/mydata/temp/mysql-5.7.29
+
+cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mydata/soft/mysql  \
+-DMYSQL_DATADIR=/usr/local/mydata/soft/mysql/data \
+-DSYSCONFDIR=/usr/local/mydata/soft/mysql/etc \
+-DWITH_INNOBASE_STORAGE_ENGINE=1 \
+-DWITH_PARTITION_STORAGE_ENGINE=1 \
+-DWITH_FEDERATED_STORAGE_ENGINE=1 \
+-DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+-DWITH_MYISAM_STORAGE_ENGINE=1 \
+-DENABLED_LOCAL_INFILE=1 \
+-DENABLE_DTRACE=0 \
+-DDEFAULT_CHARSET=utf8mb4 \
+-DDEFAULT_COLLATION=utf8mb4_general_ci \
+-DWITH_EMBEDDED_SERVER=1 \
+-DDOWNLOAD_BOOST=1 \
+-DWITH_BOOST=/usr/local/mydata/temp/mysql-5.7.29/boost
+
+# 创建上述相关目录
+mkdir -p /usr/local/mydata/soft/mysql/{data,etc,log,tmp}
+
+# 编译
+make && make install
+
+# 执行完成之后，在 /usr/local/mydata/soft/mysql 目录下多了一些 MySQL 相关目录。
+```
+
+- 下面开始安装，具体安装方法见**通用安装**，从*创建数据库实例的相关目录和文件*章节开始往后。
 
 ## 3 配置 MySQL
 
