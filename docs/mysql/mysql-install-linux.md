@@ -239,7 +239,7 @@ chown -R mysql:mysql /usr/local/mydata/soft/mysql
 ###### V5.7 初始化命令 ######
 
 # 修改 mysql 目录与文件的所有者为 mysql（目录权限，重要！！！）
-chown -R root:root /usr/local/mydata/soft/mysql
+chown -R mysql:mysql /usr/local/mydata/soft/mysql
 ```
 
 - 启动 mysql（如果需要可通过将 mysql 配置成服务注册开机启动）。
