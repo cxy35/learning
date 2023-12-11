@@ -11,11 +11,43 @@
 - 同时提供了一键检测所有代码规约情况和切换语言的功能。
 - 如果你想修改某条规约的检测规则的话，可以通过设置的 `Editor -> Inspections` 进行修改。
 
+## Chinese ​(Simplified)​ Language Pack / 中文语言包
+
+官方中文语言包
+
+## Translation
+
+> 翻译插件，支持 Google、有道、百度翻译，看源码时看注释很有帮助。
+
+使用：
+
+- 选中需要翻译的内容，右键翻译。
+- 翻译整个文档。
+- 右上角的翻译按钮翻译指定内容。
+
+## Free MyBatis Tool
+
+> Free MyBatis Tool 是一款增强idea对mybatis支持的插件
+
+介绍：
+
+- 生成mapper xml文件
+- 快速从代码跳转到mapper及从mapper返回代码
+- mybatis自动补全及语法错误提示
+- 集成mybatis generator gui界面
+- 根据数据库注解，生成swagger model注解
+
+使用：
+
+- 通过 `Alt+Enter` 生成新方法的 xml 实现。
+- 通过 Mapper 接口中方法左侧的箭头直接跳转到对应的 xml 实现中去。
+- 通过 xml 中 Statement 左侧的箭头直接跳转到对应的 Mapper 接口方法中去。
+
 ## GitHub Copilot
 
 AI 代码生成工具
 
-## aiXcoder
+## aiXcoder Code Completer
 
 `aiXcoder` 一款国产代码开发工具，提供了比较强大的代码补全、预测的功能，它的宗旨就是让我们少写代码，能自动生成的绝不手写，上手感受下就会爱上它。
 
@@ -83,31 +115,6 @@ AI 代码生成工具
 如果现有的注释样式不适合你，可以自定义你的注释模板。
 
 ![](https://oscimg.oschina.net/oscnet/up-edbd6a511a3ca56aad2d0b0c6d6387c0965.png)
-
-## Lombok
-
-> Lombok 为 Java 项目提供了非常有趣的附加功能，使用它的注解可以有效的地解决那些繁琐又重复的代码，如: Setter、Getter、toString、equals、hashCode 以及非空判断等。
-
-使用：
-
-比如给一个类添加 `@Getter` 和 `@Setter` 注解， Lombok 就会为我们自动生成所有属性的 Getter 和 Setter 方法。
-
-## Free MyBatis plugin
-
-> MyBatis 扩展插件，可以在 Mapper 接口的方法和 xml 实现之间自由跳转，也可以用来一键生成某些 xml 实现。
-
-介绍：
-
-- 生成 mapper xml 文件。
-- 快速从代码跳转到 mapper 及从 mapper 返回代码。
-- mybatis 自动补全及语法错误提示。
-- 集成 mybatis generator gui 界面。
-
-使用：
-
-- 通过 `Alt+Enter` 生成新方法的 xml 实现。
-- 通过 Mapper 接口中方法左侧的箭头直接跳转到对应的 xml 实现中去。
-- 通过 xml 中 Statement 左侧的箭头直接跳转到对应的 Mapper 接口方法中去。
 
 ## MyBatis Log Plugin
 
@@ -178,16 +185,6 @@ AI 代码生成工具
 - 可以通过 pom.xml 文件底部的依赖分析标签页 `Dependency Analyzer` 查看当前项目中的所有依赖。
 - 通过冲突按钮我们可以筛选出所有冲突的依赖，选中有冲突的依赖，点击 `Exclude` 按钮可以直接排除该依赖。
 - 同时 pom.xml 中也会对该依赖添加 `<exclusion>` 标签。
-
-## Translation
-
-> 翻译插件，支持 Google、有道、百度翻译，看源码时看注释很有帮助。
-
-使用：
-
-- 选中需要翻译的内容，右键翻译。
-- 翻译整个文档。
-- 右上角的翻译按钮翻译指定内容。
 
 ## Grep Console
 
