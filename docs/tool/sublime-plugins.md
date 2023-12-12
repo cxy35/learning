@@ -11,6 +11,17 @@
 
 - 功能说明：ConvertToUTF8 能将除 UTF8 编码之外的其他编码文件在 Sublime Text 中转换成 UTF8 编码，在打开文件的时候一开始会显示乱码，然后一刹那就自动显示出正常的字体，当然，在保存文件之后原文件的编码格式不会改变。
 
+## SideBarEnhancements
+
+功能说明：侧栏菜单扩充功能。
+插件地址：[https://github.com/titoBouzout/SideBarEnhancements/tree/st3](https://github.com/titoBouzout/SideBarEnhancements/tree/st3)
+
+## AutoFileName
+
+- 功能说明：自动补全文件（目录）名。
+- 使用方法：安装好后就可以来测试如何使用 AutoFileName，先以 `<link href="">` 档案来示范，当输入 `href=""` 的同时，Sublime Text 就会将现在编辑档案的路径为中心，判断该路径内的所有档案。其他的也类似，如：`<img src="">` 等。
+- 插件地址：[https://github.com/BoundInCode/AutoFileName](https://github.com/BoundInCode/AutoFileName)
+
 ## BracketHighlighter
 
 - 功能说明：高亮显示匹配的括号、引号和标签。
@@ -62,12 +73,6 @@
 - 使用方法：快捷键 `Ctrl+Alt+A`，可能与 QQ 截图冲突，二者中的一个要重置快捷键。
 - 插件地址：[https://github.com/kevinsperrine/sublime_alignment])(https://github.com/kevinsperrine/sublime_alignment)
 
-## AutoFileName
-
-- 功能说明：自动补全文件（目录）名。
-- 使用方法：安装好后就可以来测试如何使用 AutoFileName，先以 `<link href="">` 档案来示范，当输入 `href=""` 的同时，Sublime Text 就会将现在编辑档案的路径为中心，判断该路径内的所有档案。其他的也类似，如：`<img src="">` 等。
-- 插件地址：[https://github.com/BoundInCode/AutoFileName](https://github.com/BoundInCode/AutoFileName)
-
 ## DocBlockr
 
 - 功能说明：快速生成 `JavaScript (including ES6), PHP, ActionScript, Haxe, CoffeeScript, TypeScript, Java, Groovy, Objective C, C, C++ and Rust` 语言函数注释。
@@ -92,11 +97,6 @@
         "command": "htmlprettify" 
     }
     ```
-
-## SideBarEnhancements
-
-功能说明：侧栏菜单扩充功能。
-插件地址：[https://github.com/titoBouzout/SideBarEnhancements/tree/st3](https://github.com/titoBouzout/SideBarEnhancements/tree/st3)
 
 ## View In Browser
 
